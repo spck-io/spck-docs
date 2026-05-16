@@ -1,4 +1,4 @@
-# <a name="custom-snippets"></a>Starter Custom Snippets
+# <a name="custom-snippets"></a>Custom Snippets
 
 Spck Editor's [Custom Snippets](./editor-lite#custom-snippets) feature lets you define reusable code templates that show up in the autocomplete list. This page provides ready-to-paste starter packs for the most common patterns across popular frameworks — so you can skip writing the boilerplate yourself.
 
