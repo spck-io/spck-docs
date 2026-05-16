@@ -1,19 +1,22 @@
-# <a name="custom-snippets"></a>Стартовые пользовательские сниппеты
+# <a name="custom-snippets"></a>Пользовательские сниппеты
 
-Функция [Пользовательские сниппеты](./editor-lite#custom-snippets) в Spck Editor позволяет определять многоразовые шаблоны кода, которые появляются в списке автодополнения. На этой странице представлены готовые стартовые наборы для самых распространённых паттернов в популярных фреймворках — чтобы вам не приходилось писать шаблонный код самостоятельно.
+Функция [Пользовательские сниппеты](./editor-lite#custom-snippets) в Spck Editor позволяет определять переиспользуемые шаблоны кода, которые отображаются в списке автодополнения. На этой странице представлены готовые к вставке стартовые наборы для самых распространённых шаблонов популярных фреймворков — чтобы вам не приходилось писать шаблонный код самостоятельно.
 
-Каждый набор — это JSON-конфигурация, организованная по языковому режиму (`javascript_ls` для фронтенд-фреймворков, `python_ls` для Python, `html_ls`/`css_ls` для шаблонов и стилей). Выберите фреймворк, нажмите **Копировать** и вставьте в `Настройки > Редактор > Пользовательские сниппеты > Импорт`.
+> **Доступность:** Пользовательские сниппеты — это премиум-функция. Она открывается по [подписке Gold](https://spck.io/pricing) в полной версии Spck Editor или через разовую покупку [Spck Editor Lite](./editor-lite).
+
+Каждый набор — это JSON-конфигурация, сгруппированная по языковому режиму (`javascript_ls` для фронтенд-фреймворков, `python_ls` для Python, `html_ls`/`css_ls` для фрагментов шаблонов и стилей). Выберите фреймворк, нажмите **Скопировать JSON** и вставьте в редактор конфигурации сниппетов в Spck Editor.
 
 ## <a name="how-to-use"></a>Как использовать
 
-1. Выберите фреймворк ниже и нажмите **Копировать JSON**.
-2. В Spck Editor откройте `Настройки > Редактор > Пользовательские сниппеты`.
-3. Нажмите на меню и выберите **Импорт** (или вставьте в новый файл сниппетов для этого языка).
-4. Сниппеты появятся в списке автодополнения редактора при вводе их имени-триггера.
+1. Выберите фреймворк ниже и нажмите **Скопировать JSON**.
+2. В Spck Editor откройте `Settings > Editor > Custom Snippets`.
+3. Нажмите на значок **Code** (в верхней части списка сниппетов), чтобы отредактировать конфигурацию как JSON.
+4. Вставьте скопированный JSON и нажмите **Update**, чтобы перезаписать конфигурацию сниппетов.
+5. Сниппеты появятся в списке автодополнения вашего редактора, как только вы начнёте вводить имя их триггера.
 
 ![Импорт набора пользовательских сниппетов в Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-import.gif)
 
-Все сниппеты используют заполнители с табуляцией (`$1`, `$2`, `$0`), поэтому курсор перемещается между редактируемыми позициями после вставки. Синтаксис заполнителей описан в [справочнике по пользовательским сниппетам](./editor-lite#custom-snippets).
+Все сниппеты используют табуляционные плейсхолдеры (`$1`, `$2`, `$0`), поэтому курсор переходит между редактируемыми позициями после вставки. Синтаксис плейсхолдеров см. в [справочнике по Пользовательским сниппетам](./editor-lite#custom-snippets).
 
 ## <a name="snippet-packs"></a>Наборы сниппетов
 
@@ -30,73 +33,73 @@
   </div>
 
   <div class="snippet-tab-pane" data-pack="react">
-    <p>Хуки (useState, useEffect, useRef, useMemo, useCallback, useContext, useReducer), функциональные и стрелочные компоненты, пользовательские хуки, forwardRef и паттерны Context Provider.</p>
+    <p>Хуки (useState, useEffect, useRef, useMemo, useCallback, useContext, useReducer), функциональные и стрелочные компоненты, пользовательские хуки, forwardRef и шаблоны Context Provider.</p>
     <p>Целевой режим: <code>javascript_ls</code> · <a href="/assets/snippets/react.json" download>Скачать react.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-react">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-react">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-react"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="nextjs">
-    <p>Скаффолдинг App Router (page, layout, loading, error, not-found), обработчики маршрутов, серверные действия, generateMetadata/StaticParams, Link, Image, динамический импорт, хуки навигации и middleware.</p>
+    <p>Каркас App Router (page, layout, loading, error, not-found), обработчики маршрутов, server actions, generateMetadata/StaticParams, Link, Image, динамический import, хуки навигации и middleware.</p>
     <p>Целевой режим: <code>javascript_ls</code> · <a href="/assets/snippets/nextjs.json" download>Скачать nextjs.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-nextjs">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-nextjs">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-nextjs"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="vue">
-    <p>Примитивы Composition API, хуки жизненного цикла, defineProps/Emits, хранилище Pinia и запасной вариант Options API (сторона скрипта), а также скаффолдинг SFC, v-for/v-if/v-model/v-bind/v-on, слоты, переходы и router-link (сторона шаблона).</p>
+    <p>Примитивы Composition API, хуки жизненного цикла, defineProps/Emits, хранилище Pinia и резервный вариант Options API (со стороны script), а также каркас SFC, v-for/v-if/v-model/v-bind/v-on, слоты, переходы и router-link (со стороны шаблона).</p>
     <p>Целевые режимы: <code>javascript_ls</code> + <code>html_ls</code> · <a href="/assets/snippets/vue.json" download>Скачать vue.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-vue">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-vue">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-vue"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="svelte">
-    <p>Реактивные объявления, жизненный цикл, все типы хранилищ и диспетчер событий (сторона скрипта), а также скаффолдинг компонента, блоки {#if}/{#each}/{#await}/{#key}, директивы bind:/on:/class:/use:, подписка на хранилище и слоты (сторона шаблона).</p>
+    <p>Реактивные объявления, жизненный цикл, все типы хранилищ и event dispatcher (со стороны script), а также каркас компонента, блоки {#if}/{#each}/{#await}/{#key}, директивы bind:/on:/class:/use:, подписка на хранилище и слоты (со стороны шаблона).</p>
     <p>Целевые режимы: <code>javascript_ls</code> + <code>html_ls</code> · <a href="/assets/snippets/svelte.json" download>Скачать svelte.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-svelte">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-svelte">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-svelte"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="tailwind">
-    <p>Распространённые группы утилит (макеты flex/grid, карточки, кнопки, поля ввода, бейджи, алерты), адаптивные варианты и варианты тёмного режима, плюс CSS-директивы @apply/@layer/@tailwind.</p>
+    <p>Распространённые группы утилит (раскладки flex/grid, карточки, кнопки, поля ввода, бейджи, уведомления), варианты для адаптивной вёрстки и тёмной темы, а также CSS-директивы @apply/@layer/@tailwind.</p>
     <p>Целевые режимы: <code>html_ls</code> + <code>css_ls</code> · <a href="/assets/snippets/tailwind.json" download>Скачать tailwind.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-tailwind">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-tailwind">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-tailwind"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="express">
-    <p>Скаффолдинг приложения, все HTTP-методы, асинхронный маршрут с try/catch, middleware, middleware аутентификации, обработчик ошибок, модуль Router, CORS, статические файлы и хелперы параметров запроса.</p>
+    <p>Каркас приложения, все HTTP-методы, асинхронный маршрут с try/catch, middleware, middleware аутентификации, обработчик ошибок, модуль Router, CORS, статические файлы и хелперы для параметров запроса.</p>
     <p>Целевой режим: <code>javascript_ls</code> · <a href="/assets/snippets/express.json" download>Скачать express.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-express">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-express">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-express"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="fastapi">
-    <p>Скаффолдинг приложения, маршруты GET/POST/PUT/DELETE, асинхронные обработчики, параметры пути и запроса, модели Pydantic, Depends, HTTPException, APIRouter, BackgroundTasks, CORS middleware, загрузка файлов и обработчики жизненного цикла.</p>
+    <p>Каркас приложения, маршруты GET/POST/PUT/DELETE, асинхронные обработчики, path- и query-параметры, модели Pydantic, Depends, HTTPException, APIRouter, BackgroundTasks, middleware CORS, загрузка файлов и обработчики lifespan.</p>
     <p>Целевой режим: <code>python_ls</code> · <a href="/assets/snippets/fastapi.json" download>Скачать fastapi.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-fastapi">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-fastapi">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-fastapi"></code></pre>
     </div>
   </div>
 
   <div class="snippet-tab-pane" data-pack="django">
-    <p>Модели, представления на основе функций и классов, DRF APIView/ViewSet/Serializer, формы, urlpatterns, регистрация в админке, миграции, пользовательские менеджеры, сигналы и команды управления.</p>
+    <p>Модели, представления на основе функций и классов, DRF APIView/ViewSet/Serializer, формы, urlpatterns, регистрация в admin, миграции, пользовательские менеджеры, сигналы и management-команды.</p>
     <p>Целевой режим: <code>python_ls</code> · <a href="/assets/snippets/django.json" download>Скачать django.json</a></p>
     <div class="snippet-copy-wrap">
-      <button type="button" class="snippet-copy-btn" data-target="snippet-json-django">Копировать JSON</button>
+      <button type="button" class="snippet-copy-btn" data-target="snippet-json-django">Скопировать JSON</button>
       <pre><code class="hljs" id="snippet-json-django"></code></pre>
     </div>
   </div>
@@ -176,20 +179,22 @@
 
 ## <a name="customizing"></a>Настройка сниппетов
 
-Эти наборы — лишь отправная точка. Большинство команд со временем добавляют собственные паттерны. Любой сниппет можно редактировать прямо в приложении:
+Эти наборы — лишь отправная точка: большинство разработчиков со временем добавляют свои собственные шаблоны. Любой сниппет можно отредактировать прямо в приложении:
 
 ![Редактирование пользовательского сниппета в Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-editing.gif)
 
-Полезные дополнения для рассмотрения:
+Полезные дополнения, которые стоит рассмотреть:
 
-- **Скаффолдинг компонентов**, соответствующий структуре файлов вашего проекта (например, сниппет `page` со стандартными импортами и обёрткой макета).
-- **Шаблонный код тестов** — структура `describe`/`it` вашего тестового фреймворка с нужными импортами.
-- **Вызовы логирования или телеметрии** с предзаполненными именами событий, специфичных для проекта.
-- **Вызовы API-клиента** — оберните стандартный паттерн вызова `fetch`/axios/SDK с обработкой ошибок.
+- **Каркасы компонентов**, соответствующие структуре файлов вашего проекта (например, сниппет `page`, включающий стандартные импорты и обёртку макета).
+- **Шаблоны тестов** — структура `describe`/`it` вашего тестового фреймворка с импортами, которые всегда нужны.
+- Вызовы **логирования или телеметрии** с предзаполненными именами событий, специфичными для вашего проекта.
+- **Вызовы API-клиента** — оберните ваш стандартный шаблон вызова `fetch` / axios / SDK обработкой ошибок.
 
-Формат JSON прост — каждый сниппет состоит только из `name` (то, что отображается в автодополнении) и тела `snippet`. Перед импортом отредактируйте скачанный JSON в любом текстовом редакторе.
+Формат JSON прост: каждый сниппет — это просто `name` (то, что отображается в автодополнении) и тело `snippet`. Отредактируйте скачанный JSON в любом текстовом редакторе перед вставкой в конфигурацию сниппетов.
 
-## <a name="see-also"></a>Смотрите также
+## <a name="see-also"></a>См. также
 
-- [Справочник по пользовательским сниппетам](./editor-lite#custom-snippets) — синтаксис заполнителей, область видимости и управление сниппетами в приложении.
+- [Справочник по Пользовательским сниппетам](./editor-lite#custom-snippets) — синтаксис плейсхолдеров, область действия и управление сниппетами в приложении.
+- [Spck Editor Lite](./editor-lite) — версия с разовой покупкой, включающая Пользовательские сниппеты.
+- [Цены](https://spck.io/pricing) — подробности о подписке Gold для полной версии Spck Editor.
 - [Начало работы](./editor) — установка и обзор возможностей Spck Editor.

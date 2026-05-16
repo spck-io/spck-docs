@@ -2,14 +2,17 @@
 
 Spck Editor's [Custom Snippets](./editor-lite#custom-snippets) feature lets you define reusable code templates that show up in the autocomplete list. This page provides ready-to-paste starter packs for the most common patterns across popular frameworks — so you can skip writing the boilerplate yourself.
 
-Each pack is a JSON config keyed by language mode (`javascript_ls` for the frontend frameworks, `python_ls` for the Python ones, `html_ls`/`css_ls` for template and style fragments). Pick a framework, hit **Copy**, and paste into `Settings > Editor > Custom Snippets > Import`.
+> **Availability:** Custom Snippets is a premium feature. It's unlocked with a [Gold subscription](https://spck.io/pricing) in the full Spck Editor, or as a one-time purchase via [Spck Editor Lite](./editor-lite).
+
+Each pack is a JSON config keyed by language mode (`javascript_ls` for the frontend frameworks, `python_ls` for the Python ones, `html_ls`/`css_ls` for template and style fragments). Pick a framework, hit **Copy JSON**, and paste it into the snippet configuration editor in Spck Editor.
 
 ## <a name="how-to-use"></a>How to Use
 
 1. Pick a framework below and click **Copy JSON**.
 2. In Spck Editor, open `Settings > Editor > Custom Snippets`.
-3. Tap the menu and choose **Import** (or paste into a new snippet file for that language).
-4. The snippets will appear in your editor's autocomplete list as you type their trigger name.
+3. Tap the **Code** icon (top of the snippet list) to edit the configuration as JSON.
+4. Paste the copied JSON in, then tap **Update** to overwrite your snippet configuration.
+5. The snippets will appear in your editor's autocomplete list as you type their trigger name.
 
 ![Importing a custom snippet pack in Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-import.gif)
 
@@ -176,7 +179,7 @@ All snippets use tab-stop placeholders (`$1`, `$2`, `$0`) so the cursor jumps be
 
 ## <a name="customizing"></a>Customizing the Snippets
 
-These packs are starting points — most teams add their own patterns over time. You can edit any snippet directly inside the app:
+These packs are starting points — most developers add their own patterns over time. You can edit any snippet directly inside the app:
 
 ![Editing a custom snippet in Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-editing.gif)
 
@@ -187,9 +190,11 @@ Useful additions to consider:
 - **Logging or telemetry** calls with your project-specific event names pre-filled.
 - **API client calls** — wrap your standard `fetch` / axios / SDK call pattern with error handling.
 
-The JSON format is straightforward — each snippet is just a `name` (what shows in autocomplete) and a `snippet` body. Edit the downloaded JSON in any text editor before importing.
+The JSON format is straightforward — each snippet is just a `name` (what shows in autocomplete) and a `snippet` body. Edit the downloaded JSON in any text editor before pasting it into the snippet configuration.
 
 ## <a name="see-also"></a>See Also
 
 - [Custom Snippets reference](./editor-lite#custom-snippets) — placeholder syntax, scoping, and how to manage snippets in-app.
+- [Spck Editor Lite](./editor-lite) — one-time-purchase version that includes Custom Snippets.
+- [Pricing](https://spck.io/pricing) — Gold subscription details for the full Spck Editor.
 - [Getting Started](./editor) — installation and an overview of Spck Editor features.
