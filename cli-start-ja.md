@@ -40,7 +40,7 @@ spck
 
 Spck CLI をモバイルアプリに接続し、ローカルファイルをリモートで編集する短いウォークスルーです:
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Spck CLI デモ" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>初回セットアップ
 

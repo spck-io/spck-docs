@@ -40,7 +40,7 @@ Inicio más rápido, funciona sin conexión y resulta conveniente para el uso di
 
 Un breve recorrido conectando Spck CLI a la app móvil y editando archivos locales de forma remota:
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Demo de Spck CLI" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>Configuración inicial
 

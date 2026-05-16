@@ -40,7 +40,7 @@ Startup lebih cepat, bekerja offline, dan nyaman untuk penggunaan sehari-hari.
 
 Panduan singkat menghubungkan Spck CLI ke aplikasi seluler dan mengedit berkas lokal dari jarak jauh:
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Demo Spck CLI" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>Pengaturan Pertama Kali
 

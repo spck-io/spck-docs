@@ -40,7 +40,7 @@ spck
 
 Spck CLI를 모바일 앱에 연결하고 로컬 파일을 원격으로 편집하는 짧은 데모입니다:
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Spck CLI 데모" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>최초 설정
 

@@ -40,7 +40,7 @@ spck
 
 Короткий обзор подключения Spck CLI к мобильному приложению и удалённого редактирования локальных файлов:
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Демо Spck CLI" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>Первоначальная настройка
 

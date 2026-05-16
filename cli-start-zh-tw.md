@@ -40,7 +40,7 @@ spck
 
 下方是一段簡短示範，展示如何將 Spck CLI 連接到行動應用程式並遠端編輯本機檔案：
 
-<img src="https://docs.spck.io/assets/gifs/remote-cli-preview.gif" alt="Spck CLI 示範" width="100%" />
+![Remote Project features in Spck Editor](https://docs.spck.io/assets/gifs/remote-cli-preview.gif)
 
 ## <a name="first-time-setup"></a>首次設定
 
