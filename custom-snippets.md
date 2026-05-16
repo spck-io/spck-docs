@@ -11,6 +11,8 @@ Each pack is a JSON config keyed by language mode (`javascript_ls` for the front
 3. Tap the menu and choose **Import** (or paste into a new snippet file for that language).
 4. The snippets will appear in your editor's autocomplete list as you type their trigger name.
 
+![Importing a custom snippet pack in Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-import.gif)
+
 All snippets use tab-stop placeholders (`$1`, `$2`, `$0`) so the cursor jumps between editable positions after insertion. See the [Custom Snippets reference](./editor-lite#custom-snippets) for the placeholder syntax.
 
 ## <a name="snippet-packs"></a>Snippet Packs
@@ -174,7 +176,11 @@ All snippets use tab-stop placeholders (`$1`, `$2`, `$0`) so the cursor jumps be
 
 ## <a name="customizing"></a>Customizing the Snippets
 
-These packs are starting points — most teams add their own patterns over time. Useful additions to consider:
+These packs are starting points — most teams add their own patterns over time. You can edit any snippet directly inside the app:
+
+![Editing a custom snippet in Spck Editor](https://docs.spck.io/assets/gifs/custom-snippet-editing.gif)
+
+Useful additions to consider:
 
 - **Component scaffolds** matching your project's file structure (e.g. a `page` snippet that includes your standard imports and layout wrapper).
 - **Test boilerplate** — your testing framework's `describe`/`it` structure with the imports you always need.
