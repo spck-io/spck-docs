@@ -1,0 +1,76 @@
+{
+  "javascript_ls": [
+    {
+      "name": "useState",
+      "snippet": "const [${1:state}, set${2:State}] = useState(${0})"
+    },
+    {
+      "name": "useState:number",
+      "snippet": "const [${1:count}, set${2:Count}] = useState(${0:0})"
+    },
+    {
+      "name": "useState:boolean",
+      "snippet": "const [${1:open}, set${2:Open}] = useState(${0:false})"
+    },
+    {
+      "name": "useState:array",
+      "snippet": "const [${1:items}, set${2:Items}] = useState([${0}])"
+    },
+    {
+      "name": "useEffect",
+      "snippet": "useEffect(() => {\n  ${0}\n}, [${1}])"
+    },
+    {
+      "name": "useEffect:cleanup",
+      "snippet": "useEffect(() => {\n  ${1}\n  return () => {\n    ${0}\n  }\n}, [${2}])"
+    },
+    {
+      "name": "useEffect:mount",
+      "snippet": "useEffect(() => {\n  ${0}\n}, [])"
+    },
+    {
+      "name": "useRef",
+      "snippet": "const ${1:ref} = useRef(${0:null})"
+    },
+    {
+      "name": "useMemo",
+      "snippet": "const ${1:value} = useMemo(() => ${2:compute()}, [${0}])"
+    },
+    {
+      "name": "useCallback",
+      "snippet": "const ${1:handler} = useCallback((${2}) => {\n  ${0}\n}, [${3}])"
+    },
+    {
+      "name": "useContext",
+      "snippet": "const ${1:value} = useContext(${0:Context})"
+    },
+    {
+      "name": "useReducer",
+      "snippet": "const [${1:state}, dispatch] = useReducer(${2:reducer}, ${0:initialState})"
+    },
+    {
+      "name": "Functional Component",
+      "snippet": "function ${1:Component}(${2:props}) {\n  return (\n    <${3:div}>${0}</${3}>\n  )\n}"
+    },
+    {
+      "name": "Arrow Component",
+      "snippet": "const ${1:Component} = (${2:props}) => {\n  return (\n    <${3:div}>${0}</${3}>\n  )\n}"
+    },
+    {
+      "name": "Custom Hook",
+      "snippet": "function use${1:Name}(${2}) {\n  ${0}\n  return ${3}\n}"
+    },
+    {
+      "name": "forwardRef",
+      "snippet": "const ${1:Component} = forwardRef((${2:props}, ref) => {\n  return (\n    <${3:div} ref={ref}>${0}</${3}>\n  )\n})"
+    },
+    {
+      "name": "createContext",
+      "snippet": "const ${1:Context} = createContext(${0:null})"
+    },
+    {
+      "name": "Context Provider",
+      "snippet": "<${1:Context}.Provider value={${2:value}}>\n  ${0}\n</${1}.Provider>"
+    }
+  ]
+}

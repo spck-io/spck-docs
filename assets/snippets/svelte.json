@@ -1,0 +1,118 @@
+{
+  "javascript_ls": [
+    {
+      "name": "reactive",
+      "snippet": "$: ${1:value} = ${0}"
+    },
+    {
+      "name": "reactive block",
+      "snippet": "$: {\n  ${0}\n}"
+    },
+    {
+      "name": "onMount",
+      "snippet": "import { onMount } from 'svelte'\n\nonMount(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "onDestroy",
+      "snippet": "import { onDestroy } from 'svelte'\n\nonDestroy(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "tick",
+      "snippet": "import { tick } from 'svelte'\n\nawait tick()\n${0}"
+    },
+    {
+      "name": "writable store",
+      "snippet": "import { writable } from 'svelte/store'\n\nexport const ${1:store} = writable(${0})"
+    },
+    {
+      "name": "readable store",
+      "snippet": "import { readable } from 'svelte/store'\n\nexport const ${1:store} = readable(${2:initial}, (set) => {\n  ${0}\n  return () => {}\n})"
+    },
+    {
+      "name": "derived store",
+      "snippet": "import { derived } from 'svelte/store'\n\nexport const ${1:value} = derived(${2:source}, ($${2:source}) => ${0})"
+    },
+    {
+      "name": "export prop",
+      "snippet": "export let ${1:name}${0}"
+    },
+    {
+      "name": "createEventDispatcher",
+      "snippet": "import { createEventDispatcher } from 'svelte'\n\nconst dispatch = createEventDispatcher()\n${0}"
+    },
+    {
+      "name": "dispatch",
+      "snippet": "dispatch('${1:event}', ${0:detail})"
+    },
+    {
+      "name": "#if block",
+      "snippet": "{#if ${1:condition}}\n  ${0}\n{/if}"
+    },
+    {
+      "name": "#if/else block",
+      "snippet": "{#if ${1:condition}}\n  ${2}\n{:else}\n  ${0}\n{/if}"
+    },
+    {
+      "name": "#each block",
+      "snippet": "{#each ${1:items} as ${2:item} (${2:item}.${3:id})}\n  ${0}\n{/each}"
+    },
+    {
+      "name": "#await block",
+      "snippet": "{#await ${1:promise}}\n  ${2:loading...}\n{:then ${3:value}}\n  ${4}\n{:catch ${5:error}}\n  ${0}\n{/await}"
+    },
+    {
+      "name": "#key block",
+      "snippet": "{#key ${1:expression}}\n  ${0}\n{/key}"
+    }
+  ],
+  "html_ls": [
+    {
+      "name": "Component file",
+      "snippet": "<script>\n  ${1}\n</script>\n\n${2:<div>${0}</div>}\n\n<style>\n  ${3}\n</style>"
+    },
+    {
+      "name": "#if block",
+      "snippet": "{#if ${1:condition}}\n  ${0}\n{/if}"
+    },
+    {
+      "name": "#if/else block",
+      "snippet": "{#if ${1:condition}}\n  ${2}\n{:else}\n  ${0}\n{/if}"
+    },
+    {
+      "name": "#each block",
+      "snippet": "{#each ${1:items} as ${2:item} (${2:item}.${3:id})}\n  ${0}\n{/each}"
+    },
+    {
+      "name": "#await block",
+      "snippet": "{#await ${1:promise}}\n  ${2:loading...}\n{:then ${3:value}}\n  ${4}\n{:catch ${5:error}}\n  ${0}\n{/await}"
+    },
+    {
+      "name": "#key block",
+      "snippet": "{#key ${1:expression}}\n  ${0}\n{/key}"
+    },
+    {
+      "name": "bind:value",
+      "snippet": "bind:value={${0:variable}}"
+    },
+    {
+      "name": "on:event",
+      "snippet": "on:${1:click}={${0:handler}}"
+    },
+    {
+      "name": "class:directive",
+      "snippet": "class:${1:name}={${0:condition}}"
+    },
+    {
+      "name": "use:action",
+      "snippet": "use:${1:action}={${0:params}}"
+    },
+    {
+      "name": "store subscription",
+      "snippet": "{$${0:store}}"
+    },
+    {
+      "name": "slot",
+      "snippet": "<slot name=\"${1:default}\">${0}</slot>"
+    }
+  ]
+}

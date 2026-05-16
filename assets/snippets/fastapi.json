@@ -1,0 +1,76 @@
+{
+  "python_ls": [
+    {
+      "name": "FastAPI app",
+      "snippet": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef root():\n    return {\"message\": \"${0:Hello World}\"}"
+    },
+    {
+      "name": "GET route",
+      "snippet": "@app.get(\"/${1:path}\")\ndef ${2:read_item}():\n    return ${0}"
+    },
+    {
+      "name": "POST route",
+      "snippet": "@app.post(\"/${1:path}\")\ndef ${2:create_item}(${3:item}: ${4:Item}):\n    ${0}\n    return ${3:item}"
+    },
+    {
+      "name": "PUT route",
+      "snippet": "@app.put(\"/${1:items}/{${2:item_id}}\")\ndef ${3:update_item}(${2:item_id}: int, ${4:item}: ${5:Item}):\n    ${0}\n    return ${4:item}"
+    },
+    {
+      "name": "DELETE route",
+      "snippet": "@app.delete(\"/${1:items}/{${2:item_id}}\")\ndef ${3:delete_item}(${2:item_id}: int):\n    ${0}\n    return {\"ok\": True}"
+    },
+    {
+      "name": "async route",
+      "snippet": "@app.${1:get}(\"/${2:path}\")\nasync def ${3:handler}(${4}):\n    ${0}\n    return ${5}"
+    },
+    {
+      "name": "path param",
+      "snippet": "@app.get(\"/${1:items}/{${2:item_id}}\")\ndef ${3:read_item}(${2:item_id}: ${4:int}):\n    ${0}\n    return {\"${2:item_id}\": ${2:item_id}}"
+    },
+    {
+      "name": "query param",
+      "snippet": "@app.get(\"/${1:items}\")\ndef ${2:read_items}(${3:q}: ${4:str} | None = ${5:None}):\n    ${0}\n    return {\"${3:q}\": ${3:q}}"
+    },
+    {
+      "name": "Pydantic model",
+      "snippet": "from pydantic import BaseModel\n\nclass ${1:Item}(BaseModel):\n    ${2:name}: ${3:str}\n    ${0}"
+    },
+    {
+      "name": "Depends",
+      "snippet": "from fastapi import Depends\n\ndef ${1:get_dep}(${2}):\n    ${3}\n    return ${4}\n\n@app.get(\"/${5:path}\")\ndef ${6:handler}(${7:dep} = Depends(${1:get_dep})):\n    ${0}"
+    },
+    {
+      "name": "HTTPException",
+      "snippet": "from fastapi import HTTPException\n\nraise HTTPException(status_code=${1:404}, detail=\"${0:Not found}\")"
+    },
+    {
+      "name": "response_model",
+      "snippet": "@app.${1:get}(\"/${2:path}\", response_model=${3:Item})\ndef ${4:handler}(${5}):\n    ${0}\n    return ${6}"
+    },
+    {
+      "name": "APIRouter",
+      "snippet": "from fastapi import APIRouter\n\nrouter = APIRouter(prefix=\"/${1:items}\", tags=[\"${2:items}\"])\n\n@router.get(\"/\")\ndef ${3:list_items}():\n    ${0}\n    return []"
+    },
+    {
+      "name": "include_router",
+      "snippet": "app.include_router(${1:router}${0})"
+    },
+    {
+      "name": "BackgroundTasks",
+      "snippet": "from fastapi import BackgroundTasks\n\n@app.post(\"/${1:path}\")\ndef ${2:handler}(background_tasks: BackgroundTasks):\n    background_tasks.add_task(${3:task_fn}${4})\n    return ${0}"
+    },
+    {
+      "name": "CORS middleware",
+      "snippet": "from fastapi.middleware.cors import CORSMiddleware\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[${1:\"*\"}],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)${0}"
+    },
+    {
+      "name": "File upload",
+      "snippet": "from fastapi import UploadFile, File\n\n@app.post(\"/${1:upload}\")\nasync def ${2:upload_file}(file: UploadFile = File(...)):\n    ${3:contents} = await file.read()\n    ${0}\n    return {\"filename\": file.filename}"
+    },
+    {
+      "name": "lifespan",
+      "snippet": "from contextlib import asynccontextmanager\nfrom fastapi import FastAPI\n\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    ${1:# startup}\n    yield\n    ${0:# shutdown}\n\napp = FastAPI(lifespan=lifespan)"
+    }
+  ]
+}

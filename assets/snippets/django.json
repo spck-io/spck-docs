@@ -1,0 +1,64 @@
+{
+  "python_ls": [
+    {
+      "name": "Model",
+      "snippet": "from django.db import models\n\nclass ${1:Item}(models.Model):\n    ${2:name} = models.${3:CharField}(max_length=${4:255})\n    created_at = models.DateTimeField(auto_now_add=True)\n    ${0}\n\n    def __str__(self):\n        return self.${2:name}"
+    },
+    {
+      "name": "Function view",
+      "snippet": "from django.shortcuts import render\n\ndef ${1:view_name}(request):\n    ${0}\n    return render(request, '${2:template.html}', {${3}})"
+    },
+    {
+      "name": "Class view",
+      "snippet": "from django.views.generic import ${1:ListView}\n\nclass ${2:ItemListView}(${1:ListView}):\n    model = ${3:Item}\n    template_name = '${4:items/list.html}'\n    context_object_name = '${0:items}'"
+    },
+    {
+      "name": "API view (DRF)",
+      "snippet": "from rest_framework.views import APIView\nfrom rest_framework.response import Response\n\nclass ${1:ItemView}(APIView):\n    def get(self, request${2}):\n        ${0}\n        return Response({${3}})"
+    },
+    {
+      "name": "ViewSet (DRF)",
+      "snippet": "from rest_framework import viewsets\n\nclass ${1:Item}ViewSet(viewsets.ModelViewSet):\n    queryset = ${1:Item}.objects.all()\n    serializer_class = ${2:Item}Serializer${0}"
+    },
+    {
+      "name": "Serializer (DRF)",
+      "snippet": "from rest_framework import serializers\n\nclass ${1:Item}Serializer(serializers.ModelSerializer):\n    class Meta:\n        model = ${1:Item}\n        fields = ${0:'__all__'}"
+    },
+    {
+      "name": "Form",
+      "snippet": "from django import forms\n\nclass ${1:Item}Form(forms.${2:ModelForm}):\n    class Meta:\n        model = ${3:Item}\n        fields = [${0}]"
+    },
+    {
+      "name": "urlpatterns",
+      "snippet": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('${1:}', views.${2:index}, name='${3:index}'),\n    ${0}\n]"
+    },
+    {
+      "name": "url include",
+      "snippet": "path('${1:prefix}/', include('${0:app.urls}'))"
+    },
+    {
+      "name": "admin register",
+      "snippet": "from django.contrib import admin\nfrom .models import ${1:Item}\n\n@admin.register(${1:Item})\nclass ${1:Item}Admin(admin.ModelAdmin):\n    list_display = [${2:'id', 'name'}]\n    search_fields = [${0:'name'}]"
+    },
+    {
+      "name": "Migration (empty)",
+      "snippet": "from django.db import migrations\n\nclass Migration(migrations.Migration):\n    dependencies = [\n        ('${1:app}', '${2:0001_initial}'),\n    ]\n    operations = [\n        ${0}\n    ]"
+    },
+    {
+      "name": "settings: INSTALLED_APPS",
+      "snippet": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    '${0:myapp}',\n]"
+    },
+    {
+      "name": "manager",
+      "snippet": "class ${1:Active}Manager(models.Manager):\n    def get_queryset(self):\n        return super().get_queryset().filter(${0:is_active=True})"
+    },
+    {
+      "name": "signal",
+      "snippet": "from django.db.models.signals import ${1:post_save}\nfrom django.dispatch import receiver\n\n@receiver(${1:post_save}, sender=${2:Item})\ndef ${3:handler}(sender, instance, **kwargs):\n    ${0}"
+    },
+    {
+      "name": "management command",
+      "snippet": "from django.core.management.base import BaseCommand\n\nclass Command(BaseCommand):\n    help = '${1:Description}'\n\n    def add_arguments(self, parser):\n        ${2:parser.add_argument('name', type=str)}\n\n    def handle(self, *args, **options):\n        ${0}\n        self.stdout.write(self.style.SUCCESS('Done'))"
+    }
+  ]
+}

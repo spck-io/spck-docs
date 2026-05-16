@@ -1,0 +1,126 @@
+{
+  "javascript_ls": [
+    {
+      "name": "ref",
+      "snippet": "const ${1:value} = ref(${0})"
+    },
+    {
+      "name": "ref:number",
+      "snippet": "const ${1:count} = ref(${0:0})"
+    },
+    {
+      "name": "reactive",
+      "snippet": "const ${1:state} = reactive({\n  ${0}\n})"
+    },
+    {
+      "name": "computed",
+      "snippet": "const ${1:value} = computed(() => ${0})"
+    },
+    {
+      "name": "computed:get/set",
+      "snippet": "const ${1:value} = computed({\n  get: () => ${2},\n  set: (${3:val}) => {\n    ${0}\n  }\n})"
+    },
+    {
+      "name": "watch",
+      "snippet": "watch(${1:source}, (${2:newVal}, ${3:oldVal}) => {\n  ${0}\n})"
+    },
+    {
+      "name": "watchEffect",
+      "snippet": "watchEffect(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "onMounted",
+      "snippet": "onMounted(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "onUnmounted",
+      "snippet": "onUnmounted(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "onBeforeUnmount",
+      "snippet": "onBeforeUnmount(() => {\n  ${0}\n})"
+    },
+    {
+      "name": "defineProps",
+      "snippet": "const props = defineProps({\n  ${1:name}: {\n    type: ${2:String},\n    required: ${0:true}\n  }\n})"
+    },
+    {
+      "name": "defineEmits",
+      "snippet": "const emit = defineEmits(['${0:event}'])"
+    },
+    {
+      "name": "defineComponent",
+      "snippet": "export default defineComponent({\n  name: '${1:Component}',\n  setup() {\n    ${0}\n    return {}\n  }\n})"
+    },
+    {
+      "name": "script setup",
+      "snippet": "<script setup>\nimport { ref, computed, onMounted } from 'vue'\n\n${0}\n</script>"
+    },
+    {
+      "name": "Options Component",
+      "snippet": "export default {\n  name: '${1:Component}',\n  props: {\n    ${2}\n  },\n  data() {\n    return {\n      ${3}\n    }\n  },\n  methods: {\n    ${0}\n  }\n}"
+    },
+    {
+      "name": "Pinia store",
+      "snippet": "import { defineStore } from 'pinia'\n\nexport const use${1:Name}Store = defineStore('${2:name}', () => {\n  ${0}\n  return {}\n})"
+    },
+    {
+      "name": "provide / inject",
+      "snippet": "provide('${1:key}', ${0:value})"
+    }
+  ],
+  "html_ls": [
+    {
+      "name": "SFC",
+      "snippet": "<script setup>\n${1}\n</script>\n\n<template>\n  <${2:div}>${0}</${2}>\n</template>\n\n<style scoped>\n${3}\n</style>"
+    },
+    {
+      "name": "v-for",
+      "snippet": "v-for=\"${1:item} in ${2:items}\" :key=\"${1:item}.${0:id}\""
+    },
+    {
+      "name": "v-if",
+      "snippet": "v-if=\"${0:condition}\""
+    },
+    {
+      "name": "v-else-if",
+      "snippet": "v-else-if=\"${0:condition}\""
+    },
+    {
+      "name": "v-model",
+      "snippet": "v-model=\"${0:value}\""
+    },
+    {
+      "name": "v-bind",
+      "snippet": ":${1:attr}=\"${0:value}\""
+    },
+    {
+      "name": "v-on",
+      "snippet": "@${1:click}=\"${0:handler}\""
+    },
+    {
+      "name": "v-show",
+      "snippet": "v-show=\"${0:condition}\""
+    },
+    {
+      "name": "v-html",
+      "snippet": "v-html=\"${0:rawHtml}\""
+    },
+    {
+      "name": "slot",
+      "snippet": "<slot name=\"${1:default}\">${0}</slot>"
+    },
+    {
+      "name": "named slot use",
+      "snippet": "<template #${1:name}>\n  ${0}\n</template>"
+    },
+    {
+      "name": "transition",
+      "snippet": "<transition name=\"${1:fade}\">\n  ${0}\n</transition>"
+    },
+    {
+      "name": "router-link",
+      "snippet": "<router-link to=\"${1:/path}\">${0:label}</router-link>"
+    }
+  ]
+}

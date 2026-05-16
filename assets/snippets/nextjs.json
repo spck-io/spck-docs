@@ -1,0 +1,84 @@
+{
+  "javascript_ls": [
+    {
+      "name": "'use client'",
+      "snippet": "'use client'\n${0}"
+    },
+    {
+      "name": "'use server'",
+      "snippet": "'use server'\n${0}"
+    },
+    {
+      "name": "page",
+      "snippet": "export default function ${1:Page}() {\n  return (\n    <${2:main}>${0}</${2}>\n  )\n}"
+    },
+    {
+      "name": "async page",
+      "snippet": "export default async function ${1:Page}({ params, searchParams }) {\n  ${0}\n  return (\n    <main></main>\n  )\n}"
+    },
+    {
+      "name": "layout",
+      "snippet": "export default function ${1:Layout}({ children }) {\n  return (\n    <${2:div}>\n      ${0}\n      {children}\n    </${2}>\n  )\n}"
+    },
+    {
+      "name": "loading",
+      "snippet": "export default function Loading() {\n  return <div>${0:Loading...}</div>\n}"
+    },
+    {
+      "name": "error",
+      "snippet": "'use client'\n\nexport default function Error({ error, reset }) {\n  return (\n    <div>\n      <h2>${1:Something went wrong}</h2>\n      <button onClick={() => reset()}>${0:Try again}</button>\n    </div>\n  )\n}"
+    },
+    {
+      "name": "not-found",
+      "snippet": "export default function NotFound() {\n  return <div>${0:Not found}</div>\n}"
+    },
+    {
+      "name": "route handler",
+      "snippet": "import { NextResponse } from 'next/server'\n\nexport async function ${1:GET}(request) {\n  ${0}\n  return NextResponse.json({ ${2} })\n}"
+    },
+    {
+      "name": "route param",
+      "snippet": "export async function ${1:GET}(request, { params }) {\n  const { ${2:id} } = params\n  ${0}\n  return Response.json({ ${2:id} })\n}"
+    },
+    {
+      "name": "server action",
+      "snippet": "'use server'\n\nexport async function ${1:action}(${2:formData}) {\n  ${0}\n}"
+    },
+    {
+      "name": "generateMetadata",
+      "snippet": "export async function generateMetadata({ params }) {\n  return {\n    title: '${1:Title}',\n    description: '${0:Description}'\n  }\n}"
+    },
+    {
+      "name": "generateStaticParams",
+      "snippet": "export async function generateStaticParams() {\n  ${1}\n  return [\n    { ${0:slug: 'value'} }\n  ]\n}"
+    },
+    {
+      "name": "Link",
+      "snippet": "<Link href=\"${1:/path}\">${0:label}</Link>"
+    },
+    {
+      "name": "Image",
+      "snippet": "<Image src=\"${1:/img.png}\" alt=\"${2}\" width={${3:400}} height={${4:300}} />${0}"
+    },
+    {
+      "name": "useRouter",
+      "snippet": "import { useRouter } from 'next/navigation'\n\nconst router = useRouter()\n${0}"
+    },
+    {
+      "name": "usePathname",
+      "snippet": "import { usePathname } from 'next/navigation'\n\nconst pathname = usePathname()\n${0}"
+    },
+    {
+      "name": "useSearchParams",
+      "snippet": "import { useSearchParams } from 'next/navigation'\n\nconst searchParams = useSearchParams()\n${0}"
+    },
+    {
+      "name": "dynamic import",
+      "snippet": "import dynamic from 'next/dynamic'\n\nconst ${1:Component} = dynamic(() => import('${2:./Component}')${3:, { ssr: false }})\n${0}"
+    },
+    {
+      "name": "middleware",
+      "snippet": "import { NextResponse } from 'next/server'\n\nexport function middleware(request) {\n  ${0}\n  return NextResponse.next()\n}\n\nexport const config = {\n  matcher: ['${1:/((?!api|_next/static|_next/image|favicon.ico).*)}']\n}"
+    }
+  ]
+}

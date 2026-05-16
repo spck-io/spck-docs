@@ -1,0 +1,64 @@
+{
+  "javascript_ls": [
+    {
+      "name": "Express app",
+      "snippet": "import express from 'express'\n\nconst app = express()\napp.use(express.json())\n\napp.get('/', (req, res) => {\n  res.json({ ${0:message: 'ok'} })\n})\n\nconst PORT = process.env.PORT || ${1:3000}\napp.listen(PORT, () => console.log(`Listening on ${PORT}`))"
+    },
+    {
+      "name": "GET route",
+      "snippet": "app.get('/${1:path}', (req, res) => {\n  ${0}\n  res.json({ ${2} })\n})"
+    },
+    {
+      "name": "POST route",
+      "snippet": "app.post('/${1:path}', (req, res) => {\n  const { ${2} } = req.body\n  ${0}\n  res.status(${3:201}).json({ ${4} })\n})"
+    },
+    {
+      "name": "PUT route",
+      "snippet": "app.put('/${1:resource}/:id', (req, res) => {\n  const { id } = req.params\n  ${0}\n  res.json({ ${2} })\n})"
+    },
+    {
+      "name": "DELETE route",
+      "snippet": "app.delete('/${1:resource}/:id', (req, res) => {\n  const { id } = req.params\n  ${0}\n  res.status(204).end()\n})"
+    },
+    {
+      "name": "async route",
+      "snippet": "app.${1:get}('/${2:path}', async (req, res, next) => {\n  try {\n    ${0}\n    res.json({ ${3} })\n  } catch (err) {\n    next(err)\n  }\n})"
+    },
+    {
+      "name": "middleware",
+      "snippet": "app.use((req, res, next) => {\n  ${0}\n  next()\n})"
+    },
+    {
+      "name": "auth middleware",
+      "snippet": "function ${1:requireAuth}(req, res, next) {\n  ${2}\n  if (!${3:req.user}) return res.status(401).json({ error: 'Unauthorized' })\n  ${0}\n  next()\n}"
+    },
+    {
+      "name": "error handler",
+      "snippet": "app.use((err, req, res, next) => {\n  console.error(err)\n  res.status(err.status || 500).json({ error: err.message || '${0:Internal Server Error}' })\n})"
+    },
+    {
+      "name": "Router module",
+      "snippet": "import { Router } from 'express'\n\nconst router = Router()\n\nrouter.get('/', (req, res) => {\n  ${0}\n})\n\nexport default router"
+    },
+    {
+      "name": "mount router",
+      "snippet": "app.use('/${1:api}/${2:resource}', ${0:resourceRouter})"
+    },
+    {
+      "name": "CORS",
+      "snippet": "import cors from 'cors'\n\napp.use(cors({\n  origin: ${1:'*'},\n  credentials: ${0:true}\n}))"
+    },
+    {
+      "name": "static files",
+      "snippet": "app.use(express.static('${0:public}'))"
+    },
+    {
+      "name": "query param",
+      "snippet": "const { ${1:q} } = req.query${0}"
+    },
+    {
+      "name": "path param",
+      "snippet": "const { ${1:id} } = req.params${0}"
+    }
+  ]
+}
