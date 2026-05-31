@@ -37,6 +37,9 @@
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@
 - **`browserProxy.enabled`** (boolean): ブラウザプロキシ機能の有効/無効
   - デフォルト: `true`
   - `false` に設定すると、モバイルアプリが CLI 経由でブラウザプロキシセッションを開くのを防止
+
+### ACP 設定（ローカル AI エージェント）
+
+- **`acp.enabled`** (boolean): ACP（ローカル AI コーディングエージェント）統合の有効/無効
+  - デフォルト: `true`
+  - Spck Editor がこのホスト上にローカルインストールされた AI コーディングエージェント（Claude Code、Codex、Gemini CLI）を [Agent Client Protocol](https://agentclientprotocol.com/) 経由で制御できるかどうかを制御します
+  - `false` の場合、`acp.capabilities` は `{ available: false, agents: [] }` を返し、エディタのローカルエージェント切り替えは非表示になり、代わりにクラウド経路（SSE）が使用されます
+  - エージェントは間接的にシェルとファイルシステムにアクセスできるため、その攻撃面を望まない場合はプロジェクトごとにこのオプションを無効化してください
+  - **下位互換性**: このオプションが追加される前に作成された設定は、`acp: { enabled: true }` が自動的に埋め込まれた状態で読み込まれ、再保存されます
 
 ### ターミナル設定
 
@@ -131,6 +143,15 @@
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **不要な ACP（ローカル AI エージェント）を無効にする**:
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

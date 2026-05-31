@@ -37,6 +37,9 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
 - **`browserProxy.enabled`** (boolean): Enable/disable the browser proxy feature
   - Default: `true`
   - Set to `false` to prevent the mobile app from opening a browser proxy session through the CLI
+
+### ACP (Local AI Agent) Settings
+
+- **`acp.enabled`** (boolean): Enable/disable ACP (local AI coding agent) integration
+  - Default: `true`
+  - Controls whether Spck Editor can drive a locally installed AI coding agent (Claude Code, Codex, Gemini CLI) on this host through the [Agent Client Protocol](https://agentclientprotocol.com/)
+  - When `false`, `acp.capabilities` answers with `{ available: false, agents: [] }`, the editor's local-agent transport switcher hides, and the cloud (SSE) path is used instead
+  - The agent has indirect shell and filesystem access, so disable this per-project if you don't want that surface area
+  - **Backward-compatible**: configs created before this option was added are loaded with `acp: { enabled: true }` populated automatically and re-saved
 
 ### Terminal Settings
 
@@ -131,6 +143,15 @@ Every request is cryptographically signed:
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **Disable ACP (local AI agent) if not needed**:
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

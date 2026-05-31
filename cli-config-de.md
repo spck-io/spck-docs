@@ -37,6 +37,9 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
 - **`browserProxy.enabled`** (boolean): Browser-Proxy-Funktion aktivieren/deaktivieren
   - Standard: `true`
   - Auf `false` setzen, um zu verhindern, dass die Mobile-App eine Browser-Proxy-Sitzung über die CLI öffnet
+
+### ACP-Einstellungen (Lokaler KI-Agent)
+
+- **`acp.enabled`** (boolean): ACP-Integration (lokaler KI-Coding-Agent) aktivieren/deaktivieren
+  - Standard: `true`
+  - Steuert, ob Spck Editor einen lokal installierten KI-Coding-Agenten (Claude Code, Codex, Gemini CLI) auf diesem Host über das [Agent Client Protocol](https://agentclientprotocol.com/) ansteuern darf
+  - Bei `false` antwortet `acp.capabilities` mit `{ available: false, agents: [] }`, der Transport-Umschalter für lokale Agenten im Editor wird ausgeblendet und stattdessen wird der Cloud-Pfad (SSE) verwendet
+  - Der Agent hat indirekten Shell- und Dateisystemzugriff – deaktivieren Sie diese Option pro Projekt, wenn Sie diese Angriffsfläche nicht wünschen
+  - **Abwärtskompatibel**: Konfigurationen, die vor dieser Option erstellt wurden, werden mit automatisch ergänztem `acp: { enabled: true }` geladen und neu gespeichert
 
 ### Terminal-Einstellungen
 
@@ -131,6 +143,15 @@ Jede Anfrage wird kryptographisch signiert:
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **ACP (lokaler KI-Agent) deaktivieren, wenn nicht benötigt**:
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

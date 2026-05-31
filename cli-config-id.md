@@ -37,6 +37,9 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
 - **`browserProxy.enabled`** (boolean): Aktifkan/nonaktifkan fitur browser proxy
   - Default: `true`
   - Setel ke `false` untuk mencegah aplikasi mobile membuka sesi browser proxy melalui CLI
+
+### Pengaturan ACP (Agen AI Lokal)
+
+- **`acp.enabled`** (boolean): Aktifkan/nonaktifkan integrasi ACP (agen pengkodean AI lokal)
+  - Default: `true`
+  - Mengontrol apakah Spck Editor dapat menggerakkan agen pengkodean AI yang terpasang secara lokal (Claude Code, Codex, Gemini CLI) di host ini melalui [Agent Client Protocol](https://agentclientprotocol.com/)
+  - Saat `false`, `acp.capabilities` merespons dengan `{ available: false, agents: [] }`, pemilih transport agen lokal di editor disembunyikan, dan jalur cloud (SSE) digunakan sebagai gantinya
+  - Agen memiliki akses tidak langsung ke shell dan sistem berkas, jadi nonaktifkan opsi ini per proyek jika Anda tidak menginginkan permukaan tersebut
+  - **Kompatibel ke belakang**: konfigurasi yang dibuat sebelum opsi ini ditambahkan dimuat dengan `acp: { enabled: true }` yang diisi otomatis dan disimpan ulang
 
 ### Pengaturan Terminal
 
@@ -131,6 +143,15 @@ Setiap permintaan ditandatangani secara kriptografis:
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **Nonaktifkan ACP (agen AI lokal) jika tidak diperlukan**:
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

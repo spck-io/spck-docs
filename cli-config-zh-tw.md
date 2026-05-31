@@ -37,6 +37,9 @@
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@
 - **`browserProxy.enabled`**（布林值）：啟用或停用瀏覽器代理功能
   - 預設值：`true`
   - 設為 `false` 可防止行動應用程式透過 CLI 開啟瀏覽器代理工作階段
+
+### ACP（本機 AI 代理）設定
+
+- **`acp.enabled`**（布林值）：啟用或停用 ACP（本機 AI 編碼代理）整合
+  - 預設值：`true`
+  - 控制 Spck Editor 是否可以透過 [Agent Client Protocol](https://agentclientprotocol.com/) 在此主機上驅動本機安裝的 AI 編碼代理（Claude Code、Codex、Gemini CLI）
+  - 為 `false` 時，`acp.capabilities` 會回應 `{ available: false, agents: [] }`，編輯器的本機代理傳輸切換器會被隱藏，並改用雲端（SSE）路徑
+  - 代理具有間接的 shell 與檔案系統存取權，因此若不想暴露此攻擊面，請逐專案停用此選項
+  - **向下相容**：在此選項出現之前建立的設定會自動填入 `acp: { enabled: true }` 並重新儲存
 
 ### 終端機設定
 
@@ -131,6 +143,15 @@
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **若不需要可停用 ACP（本機 AI 代理）**：
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

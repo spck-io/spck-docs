@@ -37,6 +37,9 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
 - **`browserProxy.enabled`** (boolean) : Activer/désactiver la fonctionnalité de proxy navigateur
   - Par défaut : `true`
   - Mettre à `false` pour empêcher l’application mobile d’ouvrir une session de proxy navigateur via la CLI
+
+### Paramètres ACP (Agent IA Local)
+
+- **`acp.enabled`** (boolean) : Activer/désactiver l’intégration ACP (agent IA de codage local)
+  - Par défaut : `true`
+  - Contrôle si Spck Editor peut piloter un agent IA de codage installé localement (Claude Code, Codex, Gemini CLI) sur cet hôte via le [Agent Client Protocol](https://agentclientprotocol.com/)
+  - Lorsque `false`, `acp.capabilities` répond avec `{ available: false, agents: [] }`, le sélecteur de transport d’agent local de l’éditeur est masqué et la voie cloud (SSE) est utilisée à la place
+  - L’agent dispose d’un accès indirect au shell et au système de fichiers : désactivez cette option par projet si vous ne voulez pas exposer cette surface
+  - **Rétrocompatible** : les configurations créées avant l’ajout de cette option sont chargées avec `acp: { enabled: true }` rempli automatiquement et réenregistrées
 
 ### Paramètres du Terminal
 
@@ -131,6 +143,15 @@ Chaque requête est signée cryptographiquement :
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **Désactiver ACP (agent IA local) si non nécessaire** :
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }

@@ -37,6 +37,9 @@
   },
   "browserProxy": {
     "enabled": true
+  },
+  "acp": {
+    "enabled": true
   }
 }
 ```
@@ -46,6 +49,15 @@
 - **`browserProxy.enabled`** (boolean): 브라우저 프록시 기능 활성화/비활성화
   - 기본값: `true`
   - `false`로 설정하면 모바일 앱이 CLI를 통해 브라우저 프록시 세션을 열지 못하도록 합니다.
+
+### ACP 설정 (로컬 AI 에이전트)
+
+- **`acp.enabled`** (boolean): ACP(로컬 AI 코딩 에이전트) 통합 활성화/비활성화
+  - 기본값: `true`
+  - Spck Editor가 [Agent Client Protocol](https://agentclientprotocol.com/)을 통해 이 호스트에 로컬로 설치된 AI 코딩 에이전트(Claude Code, Codex, Gemini CLI)를 구동할 수 있는지 여부를 제어합니다.
+  - `false`인 경우 `acp.capabilities`는 `{ available: false, agents: [] }`로 응답하고, 에디터의 로컬 에이전트 전송 전환기는 숨겨지며, 대신 클라우드(SSE) 경로가 사용됩니다.
+  - 에이전트는 셸과 파일시스템에 간접적으로 접근할 수 있으므로, 그 노출 영역을 원치 않는 경우 프로젝트별로 이 옵션을 비활성화하세요.
+  - **하위 호환성**: 이 옵션이 추가되기 전에 만들어진 구성은 `acp: { enabled: true }`가 자동으로 채워진 채로 로드되고 다시 저장됩니다.
 
 ### 터미널 설정
 
@@ -131,6 +143,15 @@
    ```json
    {
      "browserProxy": {
+       "enabled": false
+     }
+   }
+   ```
+
+6. **필요하지 않은 경우 ACP(로컬 AI 에이전트) 비활성화**:
+   ```json
+   {
+     "acp": {
        "enabled": false
      }
    }
