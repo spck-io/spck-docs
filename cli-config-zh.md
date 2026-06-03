@@ -59,6 +59,8 @@
   - 代理具有对 shell 和文件系统的间接访问权限，因此如不需要该暴露面，请按项目禁用此选项
   - **向后兼容**：在该选项出现之前创建的配置会以自动填入的 `acp: { enabled: true }` 加载并重新保存
 
+> 💡 **另请参阅**：[移动端 AI 编程助手 (ACP)](./cli-acp) — 支持的智能体（Claude Code、Codex、Gemini CLI）、身份验证和**计费**的完整指南，包括 Anthropic 对从 Spck Editor 等第三方工具驱动的 Claude Code 所应用的独立速率限制配额。
+
 ### 终端设置
 
 - **`terminal.enabled`**（布尔值）：启用/禁用终端访问

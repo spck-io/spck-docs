@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>KI-Coding-Agenten
+## <a name="ai-coding-agents"></a>KI-Coding-Agenten (ACP)
 
-Das Spck CLI-Terminal bietet vollständigen Shell-Zugriff, sodass du KI-Coding-Agenten direkt von deinem Mobilgerät aus ausführen kannst. Diese Agenten können Code in deinem Projekt lesen, schreiben und umstrukturieren, während du vom Spck Editor aus überwachst.
+Das Spck CLI verbindet den KI-Chat von Spck Editor mit einem lokal installierten KI-Coding-Agenten — **Claude Code**, **Codex** oder **Gemini CLI** — über das [Agent Client Protocol (ACP)](https://agentclientprotocol.com/). Das Modell läuft auf Ihrem Rechner mit Ihrem eigenen Abonnement, bearbeitet echte Dateien auf der Festplatte und leitet Berechtigungsanfragen an Ihr Telefon weiter.
 
-> 💡 **Tipp**: Verwende **tmux**, damit KI-Agenten-Sitzungen auch nach dem Trennen der Verbindung weiterlaufen. Starte eine tmux-Sitzung auf deinem Desktop (`tmux new -s code`), starte den KI-Agenten, und verbinde dich vom Spck CLI-Terminal auf deinem Telefon wieder damit (`tmux attach -t code`). So wechselst du nahtlos zwischen Desktop und Mobilgerät, ohne den Kontext zu verlieren. Siehe [tmux verwenden](./tmux) für eine vollständige Anleitung einschließlich persistenter Remote-Server-Einrichtung.
+![Lokaler KI-Modus im KI-Chat von Spck Editor steuert Claude Code von einem Telefon aus](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[KI-Coding-Agenten auf dem Handy (ACP)](./cli-acp)** — die vollständige Anleitung: unterstützte Agenten, Installation, Abrechnung & Rate-Limits (einschließlich des separaten Drittanbieter-Kontingents von Anthropic für Claude Code), Konfiguration, FAQ und Fehlerbehebung.
+
+> 💡 **Tipp**: Verwenden Sie **tmux**, um KI-Agenten-Sitzungen auch nach dem Trennen der Verbindung weiterlaufen zu lassen. Starten Sie eine tmux-Sitzung auf Ihrem Desktop (`tmux new -s code`), starten Sie den Agenten und verbinden Sie sich anschließend vom Spck CLI-Terminal auf Ihrem Telefon wieder (`tmux attach -t code`). Funktioniert sowohl mit reinen Shell-Agenten als auch mit ACP-Agenten. Eine vollständige Anleitung einschließlich der Einrichtung eines persistenten Remote-Servers finden Sie unter [Tmux verwenden](./tmux).
 
 ## <a name="advanced-usage"></a>Erweiterte Nutzung
 

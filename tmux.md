@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 The most powerful tmux workflow with Spck CLI is starting an AI coding agent on your desktop and seamlessly picking it up from your mobile — or the reverse. Both see the exact same terminal state including the full scrollback history.
 
+> 💡 **Tip**: If you're using an ACP-compatible agent (Claude Code, Codex, Gemini CLI), you can drive it from Spck Editor's AI Chat without sharing a terminal at all. See [AI Coding Agents on Mobile (ACP)](./cli-acp) — tmux is still useful for shell-based agents or when you want to watch the agent's raw output live across devices.
+
 ### Start a Session on Desktop
 
 Create a named tmux session:

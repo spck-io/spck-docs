@@ -7,6 +7,7 @@
 - **终端访问**：基于 xterm.js 的交互式终端会话
 - **浏览器代理**：在 Spck Editor 内以全屏浏览器视图预览本地服务器
 - **快速搜索**：自动检测 ripgrep 的优化文件搜索（安装后速度提升 100 倍）
+- **本地 AI 编程助手 (ACP)**：通过 [Agent Client Protocol](https://agentclientprotocol.com/)，从 Spck Editor 的 AI 聊天中驱动 Claude Code、Codex 或 Gemini CLI。智能体在您的本地机器上使用您自己的订阅运行。请参阅 [移动端 AI 编程助手 (ACP)](./cli-acp)。
 - **安全可靠**：加密签名请求，支持可选的 Firebase 身份验证
 
 ## <a name="relay-server"></a>中继服务器

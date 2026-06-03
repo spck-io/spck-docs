@@ -7,6 +7,7 @@
 - **Acesso ao Terminal**: Sessões de terminal interativas com xterm.js
 - **Proxy de Navegador**: Visualize seu servidor local em uma janela de navegador em tela cheia dentro do Spck Editor
 - **Busca Rápida**: Busca de arquivos otimizada com detecção automática do ripgrep (100x mais rápido quando instalado)
+- **Agentes de IA Locais (ACP)**: Controle Claude Code, Codex ou Gemini CLI a partir do Chat de IA do Spck Editor via [Agent Client Protocol](https://agentclientprotocol.com/). O agente é executado em sua máquina com sua própria assinatura. Veja [Agentes de IA no Mobile (ACP)](./cli-acp).
 - **Seguro**: Requisições assinadas criptograficamente com autenticação Firebase opcional
 
 ## <a name="relay-server"></a>Servidor Relay

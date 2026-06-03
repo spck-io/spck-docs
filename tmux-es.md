@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 El flujo de trabajo más potente de tmux con Spck CLI es iniciar un agente de codificación IA en tu escritorio y retomarlo sin problemas desde tu móvil — o al revés. Ambos ven exactamente el mismo estado del terminal, incluyendo el historial de desplazamiento completo.
 
+> 💡 **Consejo**: Si usas un agente compatible con ACP (Claude Code, Codex, Gemini CLI), puedes controlarlo desde el Chat de IA de Spck Editor sin necesidad de compartir un terminal. Consulta [Agentes de IA en el móvil (ACP)](./cli-acp) — tmux sigue siendo útil para agentes basados en shell o cuando quieras ver la salida cruda del agente en directo entre dispositivos.
+
 ### Iniciar una sesión en el escritorio
 
 Crea una sesión tmux con nombre:

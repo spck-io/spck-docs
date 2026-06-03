@@ -7,6 +7,7 @@
 - **ターミナルアクセス**: xterm.js によるインタラクティブなターミナルセッション
 - **ブラウザプロキシ**: Spck Editor 内のフルスクリーンブラウザビューでローカルサーバーをプレビュー
 - **高速検索**: ripgrep の自動検出による最適化されたファイル検索（インストール時 100倍速）
+- **ローカル AI コーディングエージェント (ACP)**: Spck Editor の AI チャットから [Agent Client Protocol](https://agentclientprotocol.com/) を介して Claude Code、Codex、Gemini CLI を操作。エージェントはご自身のマシン上でご自身のサブスクリプションを使用して実行されます。[モバイルでの AI コーディングエージェント (ACP)](./cli-acp) を参照してください。
 - **セキュア**: オプションの Firebase 認証による暗号署名リクエスト
 
 ## <a name="relay-server"></a>リレーサーバー

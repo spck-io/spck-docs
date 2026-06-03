@@ -59,6 +59,8 @@ A configuração é armazenada em `.spck-editor/config/spck-cli.config.json` no 
   - O agente tem acesso indireto ao shell e ao sistema de arquivos, então desative esta opção por projeto se não quiser essa superfície de exposição
   - **Compatível com versões anteriores**: configurações criadas antes desta opção são carregadas com `acp: { enabled: true }` preenchido automaticamente e salvas novamente
 
+> 💡 **Veja Também**: [Agentes de IA no Mobile (ACP)](./cli-acp) para o guia completo dos agentes suportados (Claude Code, Codex, Gemini CLI), autenticação e **cobrança** — incluindo o bucket de rate-limit separado que a Anthropic aplica ao Claude Code quando ele é controlado por uma ferramenta de terceiros como o Spck Editor.
+
 ### Configurações do Terminal
 
 - **`terminal.enabled`** (boolean): Ativa/desativa o acesso ao terminal

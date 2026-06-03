@@ -119,6 +119,7 @@ If the QR code doesn't work:
 
 1. **Understand the relay system**: Learn how the CLI routes traffic and how to choose a server — see [CLI Reference](./cli)
 2. **Configure your setup**: Adjust terminal, security, and filesystem settings — see [Configuration](./cli-config)
-3. **Explore power features**: CLI commands, AI coding agents, multiple projects — see [Advanced Usage](./cli-advanced)
-4. **Transfer files between devices**: Copy projects between your phone and desktop wirelessly — see [File Transfer](./cli-file-transfer)
-5. **Keep sessions alive**: Share sessions across devices with tmux — see [Using Tmux](./tmux)
+3. **Drive a local AI agent from your phone**: Run Claude Code, Codex, or Gemini CLI through Spck Editor's AI Chat using your own subscription — see [AI Coding Agents on Mobile (ACP)](./cli-acp)
+4. **Explore power features**: CLI commands, multiple projects, and mobile prompt tips — see [Advanced Usage](./cli-advanced)
+5. **Transfer files between devices**: Copy projects between your phone and desktop wirelessly — see [File Transfer](./cli-file-transfer)
+6. **Keep sessions alive**: Share sessions across devices with tmux — see [Using Tmux](./tmux)

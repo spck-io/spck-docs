@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 Spck CLI 與 tmux 最強大的工作流程是在桌面啟動 AI 程式碼撰寫 Agent，然後從手機無縫接管——或反向操作。兩端看到的終端機狀態完全一致，包含完整的捲動歷程。
 
+> 💡 **提示**：如果您使用 ACP 相容的代理（Claude Code、Codex、Gemini CLI），完全無需共用終端機即可從 Spck Editor 的 AI 聊天中驅動它。參閱 [行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp) — 對於基於 shell 的 agent，或當您希望跨裝置即時查看 agent 的原始輸出時，tmux 仍然很有用。
+
 ### 在桌面啟動工作階段
 
 建立一個具名的 tmux 工作階段：

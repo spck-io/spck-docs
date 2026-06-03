@@ -7,6 +7,7 @@
 - **終端機存取**：透過 xterm.js 提供互動式終端機工作階段
 - **瀏覽器代理**：在 Spck Editor 內以全螢幕瀏覽器視圖預覽本機伺服器
 - **快速搜尋**：具自動偵測 ripgrep 功能的最佳化檔案搜尋（安裝後速度快 100 倍）
+- **本機 AI 程式設計助手 (ACP)**：透過 [Agent Client Protocol](https://agentclientprotocol.com/)，從 Spck Editor 的 AI 聊天中驅動 Claude Code、Codex 或 Gemini CLI。代理程式在您本機機器上以您自己的訂閱執行。參閱 [行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp)。
 - **安全性**：採用密碼學簽章請求，並支援可選的 Firebase 身分驗證
 
 ## <a name="relay-server"></a>中繼伺服器

@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 Spck CLI 与 tmux 最强大的工作流是在桌面启动 AI 编码 Agent，然后从手机无缝接管——或反向操作。两端看到的终端状态完全一致，包括完整的滚动历史。
 
+> 💡 **提示**：如果您使用 ACP 兼容的智能体（Claude Code、Codex、Gemini CLI），完全无需共享终端即可从 Spck Editor 的 AI 聊天中驱动它。请参阅 [移动端 AI 编程助手 (ACP)](./cli-acp) — 对于基于 shell 的 agent，或当您希望跨设备实时查看 agent 的原始输出时，tmux 仍然很有用。
+
 ### 在桌面启动会话
 
 创建一个命名的 tmux 会话：

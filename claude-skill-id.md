@@ -147,6 +147,7 @@ rm -rf ~/.claude/skills/spck-cli-service
 
 ## <a name="see-also"></a>Lihat Juga
 
+- [Agen AI Coding di Mobile (ACP)](./cli-acp) — setelah CLI berjalan sebagai service, ini yang membuka kemampuan menjalankan Claude Code (serta Codex / Gemini) dari ponsel Anda, dengan tagihan melalui langganan Anthropic Anda sendiri alih-alih kuota Spck Editor.
 - [Menggunakan Tmux](./tmux) — pendekatan alternatif menggunakan `tmux` untuk menjaga CLI tetap berjalan saat SSH terputus.
 - [Penggunaan Lanjutan](./cli-advanced) — referensi perintah CLI lengkap, penggantian konfigurasi, dan pengaturan multi-proyek.
 - [Konfigurasi](./cli-config) — pengaturan terminal, sistem file, keamanan, dan autentikasi yang tidak dicakup file unit.

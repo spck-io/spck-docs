@@ -147,6 +147,7 @@ rm -rf ~/.claude/skills/spck-cli-service
 
 ## <a name="see-also"></a>Siehe auch
 
+- [KI-Coding-Agenten auf dem Handy (ACP)](./cli-acp) — sobald die CLI als Dienst läuft, wird damit das Steuern von Claude Code (sowie Codex / Gemini) vom Handy aus freigeschaltet, wobei die Abrechnung über Ihr eigenes Anthropic-Abonnement statt über Ihr Spck Editor-Kontingent erfolgt.
 - [Tmux verwenden](./tmux) — alternativer Ansatz mit `tmux`, um die CLI bei SSH-Trennungen am Laufen zu halten.
 - [Erweiterte Nutzung](./cli-advanced) — vollständige CLI-Befehlsreferenz, Konfigurationsüberschreibungen und Multi-Projekt-Setups.
 - [Konfiguration](./cli-config) — Terminal-, Dateisystem-, Sicherheits- und Authentifizierungseinstellungen, die die Unit-Datei nicht abdeckt.

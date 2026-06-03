@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>AI Coding Agents
+## <a name="ai-coding-agents"></a>AI Coding Agents (ACP)
 
-The Spck CLI terminal gives you full shell access, which means you can run AI coding agents directly from your mobile device. These agents can read, write, and refactor code in your project while you supervise from Spck Editor.
+The Spck CLI bridges Spck Editor's AI Chat to a locally installed AI coding agent — **Claude Code**, **Codex**, or **Gemini CLI** — over the [Agent Client Protocol (ACP)](https://agentclientprotocol.com/). The model runs on your machine with your own subscription, edits real files on disk, and forwards permission prompts to your phone.
 
-> 💡 **Tip**: Use **tmux** to keep AI agent sessions running even after you disconnect. Start a tmux session on your desktop (`tmux new -s code`), launch the AI agent, then reattach from the Spck CLI terminal on your phone (`tmux attach -t code`). This lets you seamlessly switch between desktop and mobile without losing context. See [Using Tmux](./tmux) for a full guide including persistent remote server setup.
+![Local AI mode in Spck Editor's AI Chat driving Claude Code from a phone](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[AI Coding Agents on Mobile (ACP)](./cli-acp)** — the full guide: supported agents, installation, billing & rate limits (including Anthropic's separate third-party Claude Code quota), configuration, FAQ, and troubleshooting.
+
+> 💡 **Tip**: Use **tmux** to keep AI agent sessions running even after you disconnect. Start a tmux session on your desktop (`tmux new -s code`), launch the agent, then reattach from the Spck CLI terminal on your phone (`tmux attach -t code`). Works for both raw shell agents and ACP-mode agents. See [Using Tmux](./tmux) for a full guide including persistent remote server setup.
 
 ## <a name="advanced-usage"></a>Advanced Usage
 

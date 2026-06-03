@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>Agen Pengkodean AI
+## <a name="ai-coding-agents"></a>Agen Coding AI (ACP)
 
-Terminal Spck CLI memberi Anda akses shell penuh, yang berarti Anda dapat menjalankan agen pengkodean AI langsung dari perangkat mobile Anda. Agen-agen ini dapat membaca, menulis, dan merefaktor kode di proyek Anda sementara Anda mengawasi dari Spck Editor.
+Spck CLI menjembatani AI Chat Spck Editor ke agen coding AI yang terinstal secara lokal — **Claude Code**, **Codex**, atau **Gemini CLI** — melalui [Agent Client Protocol (ACP)](https://agentclientprotocol.com/). Model berjalan di mesin Anda dengan langganan Anda sendiri, mengedit file nyata di disk, dan meneruskan permintaan izin ke ponsel Anda.
 
-> 💡 **Tips**: Gunakan **tmux** agar sesi agen AI tetap berjalan bahkan setelah Anda memutuskan koneksi. Mulai sesi tmux di desktop Anda (`tmux new -s code`), luncurkan agen AI, lalu sambungkan kembali dari terminal Spck CLI di ponsel Anda (`tmux attach -t code`). Ini memungkinkan Anda beralih mulus antara desktop dan mobile tanpa kehilangan konteks. Lihat [Menggunakan Tmux](./tmux) untuk panduan lengkap termasuk pengaturan server jarak jauh yang persisten.
+![Mode AI lokal di AI Chat Spck Editor menjalankan Claude Code dari ponsel](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[Agen AI Coding di Mobile (ACP)](./cli-acp)** — panduan lengkap: agen yang didukung, instalasi, penagihan & batas laju (termasuk kuota Claude Code pihak ketiga terpisah dari Anthropic), konfigurasi, FAQ, dan pemecahan masalah.
+
+> 💡 **Tips**: Gunakan **tmux** agar sesi agen AI tetap berjalan bahkan setelah Anda memutuskan koneksi. Mulai sesi tmux di desktop (`tmux new -s code`), luncurkan agen, lalu sambungkan kembali dari terminal Spck CLI di ponsel Anda (`tmux attach -t code`). Bekerja untuk agen shell biasa maupun agen mode ACP. Lihat [Menggunakan Tmux](./tmux) untuk panduan lengkap termasuk pengaturan server remote persisten.
 
 ## <a name="advanced-usage"></a>Penggunaan Lanjutan
 

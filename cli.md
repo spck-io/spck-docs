@@ -7,6 +7,7 @@
 - **Terminal Access**: Interactive terminal sessions with xterm.js
 - **Browser Proxy**: Preview your local server in a full-screen browser view inside Spck Editor
 - **Fast Search**: Optimized file search with automatic ripgrep detection (100x faster when installed)
+- **Local AI Coding Agents (ACP)**: Drive Claude Code, Codex, or Gemini CLI from Spck Editor's AI Chat via the [Agent Client Protocol](https://agentclientprotocol.com/). The agent runs on your machine with your own subscription. See [AI Coding Agents on Mobile (ACP)](./cli-acp).
 - **Secure**: Cryptographically signed requests with optional Firebase authentication
 
 ## <a name="relay-server"></a>Relay Server

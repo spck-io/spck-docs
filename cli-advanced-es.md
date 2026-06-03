@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>Agentes de codificación con IA
+## <a name="ai-coding-agents"></a>Agentes de codificación con IA (ACP)
 
-El terminal Spck CLI te da acceso completo al shell, lo que significa que puedes ejecutar agentes de codificación con IA directamente desde tu dispositivo móvil. Estos agentes pueden leer, escribir y refactorizar código en tu proyecto mientras supervisas desde Spck Editor.
+La Spck CLI conecta el Chat de IA de Spck Editor con un agente de codificación con IA instalado localmente — **Claude Code**, **Codex** o **Gemini CLI** — a través del [Agent Client Protocol (ACP)](https://agentclientprotocol.com/). El modelo se ejecuta en tu máquina con tu propia suscripción, edita archivos reales en disco y reenvía las solicitudes de permiso a tu teléfono.
 
-> 💡 **Consejo**: Usa **tmux** para mantener las sesiones de agentes de IA en ejecución incluso después de desconectarte. Inicia una sesión tmux en tu escritorio (`tmux new -s code`), lanza el agente de IA y luego reconéctate desde el terminal Spck CLI en tu teléfono (`tmux attach -t code`). Esto te permite cambiar sin problemas entre escritorio y móvil sin perder el contexto. Consulta [Uso de Tmux](./tmux) para obtener una guía completa, incluida la configuración de un servidor remoto persistente.
+![Modo IA local en el Chat de IA de Spck Editor controlando Claude Code desde un teléfono](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[Agentes de IA en el móvil (ACP)](./cli-acp)** — la guía completa: agentes admitidos, instalación, facturación y límites de tasa (incluida la cuota independiente de Anthropic para Claude Code de terceros), configuración, preguntas frecuentes y solución de problemas.
+
+> 💡 **Consejo**: Usa **tmux** para mantener las sesiones de agentes de IA en ejecución incluso después de desconectarte. Inicia una sesión tmux en tu escritorio (`tmux new -s code`), lanza el agente y luego reconéctate desde el terminal Spck CLI en tu teléfono (`tmux attach -t code`). Funciona tanto con agentes de shell como con agentes en modo ACP. Consulta [Usar Tmux](./tmux) para una guía completa, incluida la configuración de servidor remoto persistente.
 
 ## <a name="advanced-usage"></a>Uso avanzado
 

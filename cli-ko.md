@@ -7,6 +7,7 @@
 - **터미널 접근**: xterm.js를 사용한 인터랙티브 터미널 세션
 - **브라우저 프록시**: Spck Editor 내에서 전체 화면 브라우저 뷰로 로컬 서버 미리보기
 - **빠른 검색**: ripgrep 자동 감지를 통한 최적화된 파일 검색 (설치 시 100배 빠름)
+- **로컬 AI 코딩 에이전트 (ACP)**: Spck Editor의 AI 채팅에서 [Agent Client Protocol](https://agentclientprotocol.com/)을 통해 Claude Code, Codex 또는 Gemini CLI를 제어합니다. 에이전트는 본인의 구독으로 본인의 머신에서 실행됩니다. [모바일에서 AI 코딩 에이전트 (ACP)](./cli-acp) 참조.
 - **보안**: 선택적 Firebase 인증을 통한 암호화 서명 요청
 
 ## <a name="relay-server"></a>릴레이 서버

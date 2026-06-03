@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>Agentes de codificação com IA
+## <a name="ai-coding-agents"></a>Agentes de codificação com IA (ACP)
 
-O terminal do Spck CLI oferece acesso completo ao shell, o que significa que você pode executar agentes de codificação com IA diretamente do seu dispositivo móvel. Esses agentes podem ler, escrever e refatorar código no seu projeto enquanto você supervisiona pelo Spck Editor.
+A Spck CLI conecta o Chat de IA do Spck Editor a um agente de codificação com IA instalado localmente — **Claude Code**, **Codex** ou **Gemini CLI** — através do [Agent Client Protocol (ACP)](https://agentclientprotocol.com/). O modelo é executado na sua máquina com sua própria assinatura, edita arquivos reais no disco e encaminha as solicitações de permissão para o seu celular.
 
-> 💡 **Dica**: Use o **tmux** para manter as sessões de agentes de IA em execução mesmo após desconectar. Inicie uma sessão tmux no seu desktop (`tmux new -s code`), inicie o agente de IA e reconecte-se pelo terminal Spck CLI no seu celular (`tmux attach -t code`). Isso permite alternar facilmente entre desktop e mobile sem perder o contexto. Consulte [Usando o Tmux](./tmux) para um guia completo, incluindo configuração de servidor remoto persistente.
+![Modo IA local no Chat de IA do Spck Editor controlando o Claude Code a partir de um celular](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[Agentes de IA no Mobile (ACP)](./cli-acp)** — o guia completo: agentes suportados, instalação, cobrança e limites de taxa (incluindo a cota separada da Anthropic para Claude Code de terceiros), configuração, FAQ e solução de problemas.
+
+> 💡 **Dica**: Use o **tmux** para manter as sessões de agentes de IA em execução mesmo após desconectar. Inicie uma sessão tmux no seu desktop (`tmux new -s code`), inicie o agente e reconecte-se pelo terminal Spck CLI no seu celular (`tmux attach -t code`). Funciona tanto para agentes de shell quanto para agentes em modo ACP. Veja [Usando Tmux](./tmux) para um guia completo, incluindo configuração de servidor remoto persistente.
 
 ## <a name="advanced-usage"></a>Uso avançado
 

@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 Alur kerja tmux paling powerful bersama Spck CLI adalah memulai agen coding AI di desktop Anda dan melanjutkannya secara mulus dari perangkat mobile — atau sebaliknya. Keduanya melihat kondisi terminal yang persis sama termasuk riwayat gulir lengkap.
 
+> 💡 **Tip**: Jika Anda menggunakan agen yang kompatibel dengan ACP (Claude Code, Codex, Gemini CLI), Anda dapat menjalankannya dari AI Chat Spck Editor tanpa berbagi terminal sama sekali. Lihat [Agen AI Coding di Mobile (ACP)](./cli-acp) — tmux tetap berguna untuk agen berbasis shell atau ketika Anda ingin melihat output mentah agen secara live di seluruh perangkat.
+
 ### Memulai Sesi di Desktop
 
 Buat sesi tmux bernama:

@@ -7,6 +7,7 @@
 - **Akses Terminal**: Sesi terminal interaktif dengan xterm.js
 - **Browser Proxy**: Pratinjau server lokal Anda dalam tampilan browser layar penuh di dalam Spck Editor
 - **Pencarian Cepat**: Pencarian file yang dioptimalkan dengan deteksi ripgrep otomatis (100x lebih cepat saat terinstal)
+- **Agen AI Coding Lokal (ACP)**: Jalankan Claude Code, Codex, atau Gemini CLI dari AI Chat Spck Editor melalui [Agent Client Protocol](https://agentclientprotocol.com/). Agen berjalan di mesin Anda dengan langganan Anda sendiri. Lihat [Agen AI Coding di Mobile (ACP)](./cli-acp).
 - **Aman**: Permintaan yang ditandatangani secara kriptografis dengan autentikasi Firebase opsional
 
 ## <a name="relay-server"></a>Server Relay

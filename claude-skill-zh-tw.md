@@ -147,6 +147,7 @@ rm -rf ~/.claude/skills/spck-cli-service
 
 ## <a name="see-also"></a>另請參閱
 
+- [行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp) — 一旦 CLI 作為服務執行，即可從手機驅動 Claude Code（以及 Codex / Gemini），費用透過您自己的 Anthropic 訂閱而非 Spck Editor 配額扣除。
 - [使用 Tmux](./tmux) — 使用 `tmux` 在 SSH 斷線時保持 CLI 執行的替代方法。
 - [進階用法](./cli-advanced) — 完整的 CLI 命令參考、設定覆寫和多專案設定。
 - [設定](./cli-config) — unit 檔案未涵蓋的終端機、檔案系統、安全性和認證設定。

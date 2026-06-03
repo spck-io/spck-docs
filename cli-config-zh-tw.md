@@ -59,6 +59,8 @@
   - 代理具有間接的 shell 與檔案系統存取權，因此若不想暴露此攻擊面，請逐專案停用此選項
   - **向下相容**：在此選項出現之前建立的設定會自動填入 `acp: { enabled: true }` 並重新儲存
 
+> 💡 **另請參閱**：[行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp) — 支援的代理（Claude Code、Codex、Gemini CLI）、身分驗證與**計費**的完整指南，包括 Anthropic 對從 Spck Editor 等第三方工具驅動的 Claude Code 所套用的獨立速率限制配額。
+
 ### 終端機設定
 
 - **`terminal.enabled`**（布林值）：啟用或停用終端機存取

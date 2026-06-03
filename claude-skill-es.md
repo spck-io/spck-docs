@@ -147,6 +147,7 @@ rm -rf ~/.claude/skills/spck-cli-service
 
 ## <a name="see-also"></a>Véase también
 
+- [Agentes de IA en el móvil (ACP)](./cli-acp) — una vez que la CLI esté ejecutándose como servicio, esto es lo que desbloquea el control de Claude Code (y Codex / Gemini) desde tu teléfono, con la facturación a través de tu propia suscripción de Anthropic en lugar de tu cuota de Spck Editor.
 - [Usar Tmux](./tmux) — enfoque alternativo usando `tmux` para mantener la CLI activa tras las desconexiones SSH.
 - [Uso avanzado](./cli-advanced) — referencia completa de comandos CLI, anulaciones de configuración y configuraciones multi-proyecto.
 - [Configuración](./cli-config) — configuraciones de terminal, sistema de archivos, seguridad y autenticación que el archivo de unidad no cubre.

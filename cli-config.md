@@ -50,7 +50,7 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - Default: `true`
   - Set to `false` to prevent the mobile app from opening a browser proxy session through the CLI
 
-### ACP (Local AI Agent) Settings
+### <a name="acp-settings"></a>ACP (Local AI Agent) Settings
 
 - **`acp.enabled`** (boolean): Enable/disable ACP (local AI coding agent) integration
   - Default: `true`
@@ -58,6 +58,8 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - When `false`, `acp.capabilities` answers with `{ available: false, agents: [] }`, the editor's local-agent transport switcher hides, and the cloud (SSE) path is used instead
   - The agent has indirect shell and filesystem access, so disable this per-project if you don't want that surface area
   - **Backward-compatible**: configs created before this option was added are loaded with `acp: { enabled: true }` populated automatically and re-saved
+
+> 💡 **See also**: [AI Coding Agents on Mobile (ACP)](./cli-acp) for the full walkthrough of supported agents (Claude Code, Codex, Gemini CLI), authentication, and **billing** — including the separate rate-limit bucket Anthropic applies to Claude Code when it's driven by a third-party tool like Spck Editor.
 
 ### Terminal Settings
 

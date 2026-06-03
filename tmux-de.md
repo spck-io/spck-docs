@@ -63,6 +63,8 @@ sudo apt-get install tmux
 
 Der wirkungsvollste tmux-Workflow mit Spck CLI besteht darin, einen KI-Coding-Agenten auf dem Desktop zu starten und ihn nahtlos vom Mobilgerät aus weiterzuführen — oder umgekehrt. Beide Clients sehen exakt den gleichen Terminal-Zustand einschließlich des vollständigen Scrollback-Verlaufs.
 
+> 💡 **Tipp**: Wenn Sie einen ACP-kompatiblen Agenten (Claude Code, Codex, Gemini CLI) verwenden, können Sie ihn aus dem KI-Chat von Spck Editor steuern, ohne überhaupt ein Terminal zu teilen. Siehe [KI-Coding-Agenten auf dem Handy (ACP)](./cli-acp) — tmux ist weiterhin nützlich für Shell-basierte Agenten oder wenn Sie die rohe Ausgabe des Agenten geräteübergreifend live verfolgen möchten.
+
 ### Sitzung auf dem Desktop starten
 
 Eine benannte tmux-Sitzung erstellen:

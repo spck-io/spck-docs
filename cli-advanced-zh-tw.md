@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>AI 程式設計代理
+## <a name="ai-coding-agents"></a>AI 程式設計助手 (ACP)
 
-Spck CLI 終端機提供完整的 shell 存取權限，這意味著您可以直接從行動裝置執行 AI 程式設計代理。這些代理可以在您透過 Spck Editor 監督的同時讀取、寫入和重構專案程式碼。
+Spck CLI 透過 [Agent Client Protocol (ACP)](https://agentclientprotocol.com/) 將 Spck Editor 的 AI 聊天與本機安裝的 AI 程式設計助手（**Claude Code**、**Codex** 或 **Gemini CLI**）連接起來。模型在您的本機機器上以您自己的訂閱執行，編輯磁碟上的真實檔案，並將權限請求轉發到您的手機。
 
-> 💡 **提示**：使用 **tmux** 可以讓 AI 代理工作階段在斷線後繼續執行。在桌面啟動 tmux 工作階段（`tmux new -s code`），啟動 AI 代理，然後從手機上的 Spck CLI 終端機重新連線（`tmux attach -t code`）。這樣您就可以在桌面和行動裝置之間無縫切換而不遺失上下文。包含持久遠端伺服器設定的完整指南，請參見[使用 Tmux](./tmux)。
+![Spck Editor 的 AI 聊天本機 AI 模式從手機驅動 Claude Code](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp)** — 完整指南：支援的代理、安裝、計費與速率限制（包含 Anthropic 對第三方 Claude Code 的獨立配額）、設定、常見問題與疑難排解。
+
+> 💡 **提示**：使用 **tmux** 可以讓 AI 代理工作階段在斷線後繼續執行。在桌面啟動 tmux 工作階段（`tmux new -s code`），啟動代理，然後從手機上的 Spck CLI 終端機重新連線（`tmux attach -t code`）。同時適用於一般 shell 代理和 ACP 模式代理。包含持久遠端伺服器設定的完整指南，請參見[使用 Tmux](./tmux)。
 
 ## <a name="advanced-usage"></a>進階用法
 

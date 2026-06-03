@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>AI 코딩 에이전트
+## <a name="ai-coding-agents"></a>AI 코딩 에이전트 (ACP)
 
-Spck CLI 터미널은 완전한 셸 접근을 제공하므로 모바일 기기에서 직접 AI 코딩 에이전트를 실행할 수 있습니다. 이 에이전트들은 Spck Editor에서 감독하는 동안 프로젝트의 코드를 읽고, 쓰고, 리팩터링할 수 있습니다.
+Spck CLI는 [Agent Client Protocol (ACP)](https://agentclientprotocol.com/)을 통해 Spck Editor의 AI 채팅을 로컬에 설치된 AI 코딩 에이전트(**Claude Code**, **Codex** 또는 **Gemini CLI**)에 연결합니다. 모델은 본인의 구독으로 본인의 머신에서 실행되며, 디스크의 실제 파일을 편집하고, 권한 프롬프트를 휴대폰으로 전달합니다.
 
-> 💡 **팁**: **tmux**를 사용하면 연결을 끊은 후에도 AI 에이전트 세션이 계속 실행됩니다. 데스크톱에서 tmux 세션을 시작하고(`tmux new -s code`), AI 에이전트를 실행한 다음, 스마트폰의 Spck CLI 터미널에서 다시 연결하세요(`tmux attach -t code`). 컨텍스트를 잃지 않고 데스크톱과 모바일을 원활하게 전환할 수 있습니다. 영구적인 원격 서버 설정을 포함한 전체 가이드는 [Tmux 사용하기](./tmux)를 참조하세요.
+![Spck Editor의 AI 채팅에서 로컬 AI 모드가 휴대폰으로 Claude Code를 구동하는 모습](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[모바일에서 AI 코딩 에이전트 (ACP)](./cli-acp)** — 전체 가이드: 지원되는 에이전트, 설치, 결제 및 속도 제한(Anthropic이 타사 클라이언트에 적용하는 별도 Claude Code 할당량 포함), 구성, FAQ, 문제 해결.
+
+> 💡 **팁**: **tmux**를 사용하면 연결을 끊은 후에도 AI 에이전트 세션이 계속 실행됩니다. 데스크톱에서 tmux 세션을 시작하고(`tmux new -s code`), 에이전트를 실행한 다음, 휴대폰의 Spck CLI 터미널에서 다시 연결하세요(`tmux attach -t code`). 일반 셸 에이전트와 ACP 모드 에이전트 모두에서 작동합니다. 영구적인 원격 서버 설정을 포함한 전체 가이드는 [Tmux 사용하기](./tmux)를 참조하세요.
 
 ## <a name="advanced-usage"></a>고급 사용법
 

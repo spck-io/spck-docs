@@ -40,11 +40,15 @@ spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
 ```
 
-## <a name="ai-coding-agents"></a>AI コーディングエージェント
+## <a name="ai-coding-agents"></a>AI コーディングエージェント (ACP)
 
-Spck CLI ターミナルはフルシェルアクセスを提供するため、モバイルデバイスから直接 AI コーディングエージェントを実行できます。これらのエージェントはプロジェクトのコードを読み書き・リファクタリングしながら、Spck Editor から監視することができます。
+Spck CLI は、[Agent Client Protocol (ACP)](https://agentclientprotocol.com/) を介して、ローカルにインストールされた AI コーディングエージェント（**Claude Code**、**Codex**、**Gemini CLI**）と Spck Editor の AI チャットを橋渡しします。モデルはご自身のサブスクリプションで自分のマシン上で動作し、ディスク上の実ファイルを編集し、権限プロンプトをスマートフォンに転送します。
 
-> 💡 **ヒント**: **tmux** を使用すると、切断後も AI エージェントセッションを継続できます。デスクトップで tmux セッションを開始し（`tmux new -s code`）、AI エージェントを起動してから、スマートフォンの Spck CLI ターミナルで再接続します（`tmux attach -t code`）。これにより、コンテキストを失わずにデスクトップとモバイルをシームレスに切り替えられます。永続的なリモートサーバーのセットアップを含む完全なガイドは [tmux の使い方](./tmux) を参照してください。
+![Spck Editor の AI チャットのローカル AI モードで、スマートフォンから Claude Code を駆動](https://docs.spck.io/assets/gifs/acp-ai.gif)
+
+→ **[モバイルでの AI コーディングエージェント (ACP)](./cli-acp)** — 完全ガイド：サポートされているエージェント、インストール、課金・レート制限（Anthropic がサードパーティ向けに適用する Claude Code の個別クォータを含む）、設定、FAQ、トラブルシューティング。
+
+> 💡 **ヒント**: **tmux** を使用すると、切断後も AI エージェントセッションを継続できます。デスクトップで tmux セッションを開始し（`tmux new -s code`）、エージェントを起動してから、スマートフォンの Spck CLI ターミナルで再接続します（`tmux attach -t code`）。シェルベースのエージェントにも ACP モードのエージェントにも使えます。永続的なリモートサーバーのセットアップを含む完全なガイドは [Tmux の使い方](./tmux) を参照してください。
 
 ## <a name="advanced-usage"></a>高度な使い方
 

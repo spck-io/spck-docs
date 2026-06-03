@@ -147,6 +147,7 @@ rm -rf ~/.claude/skills/spck-cli-service
 
 ## <a name="see-also"></a>참고 항목
 
+- [모바일에서 AI 코딩 에이전트 (ACP)](./cli-acp) — CLI가 서비스로 실행되면, Spck Editor 할당량이 아니라 본인의 Anthropic 구독을 통해 청구되는 방식으로 휴대폰에서 Claude Code(및 Codex / Gemini)를 구동할 수 있게 됩니다.
 - [Tmux 사용하기](./tmux) — SSH 연결이 끊어져도 CLI를 유지하기 위한 `tmux`를 사용하는 대안적 접근법.
 - [고급 사용법](./cli-advanced) — 전체 CLI 명령 참조, 구성 재정의, 다중 프로젝트 설정.
 - [구성](./cli-config) — 유닛 파일이 다루지 않는 터미널, 파일 시스템, 보안 및 인증 설정.
