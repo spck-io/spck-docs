@@ -30,6 +30,8 @@ Spck Editor is a mobile code editing solution with multiple variants designed fo
 - Embeddable on any website
 - Lightweight code editing interface
 
+See [Embedding the Editor](/en/editor-embed) for iframe setup, project management, and the JavaScript API.
+
 ### Key Features
 
 - Mobile-first design

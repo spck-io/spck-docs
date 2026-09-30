@@ -150,8 +150,11 @@ To prevent a _particular_ agent from being offered while keeping ACP enabled for
 | Tool-use permission prompts on phone | Where applicable                | Yes, forwarded over ACP               |
 | Streaming tokens                     | Yes                             | Yes                                   |
 | Multi-turn chat                      | Yes                             | Yes                                   |
+| Reads project `AGENTS.md`            | Yes — inlined into the prompt automatically | Yes — the agent reads it natively from its working directory |
 
 You can switch transports mid-project — the AI Chat shows whichever paths are currently available based on CLI connection state and detected agents.
+
+Both transports honor an `AGENTS.md` file in your project root the same way: local ACP agents (Claude Code, Codex, Gemini CLI) already read `AGENTS.md` from their working directory as part of their own native behavior, so Spck Editor doesn't need to do anything extra. The server-routed AI Chat has no filesystem of its own, so Spck Editor reads `AGENTS.md` from the project root and inlines its contents into the prompt on every turn (truncated to 20,000 characters for oversized files). Either way, drop an `AGENTS.md` in your project to give the AI Chat standing instructions about your codebase.
 
 ## <a name="acp-tmux"></a>Pairing with Tmux for Long-Running Sessions
 
@@ -196,6 +199,10 @@ Yes. Run the Spck CLI on any reachable Linux/macOS host — a dev VM, a home ser
 ### Does ACP work with Spck Editor Lite?
 
 Yes. ACP traffic uses the same WebSocket transport as filesystem and git, which Spck Editor Lite supports. Make sure `security.userAuthenticationEnabled` is set to `false` in your CLI config — Firebase auth is not supported in Lite. See [Configuration → User Authentication](./cli-config#user-authentication).
+
+### Does the AI Chat read my project's `AGENTS.md` file?
+
+Yes, on both transports — see [Local ACP vs Server-Routed AI Chat](#acp-vs-server-routed) above. With a local ACP agent, the agent CLI reads `AGENTS.md` itself; with the server-routed AI Chat, Spck Editor reads it from the project root and inlines it into every prompt for you.
 
 ### Why isn't my agent showing up in the AI Chat?
 
