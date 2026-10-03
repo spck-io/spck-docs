@@ -299,7 +299,7 @@ editor.on({
 
 ## Initial Configuration
 
-Use `config_url` to load a JSON message during connection, instead of sending the initial project from your host JavaScript. The JSON accepts the same properties as `send()`:
+Use `config_url` to load a JSON message automatically when the iframe starts, instead of sending the initial project from your host JavaScript. A plain iframe works without the wrapper or a `connect()` call. The JSON accepts the same properties as `send()`:
 
 ```json
 {
