@@ -19,11 +19,14 @@ Spck Editor 是一款移动代码编辑解决方案，具有为开发者设计�
 - 自定义代码片段
 - 预测键盘
 - 独家霓虹主题
+- 增强 Git 集成
 
 #### Spck for NodeJS
 
 **平台**：Android 独占
 **主要功能**：支持 NodeJS 的集成终端
+
+增强 Git 集成包含在有效的 Node 订阅中，也可通过终端终身购买永久解锁。这两种方式均需要登录。
 
 #### 浏览器版本
 
@@ -243,6 +246,14 @@ Spck Editor 是一款移动代码编辑解决方案，具有为开发者设计�
 &nbsp;
 
 &nbsp;
+
+# <a name="enhanced-git-integration"></a>增强 Git 集成
+
+打开 Git 面板的 **History** 标签并选择一个提交，即可查看新增、修改和删除的文件。选择文件可打开与第一个父提交比较的只读差异视图。首次提交的文件会与空目录树比较。查看器使用已提交的版本，因此未提交的编辑不会影响差异。二进制文件无法显示为文本差异。
+
+增强 Git 集成永久包含在 Spck Lite 和 Spck for NodeJS 终端终身购买中，也包含在有效的 Supporter、Gold 或 Node 订阅中。完整版需要登录，Lite 无需登录。
+
+基本 Git 集成和提交历史浏览仍可在免费版中使用。 [Supporter / Gold / Node](https://spck.io/pricing).
 
 # <a name="git-limitations"></a>Git 限制
 

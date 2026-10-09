@@ -19,11 +19,14 @@ Spck Editor adalah solusi pengeditan kode seluler dengan beberapa varian yang di
 - Snippet Kustom
 - Keyboard Prediktif
 - Tema Neon Eksklusif
+- Integrasi Git Lanjutan
 
 #### Spck untuk NodeJS
 
 **Platform**: Eksklusif Android
 **Fitur Utama**: Terminal terintegrasi dengan dukungan NodeJS
+
+Integrasi Git Lanjutan disertakan dengan langganan Node yang aktif atau terbuka secara permanen dengan pembelian terminal seumur hidup. Kedua opsi memerlukan login.
 
 #### Versi Browser
 
@@ -243,6 +246,14 @@ Cepat mengelilingi teks yang dipilih menggunakan pasangan kurung atau kutip:
 &nbsp;
 
 &nbsp;
+
+# <a name="enhanced-git-integration"></a>Integrasi Git Lanjutan
+
+Buka tab **History** di panel Git dan pilih commit untuk melihat file yang ditambahkan, diubah, dan dihapus. Pilih file untuk membuka diff hanya baca terhadap commit induk pertama. Untuk commit pertama, file dibandingkan dengan pohon kosong. Penampil menggunakan versi yang tersimpan dalam commit, sehingga perubahan yang belum di-commit tidak memengaruhi diff. File biner tidak dapat ditampilkan sebagai diff teks.
+
+Integrasi Git Lanjutan disertakan secara permanen dengan Spck Lite dan pembelian terminal seumur hidup Spck for NodeJS. Juga tersedia dengan langganan Supporter, Gold, atau Node yang aktif. Aplikasi lengkap memerlukan login; Lite tidak.
+
+Integrasi Git dasar dan penelusuran riwayat commit tetap tersedia dalam versi gratis. [Supporter / Gold / Node](https://spck.io/pricing).
 
 # <a name="git-limitations"></a>Keterbatasan Git
 

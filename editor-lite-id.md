@@ -9,6 +9,7 @@ Lite mencakup semua yang ada di versi gratis, ditambah:
 - **Predictive Keyboard** -- saran simbol kontekstual pada keyboard tambahan
 - **Snippet Kustom** -- template kode buatan pengguna dengan placeholder tab stop
 - **Tema Neon** -- tema editor eksklusif
+- **Integrasi Git Lanjutan** -- daftar file yang berubah dan diff commit hanya baca
 
 Fitur-fitur ini juga tersedia di versi lengkap Spck Editor dengan langganan Gold atau Supporter yang aktif. Aplikasi Lite menyediakan fungsionalitas yang sama sebagai pembelian satu kali.
 
@@ -67,12 +68,19 @@ Anda dapat mengekspor semua snippet ke file dan mengimpornya di perangkat lain. 
 
 Lite menyertakan tema editor **Neon**, tema gelap dengan warna aksen yang cerah. Tema ini ditetapkan sebagai tema default di Lite dan dapat diubah kapan saja di `Settings > Appearance > Theme`.
 
+## <a name="enhanced-git-integration"></a>Integrasi Git Lanjutan
+
+Buka tab **History** di panel Git dan pilih commit untuk melihat file yang ditambahkan, diubah, dan dihapus. Pilih file untuk membuka diff hanya baca terhadap commit induk pertama. Untuk commit pertama, file dibandingkan dengan pohon kosong. Penampil menggunakan versi yang tersimpan dalam commit, sehingga perubahan yang belum di-commit tidak memengaruhi diff. File biner tidak dapat ditampilkan sebagai diff teks.
+
+Integrasi Git Lanjutan disertakan secara permanen dengan Spck Lite dan pembelian terminal seumur hidup Spck for NodeJS. Juga tersedia dengan langganan Supporter, Gold, atau Node yang aktif. Aplikasi lengkap memerlukan login; Lite tidak. [Integrasi Git Lanjutan](./editor#enhanced-git-integration).
+
 ## <a name="comparison"></a>Perbandingan Fitur
 
 | Fitur | Gratis | Lite (Sekali Beli) | Lengkap (Langganan) |
 | --- | :---: | :---: | :---: |
 | Pengeditan kode dan penyorotan sintaks | Ya | Ya | Ya |
 | Integrasi Git | Ya | Ya | Ya |
+| Integrasi Git Lanjutan | -- | Ya | Supporter / Gold / Node |
 | Keyboard Tambahan | Ya | Ya | Ya |
 | Keyboard Sentuh dan Kursor | Ya | Ya | Ya |
 | Pratinjau proyek | Ya | Ya | Ya |

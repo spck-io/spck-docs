@@ -9,6 +9,7 @@ Lite incluye todo lo de la version gratuita, ademas de:
 - **Predictive Keyboard** -- sugerencias de simbolos contextuales en el teclado adicional
 - **Snippets personalizados** -- plantillas de codigo definidas por el usuario con marcadores de tabulacion
 - **Tema Neon** -- un tema de editor exclusivo
+- **Integración Git mejorada** -- listas de archivos modificados y diffs de commits de solo lectura
 
 Estas funciones tambien estan disponibles en la version completa de Spck Editor con una suscripcion Gold o Supporter activa. La aplicacion Lite ofrece la misma funcionalidad como compra unica.
 
@@ -67,12 +68,19 @@ Puedes exportar todos los snippets a un archivo e importarlos en otro dispositiv
 
 Lite incluye el tema de editor **Neon**, un tema oscuro con colores de acento vibrantes. Esta establecido como tema predeterminado en Lite y se puede cambiar en cualquier momento en `Settings > Appearance > Theme`.
 
+## <a name="enhanced-git-integration"></a>Integración Git mejorada
+
+Abre la pestaña **History** del panel Git y selecciona un commit para ver sus archivos añadidos, modificados y eliminados. Selecciona un archivo para abrir un diff de solo lectura respecto al primer commit padre. En el primer commit, los archivos se comparan con un árbol vacío. El visor usa las versiones guardadas en los commits, por lo que los cambios sin confirmar no afectan al diff. Los archivos binarios no se pueden mostrar como diffs de texto.
+
+La integración Git mejorada se incluye permanentemente con Spck Lite y la compra de acceso de por vida al terminal de Spck for NodeJS. También se incluye con suscripciones activas Supporter, Gold o Node. La aplicación completa requiere iniciar sesión; Lite no. [Integración Git mejorada](./editor#enhanced-git-integration).
+
 ## <a name="comparison"></a>Comparacion de funciones
 
 | Funcion | Gratuito | Lite (Compra unica) | Completo (Suscripcion) |
 | --- | :---: | :---: | :---: |
 | Edicion de codigo y resaltado de sintaxis | Si | Si | Si |
 | Integracion con Git | Si | Si | Si |
+| Integración Git mejorada | -- | Sí | Supporter / Gold / Node |
 | Teclado adicional | Si | Si | Si |
 | Teclado tactil y cursores | Si | Si | Si |
 | Vista previa del proyecto | Si | Si | Si |

@@ -9,6 +9,7 @@ Lite includes everything in the free version, plus:
 - **Predictive Keyboard** -- context-aware symbol suggestions on the extra keyboard
 - **Custom Snippets** -- user-defined code templates with tab-stop placeholders
 - **Neon Theme** -- an exclusive editor theme
+- **Enhanced Git Integration** -- changed-file lists and read-only diffs for commits
 
 These features are also available in the full version of Spck Editor with an active Gold or Supporter subscription. The Lite app provides the same functionality as a single purchase.
 
@@ -67,12 +68,19 @@ You can export all snippets to a file and import them on another device. This is
 
 Lite includes the **Neon** editor theme, a dark theme with vibrant accent colors. It is set as the default theme in Lite and can be changed at any time in `Settings > Appearance > Theme`.
 
+## <a name="enhanced-git-integration"></a>Enhanced Git Integration
+
+Open **Git > History** and select a commit to see its added, modified, and deleted files. Select a file to view its changes against the commit's first parent in the read-only diff viewer.
+
+Enhanced Git Integration is permanently included with the Lite app purchase, with no login or subscription required. It is also available with an active Supporter, Gold, or Node subscription, or permanently with the Spck for NodeJS terminal lifetime purchase. These options in the full app require login. See [Enhanced Git Integration](./editor#enhanced-git-integration) for details.
+
 ## <a name="comparison"></a>Feature Comparison
 
 | Feature | Free | Lite (One-Time) | Full (Subscription) |
 | --- | :---: | :---: | :---: |
 | Code editing and syntax highlighting | Yes | Yes | Yes |
 | Git integration | Yes | Yes | Yes |
+| Enhanced Git Integration | -- | Yes | Supporter / Gold / Node |
 | Extra Keyboard | Yes | Yes | Yes |
 | Touch Keyboard and Cursors | Yes | Yes | Yes |
 | Project preview | Yes | Yes | Yes |

@@ -19,11 +19,14 @@ Spck Editor est une solution d'édition de code mobile avec plusieurs variantes 
 - Snippets personnalisés
 - Clavier prédictif
 - Thème Neon exclusif
+- Intégration Git avancée
 
 #### Spck pour NodeJS
 
 **Plateforme** : Exclusivité Android
 **Fonctionnalité clé** : Terminal intégré avec prise en charge NodeJS
+
+L’intégration Git avancée est incluse avec un abonnement Node actif ou débloquée définitivement avec l’achat à vie du terminal. Les deux options nécessitent une connexion.
 
 #### Version navigateur
 
@@ -243,6 +246,14 @@ Entourez rapidement le texte sélectionné en utilisant des paires de parenthès
 &nbsp;
 
 &nbsp;
+
+# <a name="enhanced-git-integration"></a>Intégration Git avancée
+
+Ouvrez l’onglet **History** du panneau Git et sélectionnez un commit pour voir ses fichiers ajoutés, modifiés et supprimés. Sélectionnez un fichier pour ouvrir un diff en lecture seule par rapport au premier commit parent. Pour le premier commit, les fichiers sont comparés à un arbre vide. Le visualiseur utilise les versions enregistrées dans les commits ; les modifications non commitées n’affectent donc pas le diff. Les fichiers binaires ne peuvent pas être affichés sous forme de diffs textuels.
+
+L’intégration Git avancée est incluse à vie avec Spck Lite et l’achat à vie du terminal de Spck for NodeJS. Elle est aussi incluse avec les abonnements actifs Supporter, Gold ou Node. La version complète nécessite une connexion ; Lite n’en nécessite pas.
+
+L’intégration Git de base et la consultation de l’historique des commits restent disponibles dans la version gratuite. [Supporter / Gold / Node](https://spck.io/pricing).
 
 # <a name="git-limitations"></a>Limitations de Git
 

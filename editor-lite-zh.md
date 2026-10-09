@@ -9,6 +9,7 @@ Lite 包含免费版的所有功能，另外还有：
 - **Predictive Keyboard** -- 附加键盘上的上下文感知符号建议
 - **自定义代码片段** -- 用户定义的带有制表位占位符的代码模板
 - **Neon 主题** -- 独家编辑器主题
+- **增强 Git 集成** -- 提交的更改文件列表和只读差异查看器
 
 这些功能也可在 Spck Editor 完整版中通过激活 Gold 或 Supporter 订阅来使用。Lite 应用以一次性购买的方式提供相同的功能。
 
@@ -67,12 +68,19 @@ for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {
 
 Lite 包含 **Neon** 编辑器主题，这是一款具有鲜艳强调色的深色主题。它在 Lite 中被设为默认主题，可随时在 `Settings > Appearance > Theme` 中更改。
 
+## <a name="enhanced-git-integration"></a>增强 Git 集成
+
+打开 Git 面板的 **History** 标签并选择一个提交，即可查看新增、修改和删除的文件。选择文件可打开与第一个父提交比较的只读差异视图。首次提交的文件会与空目录树比较。查看器使用已提交的版本，因此未提交的编辑不会影响差异。二进制文件无法显示为文本差异。
+
+增强 Git 集成永久包含在 Spck Lite 和 Spck for NodeJS 终端终身购买中，也包含在有效的 Supporter、Gold 或 Node 订阅中。完整版需要登录，Lite 无需登录。 [增强 Git 集成](./editor#enhanced-git-integration).
+
 ## <a name="comparison"></a>功能对比
 
 | 功能 | 免费 | Lite（一次性购买） | 完整版（订阅） |
 | --- | :---: | :---: | :---: |
 | 代码编辑和语法高亮 | 是 | 是 | 是 |
 | Git 集成 | 是 | 是 | 是 |
+| 增强 Git 集成 | -- | 是 | Supporter / Gold / Node |
 | 附加键盘 | 是 | 是 | 是 |
 | 触摸键盘和光标 | 是 | 是 | 是 |
 | 项目预览 | 是 | 是 | 是 |

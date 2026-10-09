@@ -9,6 +9,7 @@ O Lite inclui tudo da versao gratuita, alem de:
 - **Predictive Keyboard** -- sugestoes de simbolos contextuais no teclado adicional
 - **Snippets personalizados** -- modelos de codigo definidos pelo usuario com marcadores de tabulacao
 - **Tema Neon** -- um tema de editor exclusivo
+- **Integração Git aprimorada** -- listas de arquivos alterados e diffs de commits somente para leitura
 
 Esses recursos tambem estao disponiveis na versao completa do Spck Editor com uma assinatura Gold ou Supporter ativa. O aplicativo Lite oferece a mesma funcionalidade como compra unica.
 
@@ -67,12 +68,19 @@ Voce pode exportar todos os snippets para um arquivo e importa-los em outro disp
 
 O Lite inclui o tema de editor **Neon**, um tema escuro com cores de destaque vibrantes. Ele e definido como tema padrao no Lite e pode ser alterado a qualquer momento em `Settings > Appearance > Theme`.
 
+## <a name="enhanced-git-integration"></a>Integração Git aprimorada
+
+Abra a aba **History** do painel Git e selecione um commit para ver os arquivos adicionados, modificados e excluídos. Selecione um arquivo para abrir um diff somente para leitura em relação ao primeiro commit pai. No primeiro commit, os arquivos são comparados com uma árvore vazia. O visualizador usa as versões salvas nos commits, portanto alterações ainda não commitadas não afetam o diff. Arquivos binários não podem ser exibidos como diffs de texto.
+
+A integração Git aprimorada está incluída permanentemente no Spck Lite e na compra vitalícia do terminal do Spck for NodeJS. Também está incluída nas assinaturas ativas Supporter, Gold ou Node. O aplicativo completo exige login; o Lite não. [Integração Git aprimorada](./editor#enhanced-git-integration).
+
 ## <a name="comparison"></a>Comparacao de recursos
 
 | Recurso | Gratuito | Lite (Compra unica) | Completo (Assinatura) |
 | --- | :---: | :---: | :---: |
 | Edicao de codigo e destaque de sintaxe | Sim | Sim | Sim |
 | Integracao com Git | Sim | Sim | Sim |
+| Integração Git aprimorada | -- | Sim | Supporter / Gold / Node |
 | Teclado adicional | Sim | Sim | Sim |
 | Teclado sensivel ao toque e cursores | Sim | Sim | Sim |
 | Pre-visualizacao do projeto | Sim | Sim | Sim |

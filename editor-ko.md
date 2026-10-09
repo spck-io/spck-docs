@@ -19,11 +19,14 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 - 사용자 지정 스니펫
 - 예측 키보드
 - 독점 네온 테마
+- 향상된 Git 통합
 
 #### Spck for NodeJS
 
 **플랫폼**: Android 전용
 **핵심 기능**: NodeJS를 지원하는 통합 터미널
+
+향상된 Git 통합은 활성 Node 구독에 포함되며 터미널 평생 이용권 구매로 영구적으로 사용할 수도 있습니다. 두 방식 모두 로그인이 필요합니다.
 
 #### 브라우저 버전
 
@@ -243,6 +246,14 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 &nbsp;
 
 &nbsp;
+
+# <a name="enhanced-git-integration"></a>향상된 Git 통합
+
+Git 패널의 **History** 탭을 열고 커밋을 선택하면 추가, 수정, 삭제된 파일을 볼 수 있습니다. 파일을 선택하면 첫 번째 부모 커밋과 비교하는 읽기 전용 diff가 열립니다. 첫 커밋은 빈 트리와 비교합니다. 뷰어는 커밋에 저장된 버전을 사용하므로 커밋되지 않은 편집은 diff에 영향을 주지 않습니다. 바이너리 파일은 텍스트 diff로 표시할 수 없습니다.
+
+향상된 Git 통합은 Spck Lite와 Spck for NodeJS 터미널 평생 이용권에 영구적으로 포함됩니다. 활성 Supporter, Gold 또는 Node 구독에도 포함됩니다. 전체 앱은 로그인이 필요하며 Lite는 필요하지 않습니다.
+
+기본 Git 통합과 커밋 기록 탐색은 무료 버전에서도 계속 사용할 수 있습니다. [Supporter / Gold / Node](https://spck.io/pricing).
 
 # <a name="git-limitations"></a>Git 제한 사항
 

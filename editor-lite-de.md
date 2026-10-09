@@ -9,6 +9,7 @@ Lite enthalt alles aus der kostenlosen Version, plus:
 - **Predictive Keyboard** -- kontextbezogene Symbolvorschlage auf der Zusatztastatur
 - **Benutzerdefinierte Snippets** -- eigene Code-Vorlagen mit Tab-Stop-Platzhaltern
 - **Neon-Theme** -- ein exklusives Editor-Theme
+- **Erweiterte Git-Integration** -- Listen geänderter Dateien und schreibgeschützte Commit-Diffs
 
 Diese Funktionen sind auch in der Vollversion von Spck Editor mit einem aktiven Gold- oder Supporter-Abonnement verfugbar. Die Lite-App bietet die gleiche Funktionalitat als Einzelkauf.
 
@@ -67,12 +68,19 @@ Du kannst alle Snippets in eine Datei exportieren und auf einem anderen Gerat im
 
 Lite enthalt das **Neon**-Editor-Theme, ein dunkles Theme mit leuchtenden Akzentfarben. Es ist in Lite als Standard-Theme eingestellt und kann jederzeit unter `Settings > Appearance > Theme` geandert werden.
 
+## <a name="enhanced-git-integration"></a>Erweiterte Git-Integration
+
+Öffnen Sie im Git-Bereich den Tab **History** und wählen Sie einen Commit aus, um seine hinzugefügten, geänderten und gelöschten Dateien zu sehen. Wählen Sie eine Datei aus, um einen schreibgeschützten Diff zum ersten übergeordneten Commit zu öffnen. Beim ersten Commit werden die Dateien mit einem leeren Dateibaum verglichen. Der Viewer verwendet die gespeicherten Commit-Versionen; nicht commitete Änderungen beeinflussen den Diff nicht. Binärdateien können nicht als Text-Diffs angezeigt werden.
+
+Die erweiterte Git-Integration ist mit dem einmaligen Kauf von **Spck Editor Lite** dauerhaft freigeschaltet, ohne Anmeldung oder Abonnement. In **Spck for NodeJS** schaltet der Terminal-Einmalkauf die Funktion dauerhaft für das Konto frei, dem der Kauf gehört. Aktive **Supporter-, Gold- oder Node-Abonnements** schalten sie für die Dauer des Abonnements frei. In der Vollversion ist für beide Optionen eine Anmeldung erforderlich. [Erweiterte Git-Integration](./editor#enhanced-git-integration).
+
 ## <a name="comparison"></a>Funktionsvergleich
 
 | Funktion | Kostenlos | Lite (Einmalkauf) | Voll (Abonnement) |
 | --- | :---: | :---: | :---: |
 | Code-Bearbeitung und Syntaxhervorhebung | Ja | Ja | Ja |
 | Git-Integration | Ja | Ja | Ja |
+| Erweiterte Git-Integration | -- | Ja | Supporter / Gold / Node |
 | Zusatztastatur | Ja | Ja | Ja |
 | Touch-Tastatur und Cursor | Ja | Ja | Ja |
 | Projektvorschau | Ja | Ja | Ja |
