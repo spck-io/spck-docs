@@ -41,6 +41,23 @@ See [Embedding the Editor](/en/editor-embed) for iframe setup, project managemen
 - Git integration
 - Cross-platform compatibility
 
+### <a name="git-credentials"></a>Git credentials and pull requests
+
+Open **Git menu → Git Credentials**, select your provider, and save its access token. The token setup and help links below open in a new tab so you can return to Spck and paste the token.
+
+| Provider | Token setup | Permissions for Git and pull requests |
+| --- | --- | --- |
+| GitHub | <a href="https://github.com/settings/personal-access-tokens/new?contents=write&amp;pull_requests=write&amp;metadata=read&amp;name=Spck-Editor&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Create GitHub token</a> · <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank" rel="noopener noreferrer">Setup guide</a> | Select the repository. The creation link preselects **Contents: Read and write**, **Pull requests: Read and write**, and **Metadata: Read**. |
+| GitLab | <a href="https://gitlab.com/-/user_settings/personal_access_tokens?name=Spck-Editor&amp;scopes=api" target="_blank" rel="noopener noreferrer">Create GitLab token</a> · <a href="https://docs.gitlab.com/user/profile/personal_access_tokens/#prefill-personal-access-token-details" target="_blank" rel="noopener noreferrer">Setup guide</a> | The creation link preselects the `api` scope for merge requests. |
+| Bitbucket Cloud | <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener noreferrer">Create API token</a> · <a href="https://support.atlassian.com/bitbucket-cloud/docs/create-an-api-token/" target="_blank" rel="noopener noreferrer">Setup guide</a> | Choose **Create API token with scopes**, select **Bitbucket**, and manually select `read:repository:bitbucket`, `write:repository:bitbucket`, `read:pullrequest:bitbucket`, and `write:pullrequest:bitbucket`. API authentication uses your Atlassian account email. |
+| Azure DevOps | <a href="https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate" target="_blank" rel="noopener noreferrer">Create PAT guide</a> | Open your organization's **User settings → Personal access tokens → New Token**, select the organization, and manually select **Code (Read & write)**. |
+
+To create a pull request, commit and push your source branch, then open **Git menu → Create PR**. Select the remote and credentials, choose a different target branch, and enter a title and description. **Generate with AI** can draft the message from committed changes against the branches' merge base; fetch the target branch first. Review the draft before selecting **Create PR**. GitLab creates a merge request.
+
+Create PR uses the same Enhanced Git Integration access as commit file changes. It is included in Lite, available with a premium subscription in the full version, and included with the terminal lifetime unlock in Spck for NodeJS when signed in.
+
+If creation fails because of token permissions, use the provider's setup link to create or update the token, save it in **Git Credentials**, and retry. Your PR draft is preserved.
+
 ### Recommended Use
 
 - On-the-go code editing
