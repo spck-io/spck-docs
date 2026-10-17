@@ -179,6 +179,8 @@ chmod 644 /path/to/file
 
 ## <a name="connection-limits"></a>連線限制
 
+Lite 支援透過 Spck CLI 編輯桌上型電腦或公用虛擬機上的專案。遠端專案需要 **Spck 帳戶和有效的 Spck 訂閱**，不包含在 Lite 的一次性購買中。訂閱有助於負擔 Spck 伺服器持續產生的託管、運作和維護費用。隨 Lite 提供的本機編輯和 Git 工具仍可無需訂閱使用。
+
 最大同時 CLI 連線數和每日使用量限制取決於您的帳號類型：
 
 | 方案      | CLI 連線數 | 每日限制   |

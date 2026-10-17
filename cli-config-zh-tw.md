@@ -161,6 +161,8 @@
 
 ## <a name="user-authentication"></a>使用者身分驗證
 
+Lite 支援透過 Spck CLI 編輯桌上型電腦或公用虛擬機上的專案。遠端專案需要 **Spck 帳戶和有效的 Spck 訂閱**，不包含在 Lite 的一次性購買中。訂閱有助於負擔 Spck 伺服器持續產生的託管、運作和維護費用。隨 Lite 提供的本機編輯和 Git 工具仍可無需訂閱使用。 CLI 的選用設定 `userAuthenticationEnabled` 不會免除帳戶和訂閱要求。
+
 Spck CLI 支援可選的 Firebase 使用者身分驗證，作為在始終啟用的請求簽章之上的第二道安全防線。
 
 ### 運作原理

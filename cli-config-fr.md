@@ -161,6 +161,8 @@ Chaque requête est signée cryptographiquement :
 
 ## <a name="user-authentication"></a>Authentification Utilisateur
 
+Lite permet de modifier des projets sur votre ordinateur ou une VM publique via Spck CLI. Les projets distants nécessitent un **compte Spck et un abonnement Spck actif**, en plus de l’achat unique de Lite. L’abonnement contribue aux frais récurrents d’hébergement, d’exploitation et de maintenance des serveurs Spck. Les outils locaux d’édition et Git inclus restent accessibles sans abonnement. Le réglage facultatif de la CLI `userAuthenticationEnabled` ne supprime pas cette obligation de compte et d’abonnement.
+
 Spck CLI prend en charge l’authentification utilisateur Firebase optionnelle comme deuxième couche de sécurité en plus de la signature de requêtes toujours active.
 
 ### Fonctionnement

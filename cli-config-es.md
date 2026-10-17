@@ -161,6 +161,8 @@ Cada solicitud está firmada criptográficamente:
 
 ## <a name="user-authentication"></a>Autenticación de Usuario
 
+Lite permite editar proyectos ubicados en tu computadora o en una VM pública mediante Spck CLI. Los proyectos remotos requieren una **cuenta de Spck y una suscripción activa de Spck**, aparte de la compra única de Lite. La suscripción ayuda a cubrir los costos continuos de alojamiento, operación y mantenimiento de los servidores de Spck. Las herramientas locales de edición y Git incluidas siguen disponibles sin suscripción. La opción de la CLI `userAuthenticationEnabled` no elimina este requisito de cuenta y suscripción.
+
 Spck CLI soporta autenticación de usuario Firebase opcional como segunda capa de seguridad sobre la firma de solicitudes siempre activa.
 
 ### Cómo Funciona

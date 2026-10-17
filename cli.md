@@ -189,6 +189,8 @@ The maximum number of simultaneous CLI connections and daily usage limits depend
 
 Free tier usage resets daily at 12:00 AM UTC.
 
+**Spck Editor Lite:** Remote Projects let you edit files on your desktop or a public VM, but require a Spck account and an active Spck subscription. The one-time Lite purchase covers its included local editing and Git tools; it does not include the remote service. Subscriptions help cover the ongoing cost of running and maintaining Spck's servers. See [Lite Remote Projects](./editor-lite#remote-projects).
+
 When the connection limit is reached:
 
 ```

@@ -161,6 +161,8 @@ Setiap permintaan ditandatangani secara kriptografis:
 
 ## <a name="user-authentication"></a>Autentikasi Pengguna
 
+Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck CLI. Proyek Jarak Jauh memerlukan **akun Spck dan langganan Spck aktif**, terpisah dari pembelian satu kali Lite. Langganan membantu menanggung biaya berkelanjutan untuk hosting, pengoperasian, dan pemeliharaan server Spck. Alat pengeditan lokal dan Git yang disertakan tetap dapat digunakan tanpa langganan. Pengaturan CLI opsional `userAuthenticationEnabled` tidak menghapus persyaratan akun dan langganan ini.
+
 Spck CLI mendukung autentikasi pengguna Firebase opsional sebagai lapisan keamanan kedua di atas penandatanganan permintaan yang selalu aktif.
 
 ### Cara Kerjanya

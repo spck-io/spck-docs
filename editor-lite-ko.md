@@ -13,6 +13,12 @@ Lite에는 무료 버전의 모든 기능에 더해 다음이 포함됩니다:
 
 이러한 기능은 Gold 또는 Supporter 구독이 활성화된 Spck Editor 정식 버전에서도 사용할 수 있습니다. Lite 앱은 동일한 기능을 일회성 구매로 제공합니다.
 
+## <a name="remote-projects"></a>원격 프로젝트
+
+Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트를 편집할 수 있습니다. 원격 프로젝트에는 Lite 일회성 구매와 별도로 **Spck 계정과 활성 Spck 구독**이 필요합니다. 구독은 Spck 서버의 지속적인 호스팅, 운영 및 유지 관리 비용을 지원합니다. 포함된 로컬 편집 및 Git 도구는 구독 없이 계속 사용할 수 있습니다.
+
+[Spck CLI](./cli-start) · [Spck](https://spck.io/pricing)
+
 ## <a name="predictive-keyboard"></a>Predictive Keyboard
 
 Predictive Keyboard는 표준 추가 키보드를 문맥 인식 기호 키 행으로 대체합니다. 키를 길게 눌러 메뉴에서 선택하는 대신, 파일 내 커서 위치에 따라 가장 가능성 높은 기호가 직접 표시됩니다.
@@ -85,8 +91,8 @@ Git 패널의 **History** 탭을 열고 커밋을 선택하면 추가, 수정, �
 | 터치 키보드 및 커서 | 예 | 예 | 예 |
 | 프로젝트 미리보기 | 예 | 예 | 예 |
 | Predictive Keyboard | -- | 예 | Gold / Supporter |
-| 사용자 정의 스니펫 | -- | 예 | Gold / Supporter |
+| 사용자 정의 스니펫 | -- | 예 | Gold |
 | Neon 테마 | -- | 예 | -- |
 | AI 어시스턴트 | -- | -- | 예 |
-| 사용자 계정 및 클라우드 동기화 | -- | -- | 예 |
+| 클라우드 동기화 | -- | -- | 예 |
 | Labs / 커뮤니티 프로젝트 | -- | -- | 예 |

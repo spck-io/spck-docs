@@ -6,6 +6,8 @@ O Spck CLI é uma ferramenta de linha de comando que conecta seu ambiente de des
 
 ## <a name="requirements"></a>Requisitos
 
+O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck CLI. Projetos remotos exigem uma **conta Spck e uma assinatura Spck ativa**, separadas da compra única do Lite. A assinatura ajuda a cobrir os custos contínuos de hospedagem, operação e manutenção dos servidores Spck. As ferramentas locais de edição e Git incluídas continuam disponíveis sem assinatura.
+
 ### Obrigatórios
 
 - **Node.js**: 18.0.0 ou superior

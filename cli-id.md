@@ -179,6 +179,8 @@ chmod 644 /path/to/file
 
 ## <a name="connection-limits"></a>Batas Koneksi
 
+Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck CLI. Proyek Jarak Jauh memerlukan **akun Spck dan langganan Spck aktif**, terpisah dari pembelian satu kali Lite. Langganan membantu menanggung biaya berkelanjutan untuk hosting, pengoperasian, dan pemeliharaan server Spck. Alat pengeditan lokal dan Git yang disertakan tetap dapat digunakan tanpa langganan.
+
 Jumlah maksimum koneksi CLI simultan dan batas penggunaan harian bergantung pada jenis akun Anda:
 
 | Paket     | Koneksi CLI | Batas Harian |

@@ -179,6 +179,8 @@ chmod 644 /path/to/file
 
 ## <a name="connection-limits"></a>Verbindungslimits
 
+Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM über Spck CLI. Dafür sind ein **Spck-Konto und ein aktives Spck-Abonnement** erforderlich, zusätzlich zum einmaligen Lite-Kauf. Das Abonnement hilft, die laufenden Kosten für Hosting, Betrieb und Wartung der Spck-Server zu decken. Die enthaltenen lokalen Editor- und Git-Werkzeuge bleiben ohne Abonnement nutzbar.
+
 Die maximale Anzahl gleichzeitiger CLI-Verbindungen und tägliche Nutzungslimits hängen von Ihrem Kontotyp ab:
 
 | Plan      | CLI-Verbindungen | Tageslimit  |

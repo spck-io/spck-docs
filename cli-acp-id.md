@@ -183,7 +183,9 @@ Tidak ada biaya tambahan Spck Editor. Penggunaan agen dihitung terhadap paket An
 
 ### Apakah saya memerlukan langganan Spck Editor berbayar untuk menggunakan ACP?
 
-Tidak. Tier gratis (koneksi CLI 30 menit/hari) cukup untuk menggerakkan agen ACP apa pun. Hanya AI Chat in-app yang dialihkan melalui server yang mengonsumsi kuota AI Spck Editor.
+Di aplikasi lengkap: Tidak. Tier gratis (koneksi CLI 30 menit/hari) cukup untuk menggerakkan agen ACP apa pun. Hanya AI Chat in-app yang dialihkan melalui server yang mengonsumsi kuota AI Spck Editor.
+
+Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck CLI. Proyek Jarak Jauh memerlukan **akun Spck dan langganan Spck aktif**, terpisah dari pembelian satu kali Lite. Langganan membantu menanggung biaya berkelanjutan untuk hosting, pengoperasian, dan pemeliharaan server Spck. Alat pengeditan lokal dan Git yang disertakan tetap dapat digunakan tanpa langganan.
 
 ### Apa yang terjadi jika saya kehilangan koneksi Wi-Fi di tengah chat?
 

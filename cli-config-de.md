@@ -161,6 +161,8 @@ Jede Anfrage wird kryptographisch signiert:
 
 ## <a name="user-authentication"></a>Benutzerauthentifizierung
 
+Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM über Spck CLI. Dafür sind ein **Spck-Konto und ein aktives Spck-Abonnement** erforderlich, zusätzlich zum einmaligen Lite-Kauf. Das Abonnement hilft, die laufenden Kosten für Hosting, Betrieb und Wartung der Spck-Server zu decken. Die enthaltenen lokalen Editor- und Git-Werkzeuge bleiben ohne Abonnement nutzbar. Die optionale CLI-Einstellung `userAuthenticationEnabled` ändert diese Konto- und Abonnementpflicht nicht.
+
 Spck CLI unterstützt optionale Firebase-Benutzerauthentifizierung als zweite Sicherheitsebene zusätzlich zur immer aktiven Anfragensignierung.
 
 ### Funktionsweise

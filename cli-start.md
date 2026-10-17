@@ -9,8 +9,10 @@ Spck CLI is a command-line tool that connects your local development environment
 ### Required
 
 - **Node.js**: 18.0.0 or higher
-- **Spck Editor Account**: Free account (30 min/day) or Premium subscription (unlimited)
+- **Spck Editor Account**: In the full app, a free account (30 min/day) or Premium subscription (unlimited). **Spck Editor Lite requires a Spck account and an active Spck subscription for Remote Projects.**
 - **Spck Editor Mobile App**: [Android](https://play.google.com/store/apps/details?id=io.spck) or [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
+
+Lite supports editing projects on your desktop or a public VM through Spck CLI. This remote service is separate from the one-time Lite app purchase. The subscription helps cover the ongoing hosting, operation, and maintenance costs of Spck's servers. See [Lite Remote Projects](./editor-lite#remote-projects).
 
 ### Optional (Recommended)
 

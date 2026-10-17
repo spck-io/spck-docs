@@ -179,6 +179,8 @@ chmod 644 /path/to/file
 
 ## <a name="connection-limits"></a>Limites de Connexion
 
+Lite permet de modifier des projets sur votre ordinateur ou une VM publique via Spck CLI. Les projets distants nécessitent un **compte Spck et un abonnement Spck actif**, en plus de l’achat unique de Lite. L’abonnement contribue aux frais récurrents d’hébergement, d’exploitation et de maintenance des serveurs Spck. Les outils locaux d’édition et Git inclus restent accessibles sans abonnement.
+
 Le nombre maximum de connexions CLI simultanées et les limites d’utilisation quotidienne dépendent de votre type de compte :
 
 | Plan      | Connexions CLI | Limite Quotidienne |

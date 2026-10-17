@@ -183,7 +183,9 @@ Keine zusätzlichen Spck-Editor-Gebühren. Die Nutzung des Agenten zählt gegen 
 
 ### Brauche ich ein bezahltes Spck-Editor-Abo, um ACP zu nutzen?
 
-Nein. Die kostenlose Stufe (30 Min/Tag CLI-Verbindung) reicht aus, um jeden ACP-Agenten anzusteuern. Nur der serverbasierte AI Chat in der App verbraucht das Spck-Editor-AI-Kontingent.
+In der Vollversion: Nein. Die kostenlose Stufe (30 Min/Tag CLI-Verbindung) reicht aus, um jeden ACP-Agenten anzusteuern. Nur der serverbasierte AI Chat in der App verbraucht das Spck-Editor-AI-Kontingent.
+
+Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM über Spck CLI. Dafür sind ein **Spck-Konto und ein aktives Spck-Abonnement** erforderlich, zusätzlich zum einmaligen Lite-Kauf. Das Abonnement hilft, die laufenden Kosten für Hosting, Betrieb und Wartung der Spck-Server zu decken. Die enthaltenen lokalen Editor- und Git-Werkzeuge bleiben ohne Abonnement nutzbar.
 
 ### Was passiert, wenn ich meine WLAN-Verbindung mitten im Chat verliere?
 

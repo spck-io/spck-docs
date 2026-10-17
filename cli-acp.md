@@ -186,7 +186,7 @@ No additional Spck Editor charge. The agent's usage counts against your Anthropi
 
 ### Do I need a paid Spck Editor subscription to use ACP?
 
-No. The free tier (30 min/day of CLI connection) is enough to drive any ACP agent. Only the in-app server-routed AI Chat consumes Spck Editor AI quota.
+In the full app, the free tier (30 min/day of CLI connection) is enough to drive an ACP agent. **Lite requires a Spck account and an active Spck subscription for Remote Projects**, including connections used for ACP. This helps cover the ongoing cost of running and maintaining Spck's servers. Agent usage is billed separately by your AI provider; only the in-app server-routed AI Chat consumes Spck Editor AI quota.
 
 ### What happens if I lose my Wi-Fi connection mid-chat?
 
@@ -198,7 +198,9 @@ Yes. Run the Spck CLI on any reachable Linux/macOS host — a dev VM, a home ser
 
 ### Does ACP work with Spck Editor Lite?
 
-Yes. ACP traffic uses the same WebSocket transport as filesystem and git, which Spck Editor Lite supports. Make sure `security.userAuthenticationEnabled` is set to `false` in your CLI config — Firebase auth is not supported in Lite. See [Configuration → User Authentication](./cli-config#user-authentication).
+Yes. Lite supports Remote Projects on your desktop or a public VM, including ACP, with a **Spck account and an active Spck subscription**. This remote service is separate from the one-time Lite purchase; the subscription helps cover ongoing server operation and maintenance. AI provider usage is separate. See [Lite Remote Projects](./editor-lite#remote-projects).
+
+Keep `security.userAuthenticationEnabled` set to `false` for Lite; the additional CLI-side Firebase identity verification is not supported. This setting does not remove the Spck account or subscription requirement for Remote Projects. See [Configuration → User Authentication](./cli-config#user-authentication).
 
 ### Does the AI Chat read my project's `AGENTS.md` file?
 

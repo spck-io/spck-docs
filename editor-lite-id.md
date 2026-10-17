@@ -13,6 +13,12 @@ Lite mencakup semua yang ada di versi gratis, ditambah:
 
 Fitur-fitur ini juga tersedia di versi lengkap Spck Editor dengan langganan Gold atau Supporter yang aktif. Aplikasi Lite menyediakan fungsionalitas yang sama sebagai pembelian satu kali.
 
+## <a name="remote-projects"></a>Proyek Jarak Jauh
+
+Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck CLI. Proyek Jarak Jauh memerlukan **akun Spck dan langganan Spck aktif**, terpisah dari pembelian satu kali Lite. Langganan membantu menanggung biaya berkelanjutan untuk hosting, pengoperasian, dan pemeliharaan server Spck. Alat pengeditan lokal dan Git yang disertakan tetap dapat digunakan tanpa langganan.
+
+[Spck CLI](./cli-start) · [Spck](https://spck.io/pricing)
+
 ## <a name="predictive-keyboard"></a>Predictive Keyboard
 
 Predictive Keyboard menggantikan Keyboard Tambahan standar dengan baris tombol simbol kontekstual. Alih-alih menekan lama tombol untuk memilih dari menu, simbol yang paling mungkin ditampilkan langsung berdasarkan posisi kursor dalam file.
@@ -85,8 +91,8 @@ Integrasi Git Lanjutan disertakan secara permanen dengan Spck Lite dan pembelian
 | Keyboard Sentuh dan Kursor | Ya | Ya | Ya |
 | Pratinjau proyek | Ya | Ya | Ya |
 | Predictive Keyboard | -- | Ya | Gold / Supporter |
-| Snippet Kustom | -- | Ya | Gold / Supporter |
+| Snippet Kustom | -- | Ya | Gold |
 | Tema Neon | -- | Ya | -- |
 | Asisten AI | -- | -- | Ya |
-| Akun pengguna dan sinkronisasi cloud | -- | -- | Ya |
+| Sinkronisasi cloud | -- | -- | Ya |
 | Labs / Proyek komunitas | -- | -- | Ya |

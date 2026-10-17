@@ -13,6 +13,12 @@ Lite inclut tout ce que contient la version gratuite, plus :
 
 Ces fonctionnalites sont egalement disponibles dans la version complete de Spck Editor avec un abonnement Gold ou Supporter actif. L\u2019application Lite offre les memes fonctionnalites en un seul achat.
 
+## <a name="remote-projects"></a>Projets distants
+
+Lite permet de modifier des projets sur votre ordinateur ou une VM publique via Spck CLI. Les projets distants nécessitent un **compte Spck et un abonnement Spck actif**, en plus de l’achat unique de Lite. L’abonnement contribue aux frais récurrents d’hébergement, d’exploitation et de maintenance des serveurs Spck. Les outils locaux d’édition et Git inclus restent accessibles sans abonnement.
+
+[Spck CLI](./cli-start) · [Spck](https://spck.io/pricing)
+
 ## <a name="predictive-keyboard"></a>Predictive Keyboard
 
 Le Predictive Keyboard remplace le clavier supplementaire standard par une rangee de touches de symboles contextuelles. Au lieu d\u2019appuyer longuement sur une touche pour choisir dans un menu, les symboles les plus probables s\u2019affichent directement en fonction de la position du curseur dans le fichier.
@@ -85,8 +91,8 @@ L’intégration Git avancée est incluse à vie avec Spck Lite et l’achat à 
 | Clavier tactile et curseurs | Oui | Oui | Oui |
 | Apercu du projet | Oui | Oui | Oui |
 | Predictive Keyboard | -- | Oui | Gold / Supporter |
-| Snippets personnalises | -- | Oui | Gold / Supporter |
+| Snippets personnalises | -- | Oui | Gold |
 | Theme Neon | -- | Oui | -- |
 | Assistant IA | -- | -- | Oui |
-| Comptes utilisateur et synchronisation cloud | -- | -- | Oui |
+| Synchronisation cloud | -- | -- | Oui |
 | Labs / Projets communautaires | -- | -- | Oui |

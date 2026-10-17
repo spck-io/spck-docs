@@ -183,7 +183,9 @@ Sem cobrança extra do Spck Editor. O uso do agente conta contra seu plano Anthr
 
 ### Preciso de uma assinatura paga do Spck Editor para usar ACP?
 
-Não. O nível gratuito (30 min/dia de conexão CLI) é suficiente para controlar qualquer agente ACP. Apenas o AI Chat roteado pelo servidor in-app consome cota de IA do Spck Editor.
+No aplicativo completo: Não. O nível gratuito (30 min/dia de conexão CLI) é suficiente para controlar qualquer agente ACP. Apenas o AI Chat roteado pelo servidor in-app consome cota de IA do Spck Editor.
+
+O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck CLI. Projetos remotos exigem uma **conta Spck e uma assinatura Spck ativa**, separadas da compra única do Lite. A assinatura ajuda a cobrir os custos contínuos de hospedagem, operação e manutenção dos servidores Spck. As ferramentas locais de edição e Git incluídas continuam disponíveis sem assinatura.
 
 ### O que acontece se eu perder minha conexão Wi-Fi no meio do chat?
 

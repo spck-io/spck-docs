@@ -6,6 +6,8 @@ Spck CLI adalah alat baris perintah yang menghubungkan lingkungan pengembangan l
 
 ## <a name="requirements"></a>Persyaratan
 
+Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck CLI. Proyek Jarak Jauh memerlukan **akun Spck dan langganan Spck aktif**, terpisah dari pembelian satu kali Lite. Langganan membantu menanggung biaya berkelanjutan untuk hosting, pengoperasian, dan pemeliharaan server Spck. Alat pengeditan lokal dan Git yang disertakan tetap dapat digunakan tanpa langganan.
+
 ### Wajib
 
 - **Node.js**: 18.0.0 atau lebih tinggi

@@ -6,6 +6,8 @@ Spck CLI ist ein Befehlszeilenwerkzeug, das deine lokale Entwicklungsumgebung ü
 
 ## <a name="requirements"></a>Voraussetzungen
 
+Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM über Spck CLI. Dafür sind ein **Spck-Konto und ein aktives Spck-Abonnement** erforderlich, zusätzlich zum einmaligen Lite-Kauf. Das Abonnement hilft, die laufenden Kosten für Hosting, Betrieb und Wartung der Spck-Server zu decken. Die enthaltenen lokalen Editor- und Git-Werkzeuge bleiben ohne Abonnement nutzbar.
+
 ### Erforderlich
 
 - **Node.js**: 18.0.0 oder höher

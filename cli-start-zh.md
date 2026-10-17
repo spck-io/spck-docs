@@ -6,6 +6,8 @@ Spck CLI 是一个命令行工具，通过安全的 WebSocket 连接将本地开
 
 ## <a name="requirements"></a>要求
 
+Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。远程项目需要 **Spck 账户和有效的 Spck 订阅**，不包含在 Lite 的一次性购买中。订阅有助于承担 Spck 服务器持续产生的托管、运行和维护费用。随 Lite 提供的本地编辑和 Git 工具仍可无需订阅使用。
+
 ### 必需
 
 - **Node.js**：18.0.0 或更高版本

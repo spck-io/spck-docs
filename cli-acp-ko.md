@@ -183,7 +183,9 @@ Linux 호스트의 경우, [Claude Skill: Linux Service](./claude-skill) 페이�
 
 ### ACP를 사용하려면 유료 Spck Editor 구독이 필요한가요?
 
-아니오. 무료 등급 (하루 30분 CLI 연결)은 어떤 ACP 에이전트든 구동하기에 충분합니다. 앱 내 서버 라우팅 AI Chat만 Spck Editor AI 할당량을 소비합니다.
+전체 앱에서는: 아니오. 무료 등급 (하루 30분 CLI 연결)은 어떤 ACP 에이전트든 구동하기에 충분합니다. 앱 내 서버 라우팅 AI Chat만 Spck Editor AI 할당량을 소비합니다.
+
+Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트를 편집할 수 있습니다. 원격 프로젝트에는 Lite 일회성 구매와 별도로 **Spck 계정과 활성 Spck 구독**이 필요합니다. 구독은 Spck 서버의 지속적인 호스팅, 운영 및 유지 관리 비용을 지원합니다. 포함된 로컬 편집 및 Git 도구는 구독 없이 계속 사용할 수 있습니다.
 
 ### 채팅 중에 Wi-Fi 연결이 끊기면 어떻게 되나요?
 

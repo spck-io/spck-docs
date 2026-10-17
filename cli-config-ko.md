@@ -161,6 +161,8 @@
 
 ## <a name="user-authentication"></a>사용자 인증
 
+Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트를 편집할 수 있습니다. 원격 프로젝트에는 Lite 일회성 구매와 별도로 **Spck 계정과 활성 Spck 구독**이 필요합니다. 구독은 Spck 서버의 지속적인 호스팅, 운영 및 유지 관리 비용을 지원합니다. 포함된 로컬 편집 및 Git 도구는 구독 없이 계속 사용할 수 있습니다. CLI의 선택 설정인 `userAuthenticationEnabled`는 이 계정 및 구독 요건을 없애지 않습니다.
+
 Spck CLI는 항상 활성화된 요청 서명 위에 두 번째 보안 레이어로 선택적 Firebase 사용자 인증을 지원합니다.
 
 ### 작동 방식

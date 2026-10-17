@@ -163,6 +163,8 @@ Every request is cryptographically signed:
 
 Spck CLI supports optional Firebase user authentication as a second security layer on top of the always-active request signing.
 
+**Lite Remote Projects still require a Spck account and an active Spck subscription.** This applies when editing projects on a desktop or public VM, regardless of the `userAuthenticationEnabled` setting below. That setting controls additional CLI-side identity verification, not access to Spck's remote service. Subscriptions help cover the ongoing cost of running and maintaining the servers. See [Lite Remote Projects](./editor-lite#remote-projects).
+
 ### How It Works
 
 When enabled, the CLI requires you to sign in with your Spck Editor account. Connections are authenticated using Firebase ID tokens that expire every hour and are automatically refreshed using secure refresh tokens stored in `~/.spck-editor/.credentials.json`.
@@ -190,7 +192,7 @@ When enabled, the CLI requires you to sign in with your Spck Editor account. Con
 
 **Keep disabled (default) when:**
 
-- Using **Spck Editor Lite** — Firebase login is not supported in Lite; setting this to `true` will prevent Lite users from connecting
+- Using **Spck Editor Lite** — additional CLI-side Firebase identity verification is not supported in Lite; setting this to `true` will prevent Lite users from connecting
 - Working on a local network or trusted environment where the secret signing key is sufficient
 - Minimizing connection latency is a priority
 
@@ -199,4 +201,4 @@ When enabled, the CLI requires you to sign in with your Spck Editor account. Con
 - The CLI is exposed on a server accessible over the internet
 - You want user identity verification as an additional access control layer beyond the signing key
 
-> ⚠️ **Spck Editor Lite does not support Firebase authentication.** If `userAuthenticationEnabled` is set to `true`, Spck Editor Lite cannot connect. Keep this setting at `false` when using Lite.
+> **Spck Editor Lite does not support the additional CLI-side Firebase identity check.** Keep `userAuthenticationEnabled` set to `false` when using Lite. A Spck account and active Spck subscription are still required for Remote Projects.

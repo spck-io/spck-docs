@@ -13,6 +13,12 @@ Lite 包含免费版的所有功能，另外还有：
 
 这些功能也可在 Spck Editor 完整版中通过激活 Gold 或 Supporter 订阅来使用。Lite 应用以一次性购买的方式提供相同的功能。
 
+## <a name="remote-projects"></a>远程项目
+
+Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。远程项目需要 **Spck 账户和有效的 Spck 订阅**，不包含在 Lite 的一次性购买中。订阅有助于承担 Spck 服务器持续产生的托管、运行和维护费用。随 Lite 提供的本地编辑和 Git 工具仍可无需订阅使用。
+
+[Spck CLI](./cli-start) · [Spck](https://spck.io/pricing)
+
 ## <a name="predictive-keyboard"></a>Predictive Keyboard
 
 Predictive Keyboard 将标准附加键盘替换为一行上下文感知的符号键。无需长按按键从菜单中选择，最可能的符号会根据光标在文件中的位置直接显示。
@@ -85,8 +91,8 @@ Lite 包含 **Neon** 编辑器主题，这是一款具有鲜艳强调色的深�
 | 触摸键盘和光标 | 是 | 是 | 是 |
 | 项目预览 | 是 | 是 | 是 |
 | Predictive Keyboard | -- | 是 | Gold / Supporter |
-| 自定义代码片段 | -- | 是 | Gold / Supporter |
+| 自定义代码片段 | -- | 是 | Gold |
 | Neon 主题 | -- | 是 | -- |
 | AI 助手 | -- | -- | 是 |
-| 用户账户和云同步 | -- | -- | 是 |
+| 云同步 | -- | -- | 是 |
 | Labs / 社区项目 | -- | -- | 是 |

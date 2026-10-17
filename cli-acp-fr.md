@@ -183,7 +183,9 @@ Pas de frais Spck Editor supplémentaires. L'utilisation de l'agent compte contr
 
 ### Ai-je besoin d'un abonnement Spck Editor payant pour utiliser ACP ?
 
-Non. Le palier gratuit (30 min/jour de connexion CLI) suffit pour piloter n'importe quel agent ACP. Seul l'AI Chat routé via le serveur in-app consomme du quota IA Spck Editor.
+Dans la version complète : Non. Le palier gratuit (30 min/jour de connexion CLI) suffit pour piloter n'importe quel agent ACP. Seul l'AI Chat routé via le serveur in-app consomme du quota IA Spck Editor.
+
+Lite permet de modifier des projets sur votre ordinateur ou une VM publique via Spck CLI. Les projets distants nécessitent un **compte Spck et un abonnement Spck actif**, en plus de l’achat unique de Lite. L’abonnement contribue aux frais récurrents d’hébergement, d’exploitation et de maintenance des serveurs Spck. Les outils locaux d’édition et Git inclus restent accessibles sans abonnement.
 
 ### Que se passe-t-il si je perds ma connexion Wi-Fi en plein chat ?
 

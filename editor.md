@@ -21,6 +21,8 @@ Spck Editor is a mobile code editing solution with multiple variants designed fo
 - Exclusive Neon Theme
 - Enhanced Git Integration
 
+Lite includes pull request management and commit file diffs for local projects with no subscription or Spck account required. It also supports **Remote Projects** on your desktop or a public VM, which require a **Spck account and an active Spck subscription**. This subscription helps cover the ongoing cost of running and maintaining the servers. See [Spck Editor Lite](./editor-lite) for the included tools and [Remote Projects](./editor-lite#remote-projects) for details.
+
 #### Spck for NodeJS
 
 **Platform**: Android exclusive
@@ -54,7 +56,21 @@ Open **Git menu → Git Credentials**, select your provider, and save its access
 
 To create a pull request, commit and push your source branch, then open **Git menu → Create PR**. Select the remote and credentials, choose a different target branch, and enter a title and description. **Generate with AI** can draft the message from committed changes against the branches' merge base; fetch the target branch first. Review the draft before selecting **Create PR**. GitLab creates a merge request.
 
-Create PR uses the same Enhanced Git Integration access as commit file changes. It is included in Lite, available with a premium subscription in the full version, and included with the terminal lifetime unlock in Spck for NodeJS when signed in.
+Creating and managing pull requests is a **Premium feature**, included with [Enhanced Git Integration](#enhanced-git-integration). Lite includes it with the one-time app purchase. In the full app, sign in with an active Supporter, Gold, or Node subscription, or the account that owns the Spck for NodeJS terminal lifetime unlock.
+
+### <a name="pull-request-management"></a>Pull request management (Premium)
+
+Manage pull requests without leaving the editor. Supported remotes are **GitHub.com, GitLab.com, Bitbucket Cloud, and Azure DevOps**; GitLab calls them merge requests.
+
+1. Open a Git project and add the provider's token in **Git menu → Git Credentials**, using the permissions above.
+2. Open **Git menu → Pull Requests**, then choose the remote and credentials to list open requests.
+3. Select a request to see its title, description, author, source and target branches, and status.
+4. Select a changed file to inspect its read-only diff. This lets you check the proposed changes before merging.
+5. Use **Merge** to merge an eligible request, or **Close** to close it without merging. Required reviews, checks, token permissions, and branch rules still apply; drafts and requests with conflicts cannot be merged from this dialog.
+
+Use **Refresh** to reload the list after changes on the provider. The request details also link to the provider for reviews, checks, and other actions.
+
+To start a new request, use **Git menu → Create PR** as described above. If the source branch needs pushing, the dialog offers **Push** before creation. Optional AI drafting uses your configured AI service and its usage limits; it is separate from the pull request access included with Lite.
 
 If creation fails because of token permissions, use the provider's setup link to create or update the token, save it in **Git Credentials**, and retry. Your PR draft is preserved.
 
@@ -268,7 +284,14 @@ Quickly surround selected text using bracket or quote pairs:
 
 # <a name="enhanced-git-integration"></a>Enhanced Git Integration
 
+Enhanced Git Integration adds two tools for reviewing and sharing changes:
+
+- **Pull request management:** create requests, browse open requests, inspect changed files and diffs, and merge or close requests. See [Pull request management](#pull-request-management) for setup and steps.
+- **Commit inspection:** browse the files changed in a commit and inspect their diffs without changing your working files.
+
 Open the Git panel's **History** tab and select a commit to see its added, modified, and deleted files. Select a file to open a read-only diff against the commit's first parent. For the first commit, files are compared with an empty tree. The viewer uses committed versions, so uncommitted edits do not affect the diff. Binary files cannot be displayed as text diffs.
+
+You can also long-press a history entry (or right-click with a mouse) and choose **View Commit**.
 
 Enhanced Git Integration is included with:
 
@@ -277,6 +300,17 @@ Enhanced Git Integration is included with:
 - **Supporter, Gold, or Node subscriptions:** unlocked while the subscription is active; login is required.
 
 Basic Git integration and browsing commit history remain available in the free version. See [pricing](https://spck.io/pricing) for plan details.
+
+## <a name="merge-conflict-resolution"></a>Resolve merge conflicts
+
+The diff viewer also helps resolve conflicts in your working files. This is part of basic Git integration and does not require Premium.
+
+1. Open a conflicted file from the Git changes list.
+2. For each conflict, choose **Accept Current**, **Accept Incoming**, or **Accept Both**. You can also edit the file to combine changes manually.
+3. Review the result. Once all conflict markers are removed, select **Resolve** in the diff viewer to stage the resolved file.
+4. Resolve any remaining files, then commit the merge.
+
+On touch devices, long-press files or Git entries to open their context menus. Git status letters supplement filename colors so changes are easier to identify.
 
 # <a name="git-limitations"></a>Git Limitations
 
