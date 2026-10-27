@@ -9,7 +9,7 @@ Spck Editor es una solución de edición de código móvil con múltiples varian
 #### Spck Editor (Gratis)
 
 - Funcionalidad básica de edición de código móvil
-- Integración de biblioteca git portátil a través de isomorphic-git
+- Integración Git nativa en Android e iOS; Git del navegador mediante isomorphic-git
 
 #### Spck Editor Lite
 
@@ -33,11 +33,20 @@ La integración Git mejorada se incluye con una suscripción Node activa o se de
 - Incrustable en cualquier sitio web
 - Interfaz ligera de edición de código
 
+[Integrar el editor](./editor-embed)
+
 ### Características Principales
 
 - Diseño mobile-first
-- Integración con Git
+- [Compatibilidad y limitaciones de Git](./git-support)
 - Compatibilidad multiplataforma
+- [Compatibilidad con lectores de pantalla (experimental)](./screen-reader-support)
+
+### <a name="git-credentials"></a>Credenciales Git y pull requests
+
+<a name="pull-request-management"></a>
+
+Consulta [Compatibilidad con Git](./git-support) para la [configuración de tokens](./git-support#git-credentials), la [gestión de pull requests](./git-support#pull-request-management) y la [integración Git mejorada](./git-support#enhanced-git-integration).
 
 ### Uso Recomendado
 
@@ -63,6 +72,14 @@ La integración Git mejorada se incluye con una suscripción Node activa o se de
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>Compatibilidad con lectores de pantalla (experimental)
+
+La compatibilidad con lectores de pantalla es **experimental**. La [guía de lectores de pantalla](./screen-reader-support) explica la activación, edición, navegación con teclado, limitaciones y [comentarios](./screen-reader-support#screen-reader-feedback).
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>Atajos de Teclado
 
 ## <a name="keyboard-shortcuts-overview"></a>Visión General
@@ -82,6 +99,8 @@ Puedes ver la lista completa de atajos en `Settings > Editor > Keyboard Shortcut
 > Los usuarios premium también pueden acceder a los atajos de teclado directamente desde el Teclado Extra o usando el atajo `⌘ K`
 
 > Habilita la tecla Ctrl/Command (⌘) y la tecla Alt/Option activando `Settings > Touch > Show ⌘ Key` y `Settings > Touch > Show ⌥ Key`
+
+Para el foco del teclado, la activación de menús y la edición accesible, consulta [Compatibilidad con lectores de pantalla (experimental)](./screen-reader-support).
 
 ## <a name="keyboard-shortcuts-editor"></a>Editor
 
@@ -247,46 +266,22 @@ Rodea rápidamente el texto seleccionado utilizando pares de paréntesis o comil
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>Integración Git mejorada
+# <a name="enhanced-git-integration"></a>Compatibilidad con Git
 
-Abre la pestaña **History** del panel Git y selecciona un commit para ver sus archivos añadidos, modificados y eliminados. Selecciona un archivo para abrir un diff de solo lectura respecto al primer commit padre. En el primer commit, los archivos se comparan con un árbol vacío. El visor usa las versiones guardadas en los commits, por lo que los cambios sin confirmar no afectan al diff. Los archivos binarios no se pueden mostrar como diffs de texto.
+Consulta la [guía Git](./git-support) para credenciales, gestión de pull requests, inspección de commits y acceso a la integración Git mejorada.
 
-La integración Git mejorada se desbloquea permanentemente con la compra única de **Spck Editor Lite**, sin iniciar sesión ni suscribirse. En **Spck for NodeJS**, la compra de acceso de por vida al terminal desbloquea la función permanentemente para la cuenta propietaria de la compra. Las suscripciones activas **Supporter, Gold o Node** la desbloquean mientras la suscripción esté activa. Ambas opciones de la aplicación completa requieren iniciar sesión.
+<a name="merge-conflict-resolution"></a>
 
-La integración Git básica y la consulta del historial de commits siguen disponibles en la versión gratuita. [Supporter / Gold / Node](https://spck.io/pricing).
+Git básico incluye la [resolución de conflictos](./git-support#merge-conflict-resolution) en el visor con **Accept Current**, **Accept Incoming**, **Accept Both** y **Resolve**.
 
-# <a name="git-limitations"></a>Limitaciones de Git
+## <a name="git-limitations"></a>Limitaciones de Git
 
-## <a name="git-limitations-overview"></a>Visión General
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-La integración de Git del editor está impulsada por [isomorphic-git](https://isomorphic-git.org/), una implementación de Git en JavaScript puro que se ejecuta completamente del lado del cliente. Si bien esto permite operaciones de Git directamente en el navegador y en dispositivos móviles sin un servidor, viene con varias restricciones inherentes a ejecutar Git en un entorno JavaScript en sandbox.
-
-## <a name="git-limitations-memory"></a>Restricciones de Memoria
-
-- Las aplicaciones móviles típicamente están limitadas a aproximadamente **50MB de memoria** por el sistema operativo.
-- Las operaciones de Git en repositorios grandes pueden exceder este presupuesto y hacer que la aplicación se termine.
-- Leer archivos pack grandes (archivos `.pack` en `.git/objects/pack/`) requiere cargar porciones significativas en memoria de una sola vez, lo cual no es factible en dispositivos con memoria limitada.
-- Como resultado, **clonar u operar en repositorios grandes puede fallar con errores de falta de memoria** en móviles.
-
-> 💡 **Consejo**: Para repositorios grandes, usa clones superficiales (shallow clones) cuando sea posible, o considera trabajar con un subconjunto más pequeño del repositorio.
-
-## <a name="git-limitations-symlinks"></a>Compatibilidad con Enlaces Simbólicos
-
-- Los enlaces simbólicos (symlinks) **no son compatibles de forma nativa** en el sandbox de navegador/móvil por razones de seguridad.
-- El editor utiliza una representación de **enlace simbólico emulado** como solución alternativa para que los repositorios que contienen enlaces simbólicos aún puedan ser clonados.
-- Esta emulación puede tener **problemas de compatibilidad** con herramientas que esperan enlaces simbólicos reales del sistema de archivos (por ejemplo, algunas herramientas de compilación, gestores de paquetes o scripts que resuelven destinos de enlaces simbólicos en tiempo de ejecución).
-- Los repositorios que dependen en gran medida de enlaces simbólicos pueden no comportarse de manera idéntica a un checkout nativo de Git.
-
-## <a name="git-limitations-cli"></a>Uso de la CLI como Alternativa
-
-Estas limitaciones solo se aplican al cliente Git dentro de la aplicación. **No** afectan a **Spck CLI**, que utiliza el **binario nativo de Git** en el sistema host:
-
-- Sin techo de memoria de 50MB — las operaciones de Git están limitadas solo por la memoria disponible de tu máquina.
-- Los archivos pack grandes y los repositorios grandes se manejan de forma nativa.
-- Los enlaces simbólicos reales funcionan como se espera, con compatibilidad total con otras herramientas.
-- Todas las funciones de Git y comandos plumbing están disponibles, no solo el subconjunto implementado por isomorphic-git.
-
-> 💡 **Consejo Pro**: Si trabajas frecuentemente con repositorios grandes o proyectos que dependen de enlaces simbólicos, usar Spck CLI para operaciones de Git (clone, fetch, push) — mientras sigues editando archivos en la aplicación móvil — te brinda lo mejor de ambos mundos.
+Android e iOS usan libgit2 nativo para proyectos locales; el navegador usa isomorphic-git y los proyectos remotos, el binario Git del anfitrión. Consulta las [limitaciones de Git](./git-support#git-limitations) para almacenamiento, memoria, enlaces simbólicos y alternativas remotas.
 
 &nbsp;
 

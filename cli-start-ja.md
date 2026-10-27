@@ -16,7 +16,7 @@ Liteは、Spck CLI経由でデスクトップや公開VM上のプロジェクト
 
 ### オプション（推奨）
 
-- **Git**: 2.20.0 以上（Git 連携機能に使用）
+- **Git**：リモートプロジェクトの [Git 連携](./git-support#git-limitations-cli)には 2.20.0 以上が必要です。
 - **ripgrep**: 15.0.0 以上（ファイル検索が大幅に高速化、100倍の改善）
 
 ## <a name="installation"></a>インストール

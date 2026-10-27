@@ -9,9 +9,11 @@ Lite inclut tout ce que contient la version gratuite, plus :
 - **Predictive Keyboard** -- suggestions de symboles contextuelles sur le clavier supplementaire
 - **Snippets personnalises** -- modeles de code definis par l\u2019utilisateur avec des marqueurs de tabulation
 - **Theme Neon** -- un theme d\u2019editeur exclusif
-- **Intégration Git avancée** -- listes des fichiers modifiés et diffs de commits en lecture seule
+- **Intégration Git avancée** — Gestion des pull requests ; Modifications et diffs des commits
 
 Ces fonctionnalites sont egalement disponibles dans la version complete de Spck Editor avec un abonnement Gold ou Supporter actif. L\u2019application Lite offre les memes fonctionnalites en un seul achat.
+
+Pour le focus clavier, l’activation des menus et l’édition accessible, consultez [Prise en charge des lecteurs d’écran (expérimental)](./screen-reader-support).
 
 ## <a name="remote-projects"></a>Projets distants
 
@@ -76,9 +78,25 @@ Lite inclut le theme d\u2019editeur **Neon**, un theme sombre avec des couleurs 
 
 ## <a name="enhanced-git-integration"></a>Intégration Git avancée
 
-Ouvrez l’onglet **History** du panneau Git et sélectionnez un commit pour voir ses fichiers ajoutés, modifiés et supprimés. Sélectionnez un fichier pour ouvrir un diff en lecture seule par rapport au premier commit parent. Pour le premier commit, les fichiers sont comparés à un arbre vide. Le visualiseur utilise les versions enregistrées dans les commits ; les modifications non commitées n’affectent donc pas le diff. Les fichiers binaires ne peuvent pas être affichés sous forme de diffs textuels.
+### Gestion des pull requests (Premium)
 
-L’intégration Git avancée est incluse à vie avec Spck Lite et l’achat à vie du terminal de Spck for NodeJS. Elle est aussi incluse avec les abonnements actifs Supporter, Gold ou Node. La version complète nécessite une connexion ; Lite n’en nécessite pas. [Intégration Git avancée](./editor#enhanced-git-integration).
+Lite inclut les mêmes outils Premium de pull requests que l’application complète, sans abonnement. Consultez la [gestion des pull requests](./git-support#pull-request-management) pour créer des demandes, parcourir les demandes ouvertes, examiner les diffs et fusionner ou fermer les demandes selon les règles du fournisseur.
+
+Enregistrez le jeton dans **Git menu → Git Credentials**. Utilisez **Git menu → Create PR** pour créer une demande et **Git menu → Pull Requests** pour gérer les demandes. La rédaction facultative par IA nécessite un service d’IA configuré et ne constitue pas une allocation de crédits IA incluse avec Lite.
+
+### Modifications et diffs des commits
+
+Ouvrez l’onglet **History** du panneau Git et sélectionnez un commit pour voir les fichiers ajoutés, modifiés et supprimés. Sélectionnez un fichier pour ouvrir un diff en lecture seule par rapport au premier parent du commit. Pour le premier commit, les fichiers sont comparés à un arbre vide. Le visualiseur utilise les versions commitées ; les modifications non commitées n’affectent pas le diff. Les fichiers binaires ne peuvent pas être affichés comme diffs textuels.
+
+Vous pouvez aussi appuyer longuement sur une entrée de l’historique, ou faire un clic droit, puis choisir **View Commit**.
+
+L’intégration Git avancée est incluse avec :
+
+- **Spck Editor Lite :** déverrouillée définitivement par l’achat unique de l’application, sans connexion requise.
+- **Achat à vie du terminal Spck for NodeJS :** déverrouillée définitivement pour le compte propriétaire de l’achat ; connexion requise.
+- **Abonnements Supporter, Gold ou Node :** déverrouillée tant que l’abonnement est actif ; connexion requise.
+
+Consultez [Prise en charge de Git](./git-support) pour la [configuration des jetons](./git-support#git-credentials), la [gestion des pull requests](./git-support#pull-request-management) et l’[intégration Git avancée](./git-support#enhanced-git-integration).
 
 ## <a name="comparison"></a>Comparaison des fonctionnalites
 

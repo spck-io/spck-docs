@@ -4,6 +4,8 @@ Embed Spck Editor in an iframe to create editable examples, tutorials, or tools 
 
 The wrapper source, generated scripts, and TypeScript declarations are in [spckio/spck-embed](https://github.com/spckio/spck-embed). This guide describes the updated editor and wrapper APIs. Use matching builds: older releases such as `spck-embed@0.2.0` contain event, promise, and declaration bugs addressed in the current source.
 
+See [Screen Reader Support (Experimental)](./screen-reader-support#screen-reader-limitations) for accessibility features and current limitations. The embedded editor does not automatically activate the mobile screen reader editing mode.
+
 ## Quick Start
 
 This complete page creates an editor, sets its text, and displays subsequent edits. Serve it from a web origin, then open it in a browser.

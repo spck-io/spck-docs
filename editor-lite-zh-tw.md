@@ -9,9 +9,11 @@ Lite 包含免費版的所有功能，另外還有：
 - **Predictive Keyboard** -- 附加鍵盤上的情境感知符號建議
 - **自訂程式碼片段** -- 使用者定義的含有定位點佔位符的程式碼範本
 - **Neon 佈景主題** -- 專屬編輯器佈景主題
-- **增強 Git 整合** -- 提交的變更檔案清單和唯讀差異檢視器
+- **增強 Git 整合** — 提取要求管理; 提交變更檔案與差異
 
 這些功能也可在 Spck Editor 完整版中透過啟用 Gold 或 Supporter 訂閱來使用。Lite 應用程式以一次性購買的方式提供相同的功能。
+
+鍵盤焦點、選單啟用與無障礙文件編輯請參閱[螢幕閱讀器支援（實驗性）](./screen-reader-support)。
 
 ## <a name="remote-projects"></a>遠端專案
 
@@ -76,9 +78,25 @@ Lite 包含 **Neon** 編輯器佈景主題，這是一款具有鮮豔強調色�
 
 ## <a name="enhanced-git-integration"></a>增強 Git 整合
 
-開啟 Git 面板的 **History** 分頁並選擇一個提交，即可查看新增、修改和刪除的檔案。選擇檔案可開啟與第一個父提交比較的唯讀差異檢視。首次提交的檔案會與空目錄樹比較。檢視器使用已提交的版本，因此未提交的編輯不會影響差異。二進位檔案無法顯示為文字差異。
+### 提取要求管理（Premium）
 
-增強 Git 整合永久包含於 Spck Lite 和 Spck for NodeJS 終端機終身購買中，也包含於有效的 Supporter、Gold 或 Node 訂閱中。完整版需要登入，Lite 無需登入。 [增強 Git 整合](./editor#enhanced-git-integration).
+Lite 無須訂閱即可使用與完整版相同的 Premium 提取要求工具。請參閱[提取要求管理](./git-support#pull-request-management)，了解建立及瀏覽要求、檢閱差異，以及依供應商規則合併或關閉要求的步驟。
+
+在 **Git menu → Git Credentials** 儲存權杖。使用 **Git menu → Create PR** 新建要求，使用 **Git menu → Pull Requests** 管理要求。選用的 AI 草稿需要已設定的 AI 服務；Lite 不含 AI 額度。
+
+### 提交變更檔案與差異
+
+開啟 Git 面板的 **History** 分頁，選擇提交以查看新增、修改與刪除的檔案。選擇檔案會開啟相對於提交第一個父提交的唯讀差異。首次提交與空樹比較。檢視器使用已提交的版本，因此未提交的編輯不影響差異。二進位檔案無法顯示為文字差異。
+
+也可以長按歷史紀錄項目，或按滑鼠右鍵，再選擇 **View Commit**。
+
+增強 Git 整合包含於：
+
+- **Spck Editor Lite：** 一次性購買後永久解鎖，無須登入。
+- **Spck for NodeJS 終端機終身購買：** 為購買所屬帳號永久解鎖，須登入。
+- **Supporter、Gold 或 Node 訂閱：** 訂閱有效期間解鎖，須登入。
+
+請參閱 [Git 支援](./git-support)，了解[權杖設定](./git-support#git-credentials)、[提取要求管理](./git-support#pull-request-management)與[增強 Git 整合](./git-support#enhanced-git-integration)。
 
 ## <a name="comparison"></a>功能比較
 

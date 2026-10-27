@@ -9,7 +9,7 @@ Spck Editor adalah solusi pengeditan kode seluler dengan beberapa varian yang di
 #### Spck Editor (Gratis)
 
 - Fungsi dasar pengeditan kode seluler
-- Integrasi library git portabel melalui isomorphic-git
+- Integrasi Git native di Android dan iOS; Git peramban melalui isomorphic-git
 
 #### Spck Editor Lite
 
@@ -33,11 +33,20 @@ Integrasi Git Lanjutan disertakan dengan langganan Node yang aktif atau terbuka 
 - Dapat disematkan di situs web mana pun
 - Antarmuka pengeditan kode yang ringan
 
+[Menyematkan Editor](./editor-embed)
+
 ### Fitur Utama
 
 - Desain mobile-first
-- Integrasi Git
+- [Dukungan dan keterbatasan Git](./git-support)
 - Kompatibilitas lintas platform
+- [Dukungan Pembaca Layar (Eksperimental)](./screen-reader-support)
+
+### <a name="git-credentials"></a>Kredensial Git dan pull request
+
+<a name="pull-request-management"></a>
+
+Lihat [Dukungan Git](./git-support) untuk [pengaturan token](./git-support#git-credentials), [pengelolaan pull request](./git-support#pull-request-management), dan [Integrasi Git Lanjutan](./git-support#enhanced-git-integration).
 
 ### Penggunaan yang Direkomendasikan
 
@@ -63,6 +72,14 @@ Integrasi Git Lanjutan disertakan dengan langganan Node yang aktif atau terbuka 
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>Dukungan Pembaca Layar (Eksperimental)
+
+Dukungan pembaca layar bersifat **eksperimental**. Lihat [panduan pembaca layar](./screen-reader-support) untuk aktivasi, penyuntingan, navigasi papan ketik, keterbatasan, dan [masukan](./screen-reader-support#screen-reader-feedback).
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>Pintasan Keyboard
 
 ## <a name="keyboard-shortcuts-overview"></a>Ikhtisar
@@ -82,6 +99,8 @@ Anda dapat melihat daftar lengkap pintasan dengan masuk ke `Settings > Editor > 
 > Pengguna premium juga dapat mengakses Pintasan Keyboard langsung dari Keyboard Tambahan atau menggunakan pintasan `⌘ K`
 
 > Aktifkan tombol Ctrl/Command (⌘) dan tombol Alt/Options dengan mengaktifkan `Settings > Touch > Show ⌘ Key` dan `Settings > Touch > Show ⌥ Key`
+
+Untuk fokus papan ketik, aktivasi menu, dan penyuntingan aksesibel, lihat [Dukungan Pembaca Layar (Eksperimental)](./screen-reader-support).
 
 ## <a name="keyboard-shortcuts-editor"></a>Editor
 
@@ -247,46 +266,22 @@ Cepat mengelilingi teks yang dipilih menggunakan pasangan kurung atau kutip:
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>Integrasi Git Lanjutan
+# <a name="enhanced-git-integration"></a>Dukungan Git
 
-Buka tab **History** di panel Git dan pilih commit untuk melihat file yang ditambahkan, diubah, dan dihapus. Pilih file untuk membuka diff hanya baca terhadap commit induk pertama. Untuk commit pertama, file dibandingkan dengan pohon kosong. Penampil menggunakan versi yang tersimpan dalam commit, sehingga perubahan yang belum di-commit tidak memengaruhi diff. File biner tidak dapat ditampilkan sebagai diff teks.
+Lihat [panduan Git](./git-support) untuk kredensial, pengelolaan pull request, pemeriksaan commit, dan akses Integrasi Git Lanjutan.
 
-Integrasi Git Lanjutan disertakan secara permanen dengan Spck Lite dan pembelian terminal seumur hidup Spck for NodeJS. Juga tersedia dengan langganan Supporter, Gold, atau Node yang aktif. Aplikasi lengkap memerlukan login; Lite tidak.
+<a name="merge-conflict-resolution"></a>
 
-Integrasi Git dasar dan penelusuran riwayat commit tetap tersedia dalam versi gratis. [Supporter / Gold / Node](https://spck.io/pricing).
+Git dasar mencakup [penyelesaian konflik](./git-support#merge-conflict-resolution) di penampil diff dengan **Accept Current**, **Accept Incoming**, **Accept Both**, dan **Resolve**.
 
-# <a name="git-limitations"></a>Keterbatasan Git
+## <a name="git-limitations"></a>Keterbatasan Git
 
-## <a name="git-limitations-overview"></a>Ikhtisar
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-Integrasi Git editor ini didukung oleh [isomorphic-git](https://isomorphic-git.org/), implementasi Git murni JavaScript yang berjalan sepenuhnya di sisi klien. Meskipun ini memungkinkan operasi Git langsung di browser dan perangkat seluler tanpa server, ini disertai dengan beberapa batasan yang melekat pada menjalankan Git dalam lingkungan JavaScript sandbox.
-
-## <a name="git-limitations-memory"></a>Batasan Memori
-
-- Aplikasi seluler biasanya dibatasi sekitar **50MB memori** oleh sistem operasi.
-- Operasi Git pada repositori besar mungkin melebihi anggaran ini dan menyebabkan aplikasi dihentikan.
-- Membaca file pack besar (file `.pack` di `.git/objects/pack/`) memerlukan pemuatan bagian signifikan ke dalam memori sekaligus, yang tidak layak pada perangkat dengan memori terbatas.
-- Akibatnya, **mengkloning atau mengoperasikan repositori besar dapat gagal dengan kesalahan kehabisan memori** di seluler.
-
-> 💡 **Tips**: Untuk repositori besar, gunakan shallow clone jika memungkinkan, atau pertimbangkan untuk bekerja dengan subset repositori yang lebih kecil.
-
-## <a name="git-limitations-symlinks"></a>Kompatibilitas Symlink
-
-- Tautan simbolis (symlinks) **tidak didukung secara native** di sandbox browser/seluler untuk alasan keamanan.
-- Editor menggunakan representasi **symlink yang diemulasi** sebagai solusi sehingga repositori yang berisi symlinks masih dapat di-checkout.
-- Emulasi ini mungkin memiliki **masalah kompatibilitas** dengan alat yang mengharapkan symlinks sistem file yang nyata (misalnya, beberapa alat build, manajer paket, atau skrip yang menyelesaikan target symlink pada waktu runtime).
-- Repositori yang sangat bergantung pada symlinks mungkin tidak berperilaku identik dengan checkout Git native.
-
-## <a name="git-limitations-cli"></a>Menggunakan CLI sebagai Alternatif
-
-Batasan ini hanya berlaku untuk klien Git dalam aplikasi. Mereka **tidak** memengaruhi **Spck CLI**, yang menggunakan **biner Git native** pada sistem host:
-
-- Tidak ada batas memori 50MB — operasi Git hanya dibatasi oleh memori yang tersedia di mesin Anda.
-- File pack besar dan repositori besar ditangani secara native.
-- Symlinks nyata berfungsi sebagaimana mestinya, dengan kompatibilitas penuh dengan alat lain.
-- Semua fitur Git dan perintah plumbing tersedia, bukan hanya subset yang diimplementasikan oleh isomorphic-git.
-
-> 💡 **Tips Pro**: Jika Anda sering bekerja dengan repositori besar atau proyek yang bergantung pada symlinks, menggunakan Spck CLI untuk operasi Git (clone, fetch, push) — sambil tetap mengedit file di aplikasi seluler — memberi Anda yang terbaik dari kedua dunia.
+Android dan iOS memakai libgit2 native untuk proyek lokal; peramban memakai isomorphic-git dan proyek jarak jauh memakai biner Git host. Lihat [Keterbatasan Git](./git-support#git-limitations) untuk penyimpanan, memori, symlink, dan alternatif jarak jauh.
 
 &nbsp;
 

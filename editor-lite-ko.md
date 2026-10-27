@@ -9,9 +9,11 @@ Lite에는 무료 버전의 모든 기능에 더해 다음이 포함됩니다:
 - **Predictive Keyboard** -- 추가 키보드의 문맥 인식 기호 제안
 - **사용자 정의 스니펫** -- 탭 스톱 플레이스홀더가 있는 사용자 정의 코드 템플릿
 - **Neon 테마** -- 독점 에디터 테마
-- **향상된 Git 통합** -- 커밋의 변경 파일 목록 및 읽기 전용 diff
+- **향상된 Git 통합** — 풀 리퀘스트 관리; 커밋 파일 변경 및 diff
 
 이러한 기능은 Gold 또는 Supporter 구독이 활성화된 Spck Editor 정식 버전에서도 사용할 수 있습니다. Lite 앱은 동일한 기능을 일회성 구매로 제공합니다.
+
+키보드 포커스, 메뉴 활성화 및 접근 가능한 문서 편집은 [스크린 리더 지원(실험적)](./screen-reader-support)을 참고하세요.
 
 ## <a name="remote-projects"></a>원격 프로젝트
 
@@ -76,9 +78,25 @@ Lite에는 **Neon** 에디터 테마가 포함되어 있습니다. 선명한 강
 
 ## <a name="enhanced-git-integration"></a>향상된 Git 통합
 
-Git 패널의 **History** 탭을 열고 커밋을 선택하면 추가, 수정, 삭제된 파일을 볼 수 있습니다. 파일을 선택하면 첫 번째 부모 커밋과 비교하는 읽기 전용 diff가 열립니다. 첫 커밋은 빈 트리와 비교합니다. 뷰어는 커밋에 저장된 버전을 사용하므로 커밋되지 않은 편집은 diff에 영향을 주지 않습니다. 바이너리 파일은 텍스트 diff로 표시할 수 없습니다.
+### 풀 리퀘스트 관리(Premium)
 
-향상된 Git 통합은 Spck Lite와 Spck for NodeJS 터미널 평생 이용권에 영구적으로 포함됩니다. 활성 Supporter, Gold 또는 Node 구독에도 포함됩니다. 전체 앱은 로그인이 필요하며 Lite는 필요하지 않습니다. [향상된 Git 통합](./editor#enhanced-git-integration).
+Lite는 구독 없이 전체 앱과 동일한 Premium 풀 리퀘스트 도구를 제공합니다. [풀 리퀘스트 관리](./git-support#pull-request-management)에서 요청 생성·탐색, diff 검토, 공급자 규칙에 따른 병합·닫기를 확인하세요.
+
+**Git menu → Git Credentials**에 토큰을 저장하세요. 새 요청에는 **Git menu → Create PR**, 관리에는 **Git menu → Pull Requests**를 사용합니다. 선택적인 AI 초안에는 설정된 AI 서비스가 필요하며 Lite에 AI 크레딧이 포함되는 것은 아닙니다.
+
+### 커밋 파일 변경 및 diff
+
+Git 패널의 **History** 탭에서 커밋을 선택하여 추가·수정·삭제된 파일을 확인하세요. 파일을 선택하면 커밋의 첫 번째 부모와 비교한 읽기 전용 diff가 열립니다. 첫 커밋은 빈 트리와 비교합니다. 뷰어는 커밋된 버전을 사용하므로 커밋하지 않은 편집은 diff에 영향을 주지 않습니다. 바이너리 파일은 텍스트 diff로 표시할 수 없습니다.
+
+기록 항목을 길게 누르거나 마우스 오른쪽 버튼으로 클릭한 뒤 **View Commit**을 선택할 수도 있습니다.
+
+향상된 Git 통합은 다음에 포함됩니다.
+
+- **Spck Editor Lite:** 일회성 앱 구매로 영구 이용 가능하며 로그인은 필요 없습니다.
+- **Spck for NodeJS 터미널 평생 구매:** 구매한 계정에서 영구 이용 가능하며 로그인이 필요합니다.
+- **Supporter, Gold 또는 Node 구독:** 구독이 활성 상태인 동안 이용 가능하며 로그인이 필요합니다.
+
+[Git 지원](./git-support)에서 [토큰 설정](./git-support#git-credentials), [풀 리퀘스트 관리](./git-support#pull-request-management), [향상된 Git 통합](./git-support#enhanced-git-integration)을 확인하세요.
 
 ## <a name="comparison"></a>기능 비교
 

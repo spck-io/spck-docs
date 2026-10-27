@@ -15,6 +15,8 @@ Lite includes everything in the free version, plus:
 
 Lite keeps these tools unlocked for local projects with a single app purchase, with no Spck account or recurring subscription required. Provider credentials are still needed to access Git remotes and pull requests. Predictive Keyboard, Command Palette, and Enhanced Git Integration are also available with Supporter or Gold in the full app; Custom Snippets requires Gold. Neon and Flow are exclusive to Lite.
 
+For accessible document editing and keyboard navigation, see [Screen Reader Support (Experimental)](./screen-reader-support).
+
 ## <a name="remote-projects"></a>Remote Projects
 
 Lite also supports **Remote Projects**: edit projects located on your desktop or a public VM through Spck CLI. **Remote Projects require a Spck account and an active Spck subscription**, separate from the one-time Lite app purchase.
@@ -89,7 +91,7 @@ Lite includes the same Premium pull request tools as the full app, with no subsc
 - **Review changed files** in read-only diffs before deciding whether to merge.
 - **Merge or close requests** from the editor, subject to your provider's permissions, reviews, checks, and branch rules.
 
-Save your provider token in **Git menu → Git Credentials**. Use **Git menu → Create PR** for a new request or **Git menu → Pull Requests** to manage existing ones. See [Pull request management](./editor#pull-request-management) for setup and steps. Optional AI drafting requires a configured AI service and is not an AI credit allowance included with Lite.
+Save your provider token in **Git menu → Git Credentials**. Use **Git menu → Create PR** for a new request or **Git menu → Pull Requests** to manage existing ones. See [Pull request management](./git-support#pull-request-management) for setup and steps. Optional AI drafting requires a configured AI service and is not an AI credit allowance included with Lite.
 
 ### Commit File Changes and Diffs
 
@@ -97,7 +99,7 @@ Open **Git > History** and select a commit to see its added, modified, and delet
 
 Long-press a history entry, or right-click with a mouse, and choose **View Commit** for another way to open it. Reviewing a commit does not change your working files.
 
-Enhanced Git Integration is permanently included with the Lite app purchase, with no login or subscription required. It is also available with an active Supporter, Gold, or Node subscription, or permanently with the Spck for NodeJS terminal lifetime purchase. These options in the full app require login. See [Enhanced Git Integration](./editor#enhanced-git-integration) for details.
+Enhanced Git Integration is permanently included with the Lite app purchase, with no login or subscription required. It is also available with an active Supporter, Gold, or Node subscription, or permanently with the Spck for NodeJS terminal lifetime purchase. These options in the full app require login. See [Enhanced Git Integration](./git-support#enhanced-git-integration) for details.
 
 ## <a name="comparison"></a>Feature Comparison
 

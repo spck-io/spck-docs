@@ -16,7 +16,7 @@ Lite supports editing projects on your desktop or a public VM through Spck CLI. 
 
 ### Optional (Recommended)
 
-- **Git**: 2.20.0+ for git integration features
+- **Git**: 2.20.0+ for [Git integration](./git-support#git-limitations-cli) in remote projects
 - **ripgrep**: 15.0.0+ for dramatically faster file search (100x improvement)
 
 ## <a name="installation"></a>Installation

@@ -16,7 +16,7 @@ Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM 
 
 ### Optional (Empfohlen)
 
-- **Git**: 2.20.0+ für Git-Integrationsfunktionen
+- **Git**: 2.20.0+ für [Git-Integration](./git-support#git-limitations-cli) in entfernten Projekten
 - **ripgrep**: 15.0.0+ für deutlich schnellere Dateisuche (100-fache Verbesserung)
 
 ## <a name="installation"></a>Installation

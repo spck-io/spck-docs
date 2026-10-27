@@ -9,9 +9,11 @@ Lite mencakup semua yang ada di versi gratis, ditambah:
 - **Predictive Keyboard** -- saran simbol kontekstual pada keyboard tambahan
 - **Snippet Kustom** -- template kode buatan pengguna dengan placeholder tab stop
 - **Tema Neon** -- tema editor eksklusif
-- **Integrasi Git Lanjutan** -- daftar file yang berubah dan diff commit hanya baca
+- **Integrasi Git Lanjutan** — Pengelolaan pull request ; Perubahan berkas dan diff commit
 
 Fitur-fitur ini juga tersedia di versi lengkap Spck Editor dengan langganan Gold atau Supporter yang aktif. Aplikasi Lite menyediakan fungsionalitas yang sama sebagai pembelian satu kali.
+
+Untuk fokus papan ketik, aktivasi menu, dan penyuntingan aksesibel, lihat [Dukungan Pembaca Layar (Eksperimental)](./screen-reader-support).
 
 ## <a name="remote-projects"></a>Proyek Jarak Jauh
 
@@ -76,9 +78,25 @@ Lite menyertakan tema editor **Neon**, tema gelap dengan warna aksen yang cerah.
 
 ## <a name="enhanced-git-integration"></a>Integrasi Git Lanjutan
 
-Buka tab **History** di panel Git dan pilih commit untuk melihat file yang ditambahkan, diubah, dan dihapus. Pilih file untuk membuka diff hanya baca terhadap commit induk pertama. Untuk commit pertama, file dibandingkan dengan pohon kosong. Penampil menggunakan versi yang tersimpan dalam commit, sehingga perubahan yang belum di-commit tidak memengaruhi diff. File biner tidak dapat ditampilkan sebagai diff teks.
+### Pengelolaan pull request (Premium)
 
-Integrasi Git Lanjutan disertakan secara permanen dengan Spck Lite dan pembelian terminal seumur hidup Spck for NodeJS. Juga tersedia dengan langganan Supporter, Gold, atau Node yang aktif. Aplikasi lengkap memerlukan login; Lite tidak. [Integrasi Git Lanjutan](./editor#enhanced-git-integration).
+Lite menyertakan alat pull request Premium yang sama dengan aplikasi lengkap, tanpa langganan. Lihat [Pengelolaan pull request](./git-support#pull-request-management) untuk membuat dan menelusuri permintaan, meninjau diff, serta menggabungkan atau menutupnya sesuai aturan penyedia.
+
+Simpan token di **Git menu → Git Credentials**. Gunakan **Git menu → Create PR** untuk membuat permintaan dan **Git menu → Pull Requests** untuk mengelolanya. Draf AI opsional memerlukan layanan yang dikonfigurasi dan bukan jatah kredit AI yang disertakan dalam Lite.
+
+### Perubahan berkas dan diff commit
+
+Buka tab **History** di panel Git dan pilih commit untuk melihat berkas yang ditambahkan, diubah, dan dihapus. Pilih berkas untuk membuka diff hanya baca terhadap induk pertama commit. Pada commit pertama, perbandingan menggunakan pohon kosong. Penampil memakai versi yang telah di-commit; perubahan yang belum di-commit tidak memengaruhi diff. Berkas biner tidak dapat ditampilkan sebagai diff teks.
+
+Anda juga dapat menekan lama entri riwayat, atau mengklik kanan, lalu memilih **View Commit**.
+
+Integrasi Git Lanjutan disertakan dengan:
+
+- **Spck Editor Lite:** terbuka permanen lewat pembelian sekali bayar, tanpa perlu masuk.
+- **Pembelian terminal Spck for NodeJS seumur hidup:** terbuka permanen untuk akun pemilik; harus masuk.
+- **Langganan Supporter, Gold, atau Node:** terbuka selama langganan aktif; harus masuk.
+
+Lihat [Dukungan Git](./git-support) untuk [pengaturan token](./git-support#git-credentials), [pengelolaan pull request](./git-support#pull-request-management), dan [Integrasi Git Lanjutan](./git-support#enhanced-git-integration).
 
 ## <a name="comparison"></a>Perbandingan Fitur
 

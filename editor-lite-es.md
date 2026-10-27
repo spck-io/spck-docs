@@ -9,9 +9,11 @@ Lite incluye todo lo de la version gratuita, ademas de:
 - **Predictive Keyboard** -- sugerencias de simbolos contextuales en el teclado adicional
 - **Snippets personalizados** -- plantillas de codigo definidas por el usuario con marcadores de tabulacion
 - **Tema Neon** -- un tema de editor exclusivo
-- **Integración Git mejorada** -- listas de archivos modificados y diffs de commits de solo lectura
+- **Integración Git mejorada** — Gestión de pull requests ; Archivos modificados y diffs de commits
 
 Estas funciones tambien estan disponibles en la version completa de Spck Editor con una suscripcion Gold o Supporter activa. La aplicacion Lite ofrece la misma funcionalidad como compra unica.
+
+Para el foco del teclado, la activación de menús y la edición accesible, consulta [Compatibilidad con lectores de pantalla (experimental)](./screen-reader-support).
 
 ## <a name="remote-projects"></a>Proyectos remotos
 
@@ -76,9 +78,25 @@ Lite incluye el tema de editor **Neon**, un tema oscuro con colores de acento vi
 
 ## <a name="enhanced-git-integration"></a>Integración Git mejorada
 
-Abre la pestaña **History** del panel Git y selecciona un commit para ver sus archivos añadidos, modificados y eliminados. Selecciona un archivo para abrir un diff de solo lectura respecto al primer commit padre. En el primer commit, los archivos se comparan con un árbol vacío. El visor usa las versiones guardadas en los commits, por lo que los cambios sin confirmar no afectan al diff. Los archivos binarios no se pueden mostrar como diffs de texto.
+### Gestión de pull requests (Premium)
 
-La integración Git mejorada se incluye permanentemente con Spck Lite y la compra de acceso de por vida al terminal de Spck for NodeJS. También se incluye con suscripciones activas Supporter, Gold o Node. La aplicación completa requiere iniciar sesión; Lite no. [Integración Git mejorada](./editor#enhanced-git-integration).
+Lite incluye las mismas herramientas Premium de pull requests que la aplicación completa, sin suscripción. Consulta [Gestión de pull requests](./git-support#pull-request-management) para crear y consultar solicitudes, revisar diffs y fusionar o cerrar solicitudes según las reglas del proveedor.
+
+Guarda el token en **Git menu → Git Credentials**. Usa **Git menu → Create PR** para crear solicitudes y **Git menu → Pull Requests** para gestionarlas. La redacción opcional con IA requiere un servicio configurado y no supone una asignación de créditos IA incluida en Lite.
+
+### Archivos modificados y diffs de commits
+
+Abre **History** en el panel Git y selecciona un commit para ver archivos añadidos, modificados y eliminados. Selecciona un archivo para abrir un diff de solo lectura respecto al primer padre. En el primer commit se compara con un árbol vacío. El visor usa versiones confirmadas; los cambios sin confirmar no afectan al diff. Los archivos binarios no se muestran como diffs de texto.
+
+También puedes mantener pulsada una entrada del historial, o hacer clic derecho, y elegir **View Commit**.
+
+La integración Git mejorada se incluye con:
+
+- **Spck Editor Lite:** desbloqueada permanentemente con la compra única, sin iniciar sesión.
+- **Compra de por vida del terminal Spck for NodeJS:** desbloqueada para siempre para la cuenta propietaria; requiere iniciar sesión.
+- **Suscripciones Supporter, Gold o Node:** desbloqueada mientras la suscripción esté activa; requiere iniciar sesión.
+
+Consulta [Compatibilidad con Git](./git-support) para la [configuración de tokens](./git-support#git-credentials), la [gestión de pull requests](./git-support#pull-request-management) y la [integración Git mejorada](./git-support#enhanced-git-integration).
 
 ## <a name="comparison"></a>Comparacion de funciones
 

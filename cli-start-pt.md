@@ -16,7 +16,7 @@ O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck
 
 ### Opcionais (Recomendados)
 
-- **Git**: 2.20.0+ para recursos de integração com Git
+- **Git**: 2.20.0+ para [integração Git](./git-support#git-limitations-cli) em projetos remotos
 - **ripgrep**: 15.0.0+ para busca de arquivos significativamente mais rápida (melhoria de 100x)
 
 ## <a name="installation"></a>Instalação

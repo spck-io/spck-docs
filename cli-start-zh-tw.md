@@ -16,7 +16,7 @@ Lite 支援透過 Spck CLI 編輯桌上型電腦或公用虛擬機上的專案�
 
 ### 選用（建議）
 
-- **Git**：2.20.0 以上（用於 Git 整合功能）
+- **Git**：遠端專案的 [Git 整合](./git-support#git-limitations-cli)需要 2.20.0 或更新版本
 - **ripgrep**：15.0.0 以上（檔案搜尋速度顯著提升，提高 100 倍）
 
 ## <a name="installation"></a>安裝

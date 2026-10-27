@@ -9,7 +9,7 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 #### Spck Editor (무료)
 
 - 기본적인 모바일 코드 편집 기능
-- isomorphic-git을 통한 휴대용 git 라이브러리 통합
+- Android·iOS의 네이티브 Git 통합, 브라우저의 isomorphic-git 기반 Git
 
 #### Spck Editor Lite
 
@@ -33,11 +33,20 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 - 어떤 웹사이트에도 임베드 가능
 - 가벼운 코드 편집 인터페이스
 
+[편집기 임베드](./editor-embed)
+
 ### 주요 기능
 
 - 모바일 우선 디자인
-- Git 통합
+- [Git 지원 및 제한 사항](./git-support)
 - 크로스 플랫폼 호환성
+- [스크린 리더 지원(실험적)](./screen-reader-support)
+
+### <a name="git-credentials"></a>Git 자격 증명 및 풀 리퀘스트
+
+<a name="pull-request-management"></a>
+
+[Git 지원](./git-support)에서 [토큰 설정](./git-support#git-credentials), [풀 리퀘스트 관리](./git-support#pull-request-management), [향상된 Git 통합](./git-support#enhanced-git-integration)을 확인하세요.
 
 ### 권장 사용
 
@@ -63,6 +72,14 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>스크린 리더 지원(실험적)
+
+스크린 리더 지원은 **실험적**입니다. [스크린 리더 가이드](./screen-reader-support)에서 활성화, 문서 편집, 키보드 탐색, 제한 및 [피드백](./screen-reader-support#screen-reader-feedback)을 확인하세요.
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>키보드 단축키
 
 ## <a name="keyboard-shortcuts-overview"></a>개요
@@ -82,6 +99,8 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 > 프리미엄 사용자는 추가 키보드에서 직접 또는 `⌘ K` 단축키를 사용하여 키보드 단축키에 액세스할 수도 있습니다.
 
 > `Settings > Touch > Show ⌘ Key` 및 `Settings > Touch > Show ⌥ Key`를 켜서 Ctrl/Command 키 (⌘)와 Alt/Options 키를 활성화합니다.
+
+키보드 포커스, 메뉴 활성화 및 접근 가능한 문서 편집은 [스크린 리더 지원(실험적)](./screen-reader-support)을 참고하세요.
 
 ## <a name="keyboard-shortcuts-editor"></a>편집기
 
@@ -247,46 +266,22 @@ Spck Editor는 개발자를 위해 설계된 여러 변형 버전이 있는 모�
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>향상된 Git 통합
+# <a name="enhanced-git-integration"></a>Git 지원
 
-Git 패널의 **History** 탭을 열고 커밋을 선택하면 추가, 수정, 삭제된 파일을 볼 수 있습니다. 파일을 선택하면 첫 번째 부모 커밋과 비교하는 읽기 전용 diff가 열립니다. 첫 커밋은 빈 트리와 비교합니다. 뷰어는 커밋에 저장된 버전을 사용하므로 커밋되지 않은 편집은 diff에 영향을 주지 않습니다. 바이너리 파일은 텍스트 diff로 표시할 수 없습니다.
+자격 증명, 풀 리퀘스트 관리, 커밋 검사 및 향상된 Git 통합 이용 조건은 [Git 가이드](./git-support)를 참고하세요.
 
-향상된 Git 통합은 Spck Lite와 Spck for NodeJS 터미널 평생 이용권에 영구적으로 포함됩니다. 활성 Supporter, Gold 또는 Node 구독에도 포함됩니다. 전체 앱은 로그인이 필요하며 Lite는 필요하지 않습니다.
+<a name="merge-conflict-resolution"></a>
 
-기본 Git 통합과 커밋 기록 탐색은 무료 버전에서도 계속 사용할 수 있습니다. [Supporter / Gold / Node](https://spck.io/pricing).
+기본 Git은 diff 뷰어의 **Accept Current**, **Accept Incoming**, **Accept Both**, **Resolve**를 통한 [충돌 해결](./git-support#merge-conflict-resolution)을 포함합니다.
 
-# <a name="git-limitations"></a>Git 제한 사항
+## <a name="git-limitations"></a>Git 제한 사항
 
-## <a name="git-limitations-overview"></a>개요
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-편집기의 Git 통합은 클라이언트 측에서 완전히 실행되는 Git의 순수 JavaScript 구현인 [isomorphic-git](https://isomorphic-git.org/)을 기반으로 합니다. 이를 통해 서버 없이 브라우저 및 모바일 기기에서 직접 Git 작업이 가능하지만, 샌드박스된 JavaScript 환경에서 Git을 실행하는 것에 내재된 몇 가지 제약이 따릅니다.
-
-## <a name="git-limitations-memory"></a>메모리 제약
-
-- 모바일 애플리케이션은 일반적으로 운영체제에 의해 약 **50MB의 메모리**로 제한됩니다.
-- 큰 저장소에서의 Git 작업은 이 예산을 초과하여 앱이 종료될 수 있습니다.
-- 큰 팩 파일 (`.git/objects/pack/`의 `.pack` 파일)을 읽으려면 한 번에 상당한 부분을 메모리에 로드해야 하므로 메모리가 제한된 기기에서는 불가능합니다.
-- 결과적으로 모바일에서는 **큰 저장소를 복제하거나 작업하면 메모리 부족 오류로 실패할 수 있습니다**.
-
-> 💡 **팁**: 큰 저장소의 경우 가능하면 shallow clone을 사용하거나 저장소의 더 작은 하위 집합으로 작업하는 것을 고려하세요.
-
-## <a name="git-limitations-symlinks"></a>심볼릭 링크 호환성
-
-- 심볼릭 링크 (symlinks)는 보안상의 이유로 브라우저/모바일 샌드박스에서 **기본적으로 지원되지 않습니다**.
-- 편집기는 심볼릭 링크가 포함된 저장소도 체크아웃할 수 있도록 우회책으로 **에뮬레이션된 심볼릭 링크** 표현을 사용합니다.
-- 이 에뮬레이션은 실제 파일시스템 심볼릭 링크를 기대하는 도구 (예: 일부 빌드 도구, 패키지 관리자 또는 런타임에 심볼릭 링크 대상을 확인하는 스크립트)와 **호환성 문제**가 있을 수 있습니다.
-- 심볼릭 링크에 크게 의존하는 저장소는 기본 Git 체크아웃과 동일하게 작동하지 않을 수 있습니다.
-
-## <a name="git-limitations-cli"></a>대안으로 CLI 사용
-
-이러한 제한 사항은 앱 내 Git 클라이언트에만 적용됩니다. 호스트 시스템에서 **기본 Git 바이너리**를 사용하는 **Spck CLI**에는 **영향을 미치지 않습니다**:
-
-- 50MB 메모리 상한 없음 - Git 작업은 컴퓨터의 사용 가능한 메모리에 의해서만 제한됩니다.
-- 큰 팩 파일과 큰 저장소가 기본적으로 처리됩니다.
-- 실제 심볼릭 링크가 예상대로 작동하며 다른 도구와 완벽하게 호환됩니다.
-- isomorphic-git에서 구현한 하위 집합뿐만 아니라 모든 Git 기능과 plumbing 명령을 사용할 수 있습니다.
-
-> 💡 **프로 팁**: 큰 저장소나 심볼릭 링크에 의존하는 프로젝트를 자주 작업하는 경우, 모바일 앱에서 파일을 계속 편집하면서 Git 작업 (clone, fetch, push)에 Spck CLI를 사용하면 두 가지 장점을 모두 누릴 수 있습니다.
+Android·iOS 로컬 프로젝트는 네이티브 libgit2, 브라우저는 isomorphic-git, 원격 프로젝트는 호스트 Git 바이너리를 사용합니다. 저장소 위치, 메모리, 심볼릭 링크, 원격 대안은 [Git 제한 사항](./git-support#git-limitations)을 참고하세요.
 
 &nbsp;
 

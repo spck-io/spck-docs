@@ -16,7 +16,7 @@ Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck
 
 ### Opsional (Direkomendasikan)
 
-- **Git**: 2.20.0+ untuk fitur integrasi Git
+- **Git**: 2.20.0+ untuk [integrasi Git](./git-support#git-limitations-cli) pada proyek jarak jauh
 - **ripgrep**: 15.0.0+ untuk pencarian file yang jauh lebih cepat (peningkatan 100x)
 
 ## <a name="installation"></a>Instalasi

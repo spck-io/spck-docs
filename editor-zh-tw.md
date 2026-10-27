@@ -9,7 +9,7 @@ Spck Editor 是一款行動程式碼編輯解決方案，具有為開發者設�
 #### Spck Editor (免費版)
 
 - 基本的行動程式碼編輯功能
-- 透過 isomorphic-git 實現可攜式 git 函式庫整合
+- Android 與 iOS 使用原生 Git；瀏覽器透過 isomorphic-git 整合 Git
 
 #### Spck Editor Lite
 
@@ -33,11 +33,20 @@ Spck Editor 是一款行動程式碼編輯解決方案，具有為開發者設�
 - 可嵌入任何網站
 - 輕量級程式碼編輯介面
 
+[嵌入編輯器](./editor-embed)
+
 ### 主要特性
 
 - 行動優先設計
-- Git 整合
+- [Git 支援與限制](./git-support)
 - 跨平台相容性
+- [螢幕閱讀器支援（實驗性）](./screen-reader-support)
+
+### <a name="git-credentials"></a>Git 憑證與提取要求
+
+<a name="pull-request-management"></a>
+
+請參閱 [Git 支援](./git-support)，了解[權杖設定](./git-support#git-credentials)、[提取要求管理](./git-support#pull-request-management)與[增強 Git 整合](./git-support#enhanced-git-integration)。
 
 ### 推薦使用情境
 
@@ -63,6 +72,14 @@ Spck Editor 是一款行動程式碼編輯解決方案，具有為開發者設�
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>螢幕閱讀器支援（實驗性）
+
+螢幕閱讀器支援屬於**實驗性**功能。[螢幕閱讀器指南](./screen-reader-support)說明啟用方式、文件編輯、鍵盤導覽、限制及[意見回饋](./screen-reader-support#screen-reader-feedback)。
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>鍵盤快捷鍵
 
 ## <a name="keyboard-shortcuts-overview"></a>概覽
@@ -82,6 +99,8 @@ Spck Editor 是一款行動程式碼編輯解決方案，具有為開發者設�
 > 進階使用者也可以直接從擴充鍵盤存取鍵盤快捷鍵，或使用快捷鍵 `⌘ K`
 
 > 透過啟用 `Settings > Touch > Show ⌘ Key` 和 `Settings > Touch > Show ⌥ Key` 啟用 Ctrl/Command 鍵（⌘）和 Alt/Options 鍵
+
+鍵盤焦點、選單啟用與無障礙文件編輯請參閱[螢幕閱讀器支援（實驗性）](./screen-reader-support)。
 
 ## <a name="keyboard-shortcuts-editor"></a>編輯器
 
@@ -247,46 +266,22 @@ Spck Editor 是一款行動程式碼編輯解決方案，具有為開發者設�
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>增強 Git 整合
+# <a name="enhanced-git-integration"></a>Git 支援
 
-開啟 Git 面板的 **History** 分頁並選擇一個提交，即可查看新增、修改和刪除的檔案。選擇檔案可開啟與第一個父提交比較的唯讀差異檢視。首次提交的檔案會與空目錄樹比較。檢視器使用已提交的版本，因此未提交的編輯不會影響差異。二進位檔案無法顯示為文字差異。
+供應商憑證、提取要求管理、提交檢視和增強 Git 整合使用條件請參閱 [Git 指南](./git-support)。
 
-增強 Git 整合永久包含於 Spck Lite 和 Spck for NodeJS 終端機終身購買中，也包含於有效的 Supporter、Gold 或 Node 訂閱中。完整版需要登入，Lite 無需登入。
+<a name="merge-conflict-resolution"></a>
 
-基本 Git 整合和提交歷史瀏覽仍可在免費版中使用。 [Supporter / Gold / Node](https://spck.io/pricing).
+基本 Git 包含透過差異檢視器的 **Accept Current**、**Accept Incoming**、**Accept Both** 及 **Resolve** 進行的[衝突解決](./git-support#merge-conflict-resolution)。
 
-# <a name="git-limitations"></a>Git 限制
+## <a name="git-limitations"></a>Git 限制
 
-## <a name="git-limitations-overview"></a>概覽
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-編輯器的 Git 整合由 [isomorphic-git](https://isomorphic-git.org/) 提供支援，這是 Git 的純 JavaScript 實作，完全在客戶端執行。雖然這使得無需伺服器即可直接在瀏覽器和行動裝置上進行 Git 操作，但它伴隨著在沙盒化 JavaScript 環境中執行 Git 所固有的幾個約束。
-
-## <a name="git-limitations-memory"></a>記憶體限制
-
-- 作業系統通常將行動應用程式限制在約 **50MB 的記憶體**。
-- 對大型儲存庫的 Git 操作可能會超出此預算，導致應用程式被終止。
-- 讀取大型 pack 檔案（`.git/objects/pack/` 中的 `.pack` 檔案）需要一次性將大量內容載入到記憶體中，這在記憶體受限的裝置上不可行。
-- 因此，在行動裝置上 **複製或操作大型儲存庫可能會因記憶體不足錯誤而失敗**。
-
-> 💡 **提示**：對於大型儲存庫，請盡可能使用淺複製（shallow clone），或考慮使用儲存庫的較小子集。
-
-## <a name="git-limitations-symlinks"></a>符號連結相容性
-
-- 出於安全原因，瀏覽器/行動沙盒中 **本機不支援** 符號連結（symlinks）。
-- 編輯器使用 **模擬符號連結** 表示作為變通方法，以便仍然可以檢出包含符號連結的儲存庫。
-- 此模擬可能與期望真實檔案系統符號連結的工具存在 **相容性問題**（例如，某些建置工具、套件管理器或在執行階段解析符號連結目標的指令碼）。
-- 嚴重依賴符號連結的儲存庫可能不會與本機 Git 檢出表現得完全相同。
-
-## <a name="git-limitations-cli"></a>使用 CLI 作為替代方案
-
-這些限制僅適用於應用程式內的 Git 客戶端。它們 **不會** 影響 **Spck CLI**，後者使用主機系統上的 **本機 Git 二進位檔案**：
-
-- 沒有 50MB 記憶體上限——Git 操作僅受您機器可用記憶體的限制。
-- 大型 pack 檔案和大型儲存庫本機處理。
-- 真正的符號連結按預期工作，與其他工具完全相容。
-- 所有 Git 功能和 plumbing 命令均可用，而不僅僅是 isomorphic-git 實作的子集。
-
-> 💡 **專業提示**：如果您經常使用大型儲存庫或依賴符號連結的專案，使用 Spck CLI 進行 Git 操作（clone、fetch、push）——同時仍然在行動應用程式中編輯檔案——可以讓您獲得兩全其美的效果。
+Android 與 iOS 本機專案使用原生 libgit2，瀏覽器使用 isomorphic-git，遠端專案使用主機 Git 執行檔。儲存需求、記憶體、符號連結及遠端替代方案請參閱 [Git 限制](./git-support#git-limitations)。
 
 &nbsp;
 

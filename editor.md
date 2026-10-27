@@ -9,7 +9,7 @@ Spck Editor is a mobile code editing solution with multiple variants designed fo
 #### Spck Editor (Free)
 
 - Basic mobile code editing functionality
-- Portable git library integration via isomorphic-git
+- Native Git integration on Android and iOS; browser Git via isomorphic-git
 
 #### Spck Editor Lite
 
@@ -40,39 +40,15 @@ See [Embedding the Editor](/en/editor-embed) for iframe setup, project managemen
 ### Key Features
 
 - Mobile-first design
-- Git integration
+- [Git support and limitations](./git-support)
 - Cross-platform compatibility
+- [Screen reader support (Experimental)](./screen-reader-support)
 
 ### <a name="git-credentials"></a>Git credentials and pull requests
 
-Open **Git menu → Git Credentials**, select your provider, and save its access token. The token setup and help links below open in a new tab so you can return to Spck and paste the token.
+<a name="pull-request-management"></a>
 
-| Provider | Token setup | Permissions for Git and pull requests |
-| --- | --- | --- |
-| GitHub | <a href="https://github.com/settings/personal-access-tokens/new?contents=write&amp;pull_requests=write&amp;metadata=read&amp;name=Spck-Editor&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Create GitHub token</a> · <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank" rel="noopener noreferrer">Setup guide</a> | Select the repository. The creation link preselects **Contents: Read and write**, **Pull requests: Read and write**, and **Metadata: Read**. |
-| GitLab | <a href="https://gitlab.com/-/user_settings/personal_access_tokens?name=Spck-Editor&amp;scopes=api" target="_blank" rel="noopener noreferrer">Create GitLab token</a> · <a href="https://docs.gitlab.com/user/profile/personal_access_tokens/#prefill-personal-access-token-details" target="_blank" rel="noopener noreferrer">Setup guide</a> | The creation link preselects the `api` scope for merge requests. |
-| Bitbucket Cloud | <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" rel="noopener noreferrer">Create API token</a> · <a href="https://support.atlassian.com/bitbucket-cloud/docs/create-an-api-token/" target="_blank" rel="noopener noreferrer">Setup guide</a> | Choose **Create API token with scopes**, select **Bitbucket**, and manually select `read:repository:bitbucket`, `write:repository:bitbucket`, `read:pullrequest:bitbucket`, and `write:pullrequest:bitbucket`. API authentication uses your Atlassian account email. |
-| Azure DevOps | <a href="https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate" target="_blank" rel="noopener noreferrer">Create PAT guide</a> | Open your organization's **User settings → Personal access tokens → New Token**, select the organization, and manually select **Code (Read & write)**. |
-
-To create a pull request, commit and push your source branch, then open **Git menu → Create PR**. Select the remote and credentials, choose a different target branch, and enter a title and description. **Generate with AI** can draft the message from committed changes against the branches' merge base; fetch the target branch first. Review the draft before selecting **Create PR**. GitLab creates a merge request.
-
-Creating and managing pull requests is a **Premium feature**, included with [Enhanced Git Integration](#enhanced-git-integration). Lite includes it with the one-time app purchase. In the full app, sign in with an active Supporter, Gold, or Node subscription, or the account that owns the Spck for NodeJS terminal lifetime unlock.
-
-### <a name="pull-request-management"></a>Pull request management (Premium)
-
-Manage pull requests without leaving the editor. Supported remotes are **GitHub.com, GitLab.com, Bitbucket Cloud, and Azure DevOps**; GitLab calls them merge requests.
-
-1. Open a Git project and add the provider's token in **Git menu → Git Credentials**, using the permissions above.
-2. Open **Git menu → Pull Requests**, then choose the remote and credentials to list open requests.
-3. Select a request to see its title, description, author, source and target branches, and status.
-4. Select a changed file to inspect its read-only diff. This lets you check the proposed changes before merging.
-5. Use **Merge** to merge an eligible request, or **Close** to close it without merging. Required reviews, checks, token permissions, and branch rules still apply; drafts and requests with conflicts cannot be merged from this dialog.
-
-Use **Refresh** to reload the list after changes on the provider. The request details also link to the provider for reviews, checks, and other actions.
-
-To start a new request, use **Git menu → Create PR** as described above. If the source branch needs pushing, the dialog offers **Push** before creation. Optional AI drafting uses your configured AI service and its usage limits; it is separate from the pull request access included with Lite.
-
-If creation fails because of token permissions, use the provider's setup link to create or update the token, save it in **Git Credentials**, and retry. Your PR draft is preserved.
+See [Git Support](./git-support) for [provider token setup](./git-support#git-credentials), [pull request management](./git-support#pull-request-management), and [Enhanced Git Integration](./git-support#enhanced-git-integration).
 
 ### Recommended Use
 
@@ -98,6 +74,14 @@ If creation fails because of token permissions, use the provider's setup link to
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>Screen Reader Support (Experimental)
+
+Screen reader support is **experimental**. See the [Screen Reader Support guide](./screen-reader-support) for activation, document editing, keyboard navigation, current limitations, and [feedback](./screen-reader-support#screen-reader-feedback).
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>Keyboard Shortcuts
 
 ## <a name="keyboard-shortcuts-overview"></a>Overview
@@ -113,6 +97,8 @@ Unlock lightning-fast efficiency with these handy keyboard shortcuts! While not 
 > 💡 **Pro Tip**: Memorize these shortcuts, and watch your productivity soar! 🌟
 
 You can view the complete list of shortcuts by going to `Settings > Editor > Keyboard Shortcuts`
+
+For keyboard focus, menu activation, and accessible document editing, see [Screen Reader Support (Experimental)](./screen-reader-support).
 
 > Premium users can also access Keyboard Shortcuts directly from the Extra Keyboard or using the shortcut `⌘ K`
 
@@ -282,68 +268,22 @@ Quickly surround selected text using bracket or quote pairs:
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>Enhanced Git Integration
+# <a name="enhanced-git-integration"></a>Git Support
 
-Enhanced Git Integration adds two tools for reviewing and sharing changes:
+See the [Git Support guide](./git-support) for provider credentials, pull request management, commit inspection, and Enhanced Git Integration access.
 
-- **Pull request management:** create requests, browse open requests, inspect changed files and diffs, and merge or close requests. See [Pull request management](#pull-request-management) for setup and steps.
-- **Commit inspection:** browse the files changed in a commit and inspect their diffs without changing your working files.
+<a name="merge-conflict-resolution"></a>
 
-Open the Git panel's **History** tab and select a commit to see its added, modified, and deleted files. Select a file to open a read-only diff against the commit's first parent. For the first commit, files are compared with an empty tree. The viewer uses committed versions, so uncommitted edits do not affect the diff. Binary files cannot be displayed as text diffs.
+Basic Git includes [merge conflict resolution](./git-support#merge-conflict-resolution) in the diff viewer, with **Accept Current**, **Accept Incoming**, **Accept Both**, and **Resolve** actions.
 
-You can also long-press a history entry (or right-click with a mouse) and choose **View Commit**.
+## <a name="git-limitations"></a>Git Limitations
 
-Enhanced Git Integration is included with:
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-- **Spck Editor Lite:** permanently unlocked by the one-time app purchase, with no login required.
-- **Spck for NodeJS terminal lifetime purchase:** permanently unlocked for the account that owns the purchase; login is required.
-- **Supporter, Gold, or Node subscriptions:** unlocked while the subscription is active; login is required.
-
-Basic Git integration and browsing commit history remain available in the free version. See [pricing](https://spck.io/pricing) for plan details.
-
-## <a name="merge-conflict-resolution"></a>Resolve merge conflicts
-
-The diff viewer also helps resolve conflicts in your working files. This is part of basic Git integration and does not require Premium.
-
-1. Open a conflicted file from the Git changes list.
-2. For each conflict, choose **Accept Current**, **Accept Incoming**, or **Accept Both**. You can also edit the file to combine changes manually.
-3. Review the result. Once all conflict markers are removed, select **Resolve** in the diff viewer to stage the resolved file.
-4. Resolve any remaining files, then commit the merge.
-
-On touch devices, long-press files or Git entries to open their context menus. Git status letters supplement filename colors so changes are easier to identify.
-
-# <a name="git-limitations"></a>Git Limitations
-
-## <a name="git-limitations-overview"></a>Overview
-
-The editor's Git integration is powered by [isomorphic-git](https://isomorphic-git.org/), a pure JavaScript implementation of Git that runs entirely client-side. While this enables Git operations directly in the browser and on mobile devices without a server, it comes with several constraints inherent to running Git in a sandboxed JavaScript environment.
-
-## <a name="git-limitations-memory"></a>Memory Constraints
-
-- Mobile applications are typically limited to around **50MB of memory** by the operating system.
-- Git operations on large repositories may exceed this budget and cause the app to be terminated.
-- Reading large pack files (`.pack` files in `.git/objects/pack/`) requires loading significant portions into memory at once, which is not feasible on memory-constrained devices.
-- As a result, **cloning or operating on large repositories may fail with out-of-memory errors** on mobile.
-
-> 💡 **Tip**: For large repositories, use shallow clones where possible, or consider working with a smaller subset of the repository.
-
-## <a name="git-limitations-symlinks"></a>Symlink Compatibility
-
-- Symbolic links (symlinks) are **not supported natively** in the browser/mobile sandbox for security reasons.
-- The editor uses an **emulated symlink** representation as a workaround so that repositories containing symlinks can still be checked out.
-- This emulation may have **compatibility issues** with tooling that expects real filesystem symlinks (e.g., some build tools, package managers, or scripts that resolve symlink targets at runtime).
-- Repositories that rely heavily on symlinks may not behave identically to a native Git checkout.
-
-## <a name="git-limitations-cli"></a>Using the CLI as an Alternative
-
-These limitations only apply to the in-app Git client. They do **not** affect the **Spck CLI**, which uses the **native Git binary** on the host system:
-
-- No 50MB memory ceiling — Git operations are bounded only by your machine's available memory.
-- Large pack files and large repositories are handled natively.
-- Real symlinks work as expected, with full compatibility with other tooling.
-- All Git features and plumbing commands are available, not just the subset implemented by isomorphic-git.
-
-> 💡 **Pro Tip**: If you frequently work with large repositories or projects that depend on symlinks, using the Spck CLI for Git operations (clone, fetch, push) — while still editing files in the mobile app — gives you the best of both worlds.
+Android and iOS use native libgit2 for local projects; the browser uses isomorphic-git, and remote projects use the host's Git binary. See [Git Limitations](./git-support#git-limitations) for storage requirements, memory constraints, symlinks, and remote alternatives.
 
 &nbsp;
 

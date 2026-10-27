@@ -16,7 +16,7 @@ Lite permet de modifier des projets sur votre ordinateur ou une VM publique via 
 
 ### Optionnels (Recommandés)
 
-- **Git** : 2.20.0+ pour les fonctionnalités d'intégration Git
+- **Git** : 2.20.0+ pour l’[intégration Git](./git-support#git-limitations-cli) dans les projets distants
 - **ripgrep** : 15.0.0+ pour une recherche de fichiers nettement plus rapide (amélioration 100x)
 
 ## <a name="installation"></a>Installation

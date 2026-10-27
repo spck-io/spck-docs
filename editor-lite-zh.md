@@ -9,9 +9,11 @@ Lite 包含免费版的所有功能，另外还有：
 - **Predictive Keyboard** -- 附加键盘上的上下文感知符号建议
 - **自定义代码片段** -- 用户定义的带有制表位占位符的代码模板
 - **Neon 主题** -- 独家编辑器主题
-- **增强 Git 集成** -- 提交的更改文件列表和只读差异查看器
+- **增强 Git 集成** — 拉取请求管理; 提交更改文件与差异
 
 这些功能也可在 Spck Editor 完整版中通过激活 Gold 或 Supporter 订阅来使用。Lite 应用以一次性购买的方式提供相同的功能。
+
+键盘焦点、菜单激活和无障碍文档编辑请参阅[屏幕阅读器支持（实验性）](./screen-reader-support)。
 
 ## <a name="remote-projects"></a>远程项目
 
@@ -76,9 +78,25 @@ Lite 包含 **Neon** 编辑器主题，这是一款具有鲜艳强调色的深�
 
 ## <a name="enhanced-git-integration"></a>增强 Git 集成
 
-打开 Git 面板的 **History** 标签并选择一个提交，即可查看新增、修改和删除的文件。选择文件可打开与第一个父提交比较的只读差异视图。首次提交的文件会与空目录树比较。查看器使用已提交的版本，因此未提交的编辑不会影响差异。二进制文件无法显示为文本差异。
+### 拉取请求管理（Premium）
 
-增强 Git 集成永久包含在 Spck Lite 和 Spck for NodeJS 终端终身购买中，也包含在有效的 Supporter、Gold 或 Node 订阅中。完整版需要登录，Lite 无需登录。 [增强 Git 集成](./editor#enhanced-git-integration).
+Lite 无需订阅即可使用与完整版相同的 Premium 拉取请求工具。请参阅[拉取请求管理](./git-support#pull-request-management)，了解创建、浏览请求、审阅差异，以及按提供商规则合并或关闭请求的步骤。
+
+在 **Git menu → Git Credentials** 保存令牌。使用 **Git menu → Create PR** 新建请求，使用 **Git menu → Pull Requests** 管理请求。可选的 AI 起草需要已配置的 AI 服务；Lite 不包含 AI 额度。
+
+### 提交更改文件与差异
+
+打开 Git 面板的 **History** 标签页，选择提交以查看新增、修改和删除的文件。选择文件可打开相对于提交第一个父提交的只读差异。首次提交与空树比较。查看器使用已提交的版本，因此未提交的编辑不会影响差异。二进制文件无法显示为文本差异。
+
+也可长按历史记录条目，或用鼠标右键单击，然后选择 **View Commit**。
+
+增强 Git 集成包含于：
+
+- **Spck Editor Lite：** 一次性购买后永久解锁，无需登录。
+- **Spck for NodeJS 终端终身购买：** 为购买所属账户永久解锁，需要登录。
+- **Supporter、Gold 或 Node 订阅：** 订阅有效期间解锁，需要登录。
+
+请参阅 [Git 支持](./git-support)，了解[令牌设置](./git-support#git-credentials)、[拉取请求管理](./git-support#pull-request-management)和[增强 Git 集成](./git-support#enhanced-git-integration)。
 
 ## <a name="comparison"></a>功能对比
 

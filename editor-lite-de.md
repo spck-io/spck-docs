@@ -9,9 +9,11 @@ Lite enthalt alles aus der kostenlosen Version, plus:
 - **Predictive Keyboard** -- kontextbezogene Symbolvorschlage auf der Zusatztastatur
 - **Benutzerdefinierte Snippets** -- eigene Code-Vorlagen mit Tab-Stop-Platzhaltern
 - **Neon-Theme** -- ein exklusives Editor-Theme
-- **Erweiterte Git-Integration** -- Listen geänderter Dateien und schreibgeschützte Commit-Diffs
+- **Erweiterte Git-Integration** — Pull Requests verwalten ; Commit-Dateiänderungen und Diffs
 
 Diese Funktionen sind auch in der Vollversion von Spck Editor mit einem aktiven Gold- oder Supporter-Abonnement verfugbar. Die Lite-App bietet die gleiche Funktionalitat als Einzelkauf.
+
+Hinweise zu Tastaturfokus, Menüaktivierung und barrierefreier Bearbeitung finden Sie unter [Screenreader-Unterstützung (experimentell)](./screen-reader-support).
 
 ## <a name="remote-projects"></a>Remote-Projekte
 
@@ -76,9 +78,25 @@ Lite enthalt das **Neon**-Editor-Theme, ein dunkles Theme mit leuchtenden Akzent
 
 ## <a name="enhanced-git-integration"></a>Erweiterte Git-Integration
 
-Öffnen Sie im Git-Bereich den Tab **History** und wählen Sie einen Commit aus, um seine hinzugefügten, geänderten und gelöschten Dateien zu sehen. Wählen Sie eine Datei aus, um einen schreibgeschützten Diff zum ersten übergeordneten Commit zu öffnen. Beim ersten Commit werden die Dateien mit einem leeren Dateibaum verglichen. Der Viewer verwendet die gespeicherten Commit-Versionen; nicht commitete Änderungen beeinflussen den Diff nicht. Binärdateien können nicht als Text-Diffs angezeigt werden.
+### Pull Requests verwalten (Premium)
 
-Die erweiterte Git-Integration ist mit dem einmaligen Kauf von **Spck Editor Lite** dauerhaft freigeschaltet, ohne Anmeldung oder Abonnement. In **Spck for NodeJS** schaltet der Terminal-Einmalkauf die Funktion dauerhaft für das Konto frei, dem der Kauf gehört. Aktive **Supporter-, Gold- oder Node-Abonnements** schalten sie für die Dauer des Abonnements frei. In der Vollversion ist für beide Optionen eine Anmeldung erforderlich. [Erweiterte Git-Integration](./editor#enhanced-git-integration).
+Lite enthält ohne Abonnement dieselben Premium-Werkzeuge für Pull Requests wie die Vollversion. Unter [Pull Requests verwalten](./git-support#pull-request-management) erfahren Sie, wie Sie Anfragen erstellen und durchsuchen, Diffs prüfen und Anfragen gemäß den Regeln des Anbieters zusammenführen oder schließen.
+
+Speichern Sie das Token unter **Git menu → Git Credentials**. Erstellen Sie Anfragen mit **Git menu → Create PR** und verwalten Sie sie mit **Git menu → Pull Requests**. Optionale KI-Entwürfe benötigen einen konfigurierten KI-Dienst; Lite enthält dafür kein KI-Guthaben.
+
+### Commit-Dateiänderungen und Diffs
+
+Öffnen Sie im Git-Bereich **History** und wählen Sie einen Commit für dessen hinzugefügte, geänderte und gelöschte Dateien. Eine Datei öffnet einen schreibgeschützten Diff zum ersten Eltern-Commit. Beim ersten Commit wird mit einem leeren Baum verglichen. Der Viewer verwendet committete Versionen; nicht committete Änderungen beeinflussen den Diff nicht. Binärdateien können nicht als Text-Diffs angezeigt werden.
+
+Alternativ können Sie einen Verlaufseintrag lange drücken oder mit der rechten Maustaste anklicken und **View Commit** wählen.
+
+Die erweiterte Git-Integration ist enthalten in:
+
+- **Spck Editor Lite:** dauerhaft durch den einmaligen App-Kauf freigeschaltet, ohne Anmeldung.
+- **Dauerkauf des Spck-for-NodeJS-Terminals:** dauerhaft für das kaufende Konto freigeschaltet; Anmeldung erforderlich.
+- **Supporter-, Gold- oder Node-Abonnements:** während des aktiven Abonnements freigeschaltet; Anmeldung erforderlich.
+
+Siehe [Git-Unterstützung](./git-support) für [Anbieter-Token](./git-support#git-credentials), [Pull-Request-Verwaltung](./git-support#pull-request-management) und [erweiterte Git-Integration](./git-support#enhanced-git-integration).
 
 ## <a name="comparison"></a>Funktionsvergleich
 

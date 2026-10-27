@@ -16,7 +16,7 @@ Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。�
 
 ### 可选（推荐）
 
-- **Git**：2.20.0 以上（用于 Git 集成功能）
+- **Git**：远程项目的 [Git 集成](./git-support#git-limitations-cli)需要 2.20.0 或更高版本
 - **ripgrep**：15.0.0 以上（文件搜索速度显著提升，提高 100 倍）
 
 ## <a name="installation"></a>安装

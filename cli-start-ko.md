@@ -16,7 +16,7 @@ Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트�
 
 ### 선택 사항 (권장)
 
-- **Git**: 2.20.0 이상(Git 연동 기능에 필요)
+- **Git**: 원격 프로젝트의 [Git 통합](./git-support#git-limitations-cli)에 2.20.0 이상 필요
 - **ripgrep**: 15.0.0 이상(파일 검색 속도가 100배 향상)
 
 ## <a name="installation"></a>설치

@@ -9,7 +9,7 @@ Spck Editor ist eine mobile Code-Editing-Lösung mit mehreren Varianten, die fü
 #### Spck Editor (Kostenlos)
 
 - Grundlegende mobile Code-Editing-Funktionalität
-- Portable Git-Bibliotheksintegration über isomorphic-git
+- Native Git-Integration auf Android und iOS; Browser-Git über isomorphic-git
 
 #### Spck Editor Lite
 
@@ -33,11 +33,20 @@ Die erweiterte Git-Integration ist mit einem aktiven Node-Abonnement enthalten o
 - Auf jeder Website einbettbar
 - Leichtgewichtige Code-Editing-Oberfläche
 
+[Editor einbetten](./editor-embed)
+
 ### Hauptmerkmale
 
 - Mobile-First-Design
-- Git-Integration
+- [Git-Unterstützung und Einschränkungen](./git-support)
 - Plattformübergreifende Kompatibilität
+- [Screenreader-Unterstützung (experimentell)](./screen-reader-support)
+
+### <a name="git-credentials"></a>Git-Zugangsdaten und Pull Requests
+
+<a name="pull-request-management"></a>
+
+Siehe [Git-Unterstützung](./git-support) für [Anbieter-Token](./git-support#git-credentials), [Pull-Request-Verwaltung](./git-support#pull-request-management) und [erweiterte Git-Integration](./git-support#enhanced-git-integration).
 
 ### Empfohlene Verwendung
 
@@ -63,6 +72,14 @@ Die erweiterte Git-Integration ist mit einem aktiven Node-Abonnement enthalten o
 
 &nbsp;
 
+# <a name="screen-reader-support"></a>Screenreader-Unterstützung (experimentell)
+
+Die Screenreader-Unterstützung ist **experimentell**. Die [Screenreader-Anleitung](./screen-reader-support) beschreibt Aktivierung, Bearbeitung, Tastaturnavigation, Einschränkungen und [Feedback](./screen-reader-support#screen-reader-feedback).
+
+&nbsp;
+
+&nbsp;
+
 # <a name="keyboard-shortcuts"></a>Tastenkombinationen
 
 ## <a name="keyboard-shortcuts-overview"></a>Überblick
@@ -82,6 +99,8 @@ Sie können die vollständige Liste der Tastenkürzel unter `Settings > Editor >
 > Premium-Benutzer können auch direkt über die Zusatztastatur oder mit dem Tastenkürzel `⌘ K` auf die Tastenkombinationen zugreifen.
 
 > Aktivieren Sie die Strg/Command-Taste (⌘) und Alt/Option-Taste unter `Settings > Touch > Show ⌘ Key` und `Settings > Touch > Show ⌥ Key`.
+
+Hinweise zu Tastaturfokus, Menüaktivierung und barrierefreier Bearbeitung finden Sie unter [Screenreader-Unterstützung (experimentell)](./screen-reader-support).
 
 ## <a name="keyboard-shortcuts-editor"></a>Editor
 
@@ -247,46 +266,22 @@ Umschließen Sie ausgewählten Text schnell mit Klammer- oder Anführungspaaren:
 
 &nbsp;
 
-# <a name="enhanced-git-integration"></a>Erweiterte Git-Integration
+# <a name="enhanced-git-integration"></a>Git-Unterstützung
 
-Öffnen Sie im Git-Bereich den Tab **History** und wählen Sie einen Commit aus, um seine hinzugefügten, geänderten und gelöschten Dateien zu sehen. Wählen Sie eine Datei aus, um einen schreibgeschützten Diff zum ersten übergeordneten Commit zu öffnen. Beim ersten Commit werden die Dateien mit einem leeren Dateibaum verglichen. Der Viewer verwendet die gespeicherten Commit-Versionen; nicht commitete Änderungen beeinflussen den Diff nicht. Binärdateien können nicht als Text-Diffs angezeigt werden.
+Die [Git-Anleitung](./git-support) beschreibt Anbieter-Zugangsdaten, Pull-Request-Verwaltung, Commit-Ansichten und den Zugriff auf die erweiterte Git-Integration.
 
-Die erweiterte Git-Integration ist mit dem einmaligen Kauf von **Spck Editor Lite** dauerhaft freigeschaltet, ohne Anmeldung oder Abonnement. In **Spck for NodeJS** schaltet der Terminal-Einmalkauf die Funktion dauerhaft für das Konto frei, dem der Kauf gehört. Aktive **Supporter-, Gold- oder Node-Abonnements** schalten sie für die Dauer des Abonnements frei. In der Vollversion ist für beide Optionen eine Anmeldung erforderlich.
+<a name="merge-conflict-resolution"></a>
 
-Die grundlegende Git-Integration und das Durchsuchen des Commit-Verlaufs bleiben in der kostenlosen Version verfügbar. [Supporter / Gold / Node](https://spck.io/pricing).
+Grundlegendes Git umfasst die [Konfliktauflösung](./git-support#merge-conflict-resolution) im Diff-Viewer mit **Accept Current**, **Accept Incoming**, **Accept Both** und **Resolve**.
 
-# <a name="git-limitations"></a>Git-Einschränkungen
+## <a name="git-limitations"></a>Git-Einschränkungen
 
-## <a name="git-limitations-overview"></a>Überblick
+<a name="git-limitations-overview"></a>
+<a name="git-limitations-memory"></a>
+<a name="git-limitations-symlinks"></a>
+<a name="git-limitations-cli"></a>
 
-Die Git-Integration des Editors basiert auf [isomorphic-git](https://isomorphic-git.org/), einer reinen JavaScript-Implementierung von Git, die vollständig clientseitig läuft. Dies ermöglicht zwar Git-Operationen direkt im Browser und auf Mobilgeräten ohne Server, bringt aber mehrere Einschränkungen mit sich, die dem Ausführen von Git in einer Sandbox-JavaScript-Umgebung inhärent sind.
-
-## <a name="git-limitations-memory"></a>Speicherbeschränkungen
-
-- Mobile Anwendungen sind in der Regel auf etwa **50MB Speicher** durch das Betriebssystem beschränkt.
-- Git-Operationen auf großen Repositories können dieses Budget überschreiten und dazu führen, dass die App beendet wird.
-- Das Lesen großer Pack-Dateien (`.pack`-Dateien in `.git/objects/pack/`) erfordert das gleichzeitige Laden erheblicher Teile in den Speicher, was auf speicherbeschränkten Geräten nicht möglich ist.
-- Daher kann **das Klonen oder Arbeiten an großen Repositories mit Speichermangel-Fehlern fehlschlagen** auf Mobilgeräten.
-
-> 💡 **Tipp**: Verwenden Sie bei großen Repositories nach Möglichkeit Shallow Clones, oder erwägen Sie, mit einer kleineren Teilmenge des Repositorys zu arbeiten.
-
-## <a name="git-limitations-symlinks"></a>Symlink-Kompatibilität
-
-- Symbolische Links (Symlinks) werden aus Sicherheitsgründen in der Browser/Mobile-Sandbox **nicht nativ unterstützt**.
-- Der Editor verwendet eine **emulierte Symlink**-Darstellung als Workaround, sodass Repositories mit Symlinks dennoch ausgecheckt werden können.
-- Diese Emulation kann **Kompatibilitätsprobleme** mit Tools haben, die echte Dateisystem-Symlinks erwarten (z. B. einige Build-Tools, Paketmanager oder Skripte, die Symlink-Ziele zur Laufzeit auflösen).
-- Repositories, die stark auf Symlinks angewiesen sind, verhalten sich möglicherweise nicht identisch zu einem nativen Git-Checkout.
-
-## <a name="git-limitations-cli"></a>Verwendung der CLI als Alternative
-
-Diese Einschränkungen gelten nur für den In-App-Git-Client. Sie betreffen **nicht** die **Spck CLI**, die die **native Git-Binary** auf dem Hostsystem verwendet:
-
-- Keine 50MB-Speicherobergrenze – Git-Operationen werden nur durch den verfügbaren Speicher Ihres Rechners begrenzt.
-- Große Pack-Dateien und große Repositories werden nativ behandelt.
-- Echte Symlinks funktionieren wie erwartet, mit voller Kompatibilität zu anderen Tools.
-- Alle Git-Funktionen und Plumbing-Befehle sind verfügbar, nicht nur die von isomorphic-git implementierte Teilmenge.
-
-> 💡 **Profi-Tipp**: Wenn Sie häufig mit großen Repositories oder Projekten arbeiten, die auf Symlinks angewiesen sind, bietet Ihnen die Verwendung der Spck CLI für Git-Operationen (clone, fetch, push) – während Sie weiterhin Dateien in der Mobile-App bearbeiten – das Beste aus beiden Welten.
+Android und iOS nutzen natives libgit2 für lokale Projekte, der Browser isomorphic-git und entfernte Projekte die Git-Binary des Hosts. Siehe [Git-Einschränkungen](./git-support#git-limitations) für Speicherort, Speichergrenzen, Symlinks und entfernte Alternativen.
 
 &nbsp;
 
