@@ -17,6 +17,10 @@ Lite keeps these tools unlocked for local projects with a single app purchase, w
 
 For accessible document editing and keyboard navigation, see [Screen Reader Support (Experimental)](./screen-reader-support).
 
+## <a name="iphone-duo"></a>iPhone Duo Support
+
+On iPhone Duo, Lite adapts to folding, rotation, and the on-screen keyboard, with a dedicated action bar for common tools. See [iPhone Duo Support in Lite](./iphone-duo) for controls and layout details.
+
 ## <a name="remote-projects"></a>Remote Projects
 
 Lite also supports **Remote Projects**: edit projects located on your desktop or a public VM through Spck CLI. **Remote Projects require a Spck account and an active Spck subscription**, separate from the one-time Lite app purchase.
