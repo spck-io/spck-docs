@@ -82,7 +82,7 @@ Lite 包含 **Neon** 編輯器佈景主題，這是一款具有鮮豔強調色�
 
 Lite 無須訂閱即可使用與完整版相同的 Premium 提取要求工具。請參閱[提取要求管理](./git-support#pull-request-management)，了解建立及瀏覽要求、檢閱差異，以及依供應商規則合併或關閉要求的步驟。
 
-在 **Git menu → Git Credentials** 儲存權杖。使用 **Git menu → Create PR** 新建要求，使用 **Git menu → Pull Requests** 管理要求。選用的 AI 草稿需要已設定的 AI 服務；Lite 不含 AI 額度。
+在 **Git menu → Git Credentials** 儲存權杖。使用 **Git menu → Create PR** 新建要求，使用 **Branches menu → Pull Requests** 管理要求。選用的 AI 草稿需要已設定的 AI 服務；Lite 不含 AI 額度。
 
 ### 提交變更檔案與差異
 

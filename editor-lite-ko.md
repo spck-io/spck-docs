@@ -82,7 +82,7 @@ Lite에는 **Neon** 에디터 테마가 포함되어 있습니다. 선명한 강
 
 Lite는 구독 없이 전체 앱과 동일한 Premium 풀 리퀘스트 도구를 제공합니다. [풀 리퀘스트 관리](./git-support#pull-request-management)에서 요청 생성·탐색, diff 검토, 공급자 규칙에 따른 병합·닫기를 확인하세요.
 
-**Git menu → Git Credentials**에 토큰을 저장하세요. 새 요청에는 **Git menu → Create PR**, 관리에는 **Git menu → Pull Requests**를 사용합니다. 선택적인 AI 초안에는 설정된 AI 서비스가 필요하며 Lite에 AI 크레딧이 포함되는 것은 아닙니다.
+**Git menu → Git Credentials**에 토큰을 저장하세요. 새 요청에는 **Git menu → Create PR**, 관리에는 **Branches menu → Pull Requests**를 사용합니다. 선택적인 AI 초안에는 설정된 AI 서비스가 필요하며 Lite에 AI 크레딧이 포함되는 것은 아닙니다.
 
 ### 커밋 파일 변경 및 diff
 

@@ -82,7 +82,7 @@ Lite incluye el tema de editor **Neon**, un tema oscuro con colores de acento vi
 
 Lite incluye las mismas herramientas Premium de pull requests que la aplicación completa, sin suscripción. Consulta [Gestión de pull requests](./git-support#pull-request-management) para crear y consultar solicitudes, revisar diffs y fusionar o cerrar solicitudes según las reglas del proveedor.
 
-Guarda el token en **Git menu → Git Credentials**. Usa **Git menu → Create PR** para crear solicitudes y **Git menu → Pull Requests** para gestionarlas. La redacción opcional con IA requiere un servicio configurado y no supone una asignación de créditos IA incluida en Lite.
+Guarda el token en **Git menu → Git Credentials**. Usa **Git menu → Create PR** para crear solicitudes y **Branches menu → Pull Requests** para gestionarlas. La redacción opcional con IA requiere un servicio configurado y no supone una asignación de créditos IA incluida en Lite.
 
 ### Archivos modificados y diffs de commits
 

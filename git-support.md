@@ -24,7 +24,7 @@ Creating and managing pull requests is a **Premium feature**, included with [Enh
 Manage pull requests without leaving the editor. Supported remotes are **GitHub.com, GitLab.com, Bitbucket Cloud, and Azure DevOps**; GitLab calls them merge requests.
 
 1. Open a Git project and add the provider's token in **Git menu → Git Credentials**, using the permissions above.
-2. Open **Git menu → Pull Requests**, then choose the remote and credentials to list open requests.
+2. Open **Branches menu → Pull Requests**, then choose the remote and credentials to list open requests.
 3. Select a request to see its title, description, author, source and target branches, and status.
 4. Select a changed file to inspect its read-only diff. This lets you check the proposed changes before merging.
 5. Use **Merge** to merge an eligible request, or **Close** to close it without merging. Required reviews, checks, token permissions, and branch rules still apply; drafts and requests with conflicts cannot be merged from this dialog.

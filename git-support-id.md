@@ -24,7 +24,7 @@ Pembuatan dan pengelolaan pull request adalah **fitur Premium** dalam [Integrasi
 Kelola pull request tanpa meninggalkan editor. Remote yang didukung adalah **GitHub.com, GitLab.com, Bitbucket Cloud, dan Azure DevOps**; GitLab menyebutnya merge request.
 
 1. Buka proyek Git dan tambahkan token penyedia di **Git menu → Git Credentials** dengan izin di atas.
-2. Buka **Git menu → Pull Requests**, lalu pilih remote dan kredensial untuk menampilkan permintaan terbuka.
+2. Buka **Branches menu → Pull Requests**, lalu pilih remote dan kredensial untuk menampilkan permintaan terbuka.
 3. Pilih permintaan untuk melihat judul, deskripsi, penulis, cabang sumber dan tujuan, serta status.
 4. Pilih berkas yang berubah untuk memeriksa diff hanya baca sebelum menggabungkan.
 5. Gunakan **Merge** untuk menggabungkan permintaan yang memenuhi syarat atau **Close** untuk menutup tanpa menggabungkan. Peninjauan, pemeriksaan, izin token, dan aturan cabang tetap berlaku; draf serta permintaan berkonflik tidak dapat digabungkan dari dialog ini.

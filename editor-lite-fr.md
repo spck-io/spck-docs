@@ -82,7 +82,7 @@ Lite inclut le theme d\u2019editeur **Neon**, un theme sombre avec des couleurs 
 
 Lite inclut les mêmes outils Premium de pull requests que l’application complète, sans abonnement. Consultez la [gestion des pull requests](./git-support#pull-request-management) pour créer des demandes, parcourir les demandes ouvertes, examiner les diffs et fusionner ou fermer les demandes selon les règles du fournisseur.
 
-Enregistrez le jeton dans **Git menu → Git Credentials**. Utilisez **Git menu → Create PR** pour créer une demande et **Git menu → Pull Requests** pour gérer les demandes. La rédaction facultative par IA nécessite un service d’IA configuré et ne constitue pas une allocation de crédits IA incluse avec Lite.
+Enregistrez le jeton dans **Git menu → Git Credentials**. Utilisez **Git menu → Create PR** pour créer une demande et **Branches menu → Pull Requests** pour gérer les demandes. La rédaction facultative par IA nécessite un service d’IA configuré et ne constitue pas une allocation de crédits IA incluse avec Lite.
 
 ### Modifications et diffs des commits
 

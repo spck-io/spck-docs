@@ -24,7 +24,7 @@ Das Erstellen und Verwalten von Pull Requests ist eine **Premium-Funktion** der 
 Verwalten Sie Pull Requests direkt im Editor. Unterstützte Remotes sind **GitHub.com, GitLab.com, Bitbucket Cloud und Azure DevOps**; bei GitLab heißen sie Merge Requests.
 
 1. Öffnen Sie ein Git-Projekt und hinterlegen Sie das Anbieter-Token unter **Git menu → Git Credentials** mit den oben genannten Berechtigungen.
-2. Öffnen Sie **Git menu → Pull Requests** und wählen Sie Remote und Zugangsdaten, um offene Anfragen aufzulisten.
+2. Öffnen Sie **Branches menu → Pull Requests** und wählen Sie Remote und Zugangsdaten, um offene Anfragen aufzulisten.
 3. Wählen Sie eine Anfrage für Titel, Beschreibung, Autor, Quell- und Zielbranch sowie Status.
 4. Wählen Sie eine geänderte Datei, um vor dem Zusammenführen ihren schreibgeschützten Diff zu prüfen.
 5. Mit **Merge** führen Sie eine geeignete Anfrage zusammen; **Close** schließt sie ohne Merge. Erforderliche Reviews, Prüfungen, Token-Berechtigungen und Branch-Regeln gelten weiterhin. Entwürfe und Anfragen mit Konflikten können in diesem Dialog nicht zusammengeführt werden.

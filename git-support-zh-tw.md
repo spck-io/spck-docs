@@ -24,7 +24,7 @@ Spck 支援在 Android 與 iOS 本機專案、瀏覽器專案，以及透過 Spc
 無須離開編輯器即可管理提取要求。支援的遠端服務包括 **GitHub.com、GitLab.com、Bitbucket Cloud 與 Azure DevOps**；GitLab 稱為合併要求。
 
 1. 開啟 Git 專案，在 **Git menu → Git Credentials** 加入具有上述權限的供應商權杖。
-2. 開啟 **Git menu → Pull Requests**，選擇遠端儲存庫及憑證，列出尚未關閉的要求。
+2. 開啟 **Branches menu → Pull Requests**，選擇遠端儲存庫及憑證，列出尚未關閉的要求。
 3. 選擇要求，查看標題、描述、作者、來源與目標分支及狀態。
 4. 選擇變更檔案，在合併前檢查唯讀差異。
 5. 用 **Merge** 合併符合條件的要求，或用 **Close** 不經合併直接關閉。必要的審查、檢查、權杖權限與分支規則仍適用；草稿及有衝突的要求無法在此對話方塊合併。

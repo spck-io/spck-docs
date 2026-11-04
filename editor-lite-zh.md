@@ -82,7 +82,7 @@ Lite 包含 **Neon** 编辑器主题，这是一款具有鲜艳强调色的深�
 
 Lite 无需订阅即可使用与完整版相同的 Premium 拉取请求工具。请参阅[拉取请求管理](./git-support#pull-request-management)，了解创建、浏览请求、审阅差异，以及按提供商规则合并或关闭请求的步骤。
 
-在 **Git menu → Git Credentials** 保存令牌。使用 **Git menu → Create PR** 新建请求，使用 **Git menu → Pull Requests** 管理请求。可选的 AI 起草需要已配置的 AI 服务；Lite 不包含 AI 额度。
+在 **Git menu → Git Credentials** 保存令牌。使用 **Git menu → Create PR** 新建请求，使用 **Branches menu → Pull Requests** 管理请求。可选的 AI 起草需要已配置的 AI 服务；Lite 不包含 AI 额度。
 
 ### 提交更改文件与差异
 

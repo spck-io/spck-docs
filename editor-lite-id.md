@@ -82,7 +82,7 @@ Lite menyertakan tema editor **Neon**, tema gelap dengan warna aksen yang cerah.
 
 Lite menyertakan alat pull request Premium yang sama dengan aplikasi lengkap, tanpa langganan. Lihat [Pengelolaan pull request](./git-support#pull-request-management) untuk membuat dan menelusuri permintaan, meninjau diff, serta menggabungkan atau menutupnya sesuai aturan penyedia.
 
-Simpan token di **Git menu → Git Credentials**. Gunakan **Git menu → Create PR** untuk membuat permintaan dan **Git menu → Pull Requests** untuk mengelolanya. Draf AI opsional memerlukan layanan yang dikonfigurasi dan bukan jatah kredit AI yang disertakan dalam Lite.
+Simpan token di **Git menu → Git Credentials**. Gunakan **Git menu → Create PR** untuk membuat permintaan dan **Branches menu → Pull Requests** untuk mengelolanya. Draf AI opsional memerlukan layanan yang dikonfigurasi dan bukan jatah kredit AI yang disertakan dalam Lite.
 
 ### Perubahan berkas dan diff commit
 

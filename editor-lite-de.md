@@ -82,7 +82,7 @@ Lite enthalt das **Neon**-Editor-Theme, ein dunkles Theme mit leuchtenden Akzent
 
 Lite enthält ohne Abonnement dieselben Premium-Werkzeuge für Pull Requests wie die Vollversion. Unter [Pull Requests verwalten](./git-support#pull-request-management) erfahren Sie, wie Sie Anfragen erstellen und durchsuchen, Diffs prüfen und Anfragen gemäß den Regeln des Anbieters zusammenführen oder schließen.
 
-Speichern Sie das Token unter **Git menu → Git Credentials**. Erstellen Sie Anfragen mit **Git menu → Create PR** und verwalten Sie sie mit **Git menu → Pull Requests**. Optionale KI-Entwürfe benötigen einen konfigurierten KI-Dienst; Lite enthält dafür kein KI-Guthaben.
+Speichern Sie das Token unter **Git menu → Git Credentials**. Erstellen Sie Anfragen mit **Git menu → Create PR** und verwalten Sie sie mit **Branches menu → Pull Requests**. Optionale KI-Entwürfe benötigen einen konfigurierten KI-Dienst; Lite enthält dafür kein KI-Guthaben.
 
 ### Commit-Dateiänderungen und Diffs
 

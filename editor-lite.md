@@ -95,7 +95,7 @@ Lite includes the same Premium pull request tools as the full app, with no subsc
 - **Review changed files** in read-only diffs before deciding whether to merge.
 - **Merge or close requests** from the editor, subject to your provider's permissions, reviews, checks, and branch rules.
 
-Save your provider token in **Git menu → Git Credentials**. Use **Git menu → Create PR** for a new request or **Git menu → Pull Requests** to manage existing ones. See [Pull request management](./git-support#pull-request-management) for setup and steps. Optional AI drafting requires a configured AI service and is not an AI credit allowance included with Lite.
+Save your provider token in **Git menu → Git Credentials**. Use **Git menu → Create PR** for a new request or **Branches menu → Pull Requests** to manage existing ones. See [Pull request management](./git-support#pull-request-management) for setup and steps. Optional AI drafting requires a configured AI service and is not an AI credit allowance included with Lite.
 
 ### Commit File Changes and Diffs
 

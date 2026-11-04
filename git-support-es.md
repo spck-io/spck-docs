@@ -24,7 +24,7 @@ Crear y gestionar pull requests es una **función Premium** incluida en la [inte
 Gestiona pull requests sin salir del editor. Los remotos compatibles son **GitHub.com, GitLab.com, Bitbucket Cloud y Azure DevOps**; GitLab las llama merge requests.
 
 1. Abre un proyecto Git y añade el token en **Git menu → Git Credentials** con los permisos indicados arriba.
-2. Abre **Git menu → Pull Requests** y elige remoto y credenciales para ver las solicitudes abiertas.
+2. Abre **Branches menu → Pull Requests** y elige remoto y credenciales para ver las solicitudes abiertas.
 3. Selecciona una solicitud para ver título, descripción, autor, ramas de origen y destino y estado.
 4. Selecciona un archivo modificado para revisar su diff de solo lectura antes de fusionar.
 5. Usa **Merge** para fusionar una solicitud apta o **Close** para cerrarla sin fusionar. Siguen aplicándose revisiones, comprobaciones, permisos del token y reglas de las ramas; los borradores y las solicitudes con conflictos no pueden fusionarse desde este diálogo.

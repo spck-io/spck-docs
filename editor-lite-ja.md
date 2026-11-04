@@ -82,7 +82,7 @@ Liteには**Neon**エディターテーマが含まれています。鮮やか�
 
 Lite はサブスクリプションなしでフル版と同じ Premium プルリクエスト機能を利用できます。[プルリクエスト管理](./git-support#pull-request-management)で、作成、一覧、差分確認、プロバイダーのルールに従うマージやクローズの手順をご確認ください。
 
-**Git menu → Git Credentials** にトークンを保存します。新規作成は **Git menu → Create PR**、管理は **Git menu → Pull Requests** を使用します。任意の AI 下書きには設定済み AI サービスが必要で、Lite に AI クレジットが付属するわけではありません。
+**Git menu → Git Credentials** にトークンを保存します。新規作成は **Git menu → Create PR**、管理は **Branches menu → Pull Requests** を使用します。任意の AI 下書きには設定済み AI サービスが必要で、Lite に AI クレジットが付属するわけではありません。
 
 ### コミットの変更ファイルと差分
 

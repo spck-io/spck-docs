@@ -24,7 +24,7 @@ Spck 支持 Android 和 iOS 本地项目、浏览器项目，以及通过 Spck C
 无需离开编辑器即可管理拉取请求。支持的远程服务包括 **GitHub.com、GitLab.com、Bitbucket Cloud 和 Azure DevOps**；GitLab 称为合并请求。
 
 1. 打开 Git 项目，在 **Git menu → Git Credentials** 中添加具有上述权限的提供商令牌。
-2. 打开 **Git menu → Pull Requests**，选择远程仓库和凭据以列出未关闭的请求。
+2. 打开 **Branches menu → Pull Requests**，选择远程仓库和凭据以列出未关闭的请求。
 3. 选择请求，查看标题、描述、作者、源分支、目标分支和状态。
 4. 选择已更改文件，在合并前检查只读差异。
 5. 使用 **Merge** 合并符合条件的请求，或用 **Close** 不经合并直接关闭。必要审查、检查、令牌权限和分支规则仍适用；草稿和存在冲突的请求无法在此对话框合并。

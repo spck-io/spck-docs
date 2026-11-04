@@ -24,7 +24,7 @@ La création et la gestion des pull requests sont une **fonction Premium**, incl
 Gérez les pull requests sans quitter l’éditeur. Les remotes pris en charge sont **GitHub.com, GitLab.com, Bitbucket Cloud et Azure DevOps** ; GitLab les appelle merge requests.
 
 1. Ouvrez un projet Git et ajoutez le jeton du fournisseur dans **Git menu → Git Credentials**, avec les autorisations ci-dessus.
-2. Ouvrez **Git menu → Pull Requests**, puis choisissez le remote et les identifiants pour afficher les demandes ouvertes.
+2. Ouvrez **Branches menu → Pull Requests**, puis choisissez le remote et les identifiants pour afficher les demandes ouvertes.
 3. Sélectionnez une demande pour voir son titre, sa description, son auteur, les branches source et cible et son état.
 4. Sélectionnez un fichier modifié pour examiner son diff en lecture seule avant la fusion.
 5. Utilisez **Merge** pour fusionner une demande admissible ou **Close** pour la fermer sans fusion. Les revues, vérifications, autorisations du jeton et règles de branche restent applicables ; les brouillons et les demandes avec conflits ne peuvent pas être fusionnés depuis cette boîte de dialogue.
