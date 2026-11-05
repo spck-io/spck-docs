@@ -40,6 +40,9 @@
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@
   - **向后兼容**：在该选项出现之前创建的配置会以自动填入的 `acp: { enabled: true }` 加载并重新保存
 
 > 💡 **另请参阅**：[移动端 AI 编程助手 (ACP)](./cli-acp) — 支持的智能体（Claude Code、Codex、Gemini CLI）、身份验证和**计费**的完整指南，包括 Anthropic 对从 Spck Editor 等第三方工具驱动的 Claude Code 所应用的独立速率限制配额。
+
+### <a name="fast-lane-settings"></a>Fast Lane 设置
+
+- **`fastLane.enabled`**（布尔值）：允许编辑器通过 WebRTC 直接连接到此 CLI（[Fast Lane](./cli#fast-lane)，适用于 Supporter 和 Gold 账户）
+  - 默认值：`true`（没有 `fastLane` 条目的配置视为已启用）
+  - 在不允许点对点流量的网络中设为 `false`，编辑器将改为通过中继连接
+  - 也可以在 CLI 仪表盘中按 **`f`** 键切换
+  - 需要重启 CLI 才能生效
 
 ### 终端设置
 
@@ -101,6 +112,10 @@
 
 - **WSS（WebSocket Secure）**：TLS/SSL 加密
 - **HTTPS**：加密初始握手
+
+### Fast Lane 加密
+
+启用 [Fast Lane](./cli#fast-lane) 时，数据通过使用 DTLS 加密的 WebRTC 直连传输。CLI 的身份验证证明与该 DTLS 会话绑定，因此连接无法被劫持，也无法在其他通道上重放。
 
 ### 请求签名
 

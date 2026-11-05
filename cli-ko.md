@@ -8,6 +8,7 @@
 - **브라우저 프록시**: Spck Editor 내에서 전체 화면 브라우저 뷰로 로컬 서버 미리보기
 - **빠른 검색**: ripgrep 자동 감지를 통한 최적화된 파일 검색 (설치 시 100배 빠름)
 - **로컬 AI 코딩 에이전트 (ACP)**: Spck Editor의 AI 채팅에서 [Agent Client Protocol](https://agentclientprotocol.com/)을 통해 Claude Code, Codex 또는 Gemini CLI를 제어합니다. 에이전트는 본인의 구독으로 본인의 머신에서 실행됩니다. [모바일에서 AI 코딩 에이전트 (ACP)](./cli-acp) 참조.
+- **Fast Lane** (Supporter & Gold): Spck Editor와 CLI 간의 직접 P2P WebRTC 연결로, 릴레이보다 평균 2배 빠릅니다. [Fast Lane](#fast-lane)을 참조하세요.
 - **보안**: 선택적 Firebase 인증을 통한 암호화 서명 요청
 
 ## <a name="relay-server"></a>릴레이 서버
@@ -45,6 +46,40 @@ spck
 ### Spck Editor에서 릴레이 서버 선택
 
 **Link Remote Server**를 통해 모바일 앱에서 연결할 때 CLI가 사용 중인 것과 동일한 릴레이 서버를 **Relay Server** 드롭다운에서 선택하세요. 릴레이 서버 이름은 연결 후 CLI 출력에 표시됩니다.
+
+## <a name="fast-lane"></a>Fast Lane
+
+Fast Lane은 **Supporter** 및 **Gold** 구독자를 위한 프리미엄 기능입니다. 모든 메시지를 릴레이 서버를 거쳐 보내는 대신, Spck Editor가 WebRTC(P2P)를 사용해 **CLI에 직접 연결**합니다. 릴레이를 거치는 단계가 사라지고 왕복 횟수가 줄어들어 Fast Lane은 **릴레이보다 평균 2배 빠르며**, 파일 작업, 검색, Git, 터미널 입력이 눈에 띄게 빠르게 반응합니다.
+
+릴레이 서버는 여전히 필요합니다. CLI가 등록되는 곳이자 에디터와 CLI 간의 초기 핸드셰이크를 중개하기 때문입니다. 직접 경로가 만들어지면 프로젝트 데이터는 릴레이 대신 그 경로로 전달됩니다.
+
+### 요구 사항
+
+- CLI에 로그인한 계정의 활성 **Supporter** 또는 **Gold** 구독
+- Spck CLI **0.7.0 이상** (`npm i -g spck`)
+- Spck Editor를 실행하는 기기와 CLI를 실행하는 컴퓨터 모두에서 WebRTC 지원
+
+### Fast Lane 켜기 또는 끄기
+
+**Spck Editor에서:** **Link Remote Server**를 열거나(또는 메뉴에서 기존 연결을 편집하고) **⚡ Fast Lane** 토글을 사용하세요. Supporter 및 Gold 계정의 새 연결에서는 기본적으로 켜져 있습니다.
+
+**CLI에서:** Fast Lane은 기본적으로 활성화되어 있습니다. CLI 대시보드에서 **`f`**를 눌러 현재 프로젝트에 대해 켜거나 끄거나, [프로젝트 구성](./cli-config#fast-lane-settings)에서 `fastLane.enabled`를 설정하세요. 변경 사항은 CLI를 다시 시작한 후 적용됩니다. P2P 트래픽을 차단하는 네트워크에서는 끄세요.
+
+CLI 대시보드에는 현재 Fast Lane 상태(활성, 사용 가능, 꺼짐, 이 플랫폼에서 사용할 수 없음)가 표시되며, Spck Editor의 파일 패널에는 사용 중인 전송 방식과 현재 핑이 `Fast Lane · 24 ms` 또는 `Relay · 80 ms`처럼 표시됩니다.
+
+### 자동 폴백
+
+직접 연결을 만들 수 없는 경우 Spck Editor는 작업을 계속할 수 있도록 자동으로 릴레이로 전환하고 그 이유를 알려 줍니다. 일반적인 이유:
+
+- CLI가 오래됨 — `npm i -g spck`로 업데이트하세요
+- CLI 프로젝트 구성에서 Fast Lane이 꺼져 있음
+- CLI를 실행하는 컴퓨터 또는 사용 중인 기기에서 WebRTC를 사용할 수 없음
+- 릴레이 서버가 아직 Fast Lane을 지원하지 않음
+- 네트워크가 직접 P2P 경로를 차단함 (예: 엄격한 기업 방화벽 또는 NAT)
+
+### 보안
+
+Fast Lane 트래픽은 WebRTC(DTLS)로 종단 간 암호화됩니다. 또한 CLI의 인증 핸드셰이크는 해당 DTLS 세션에 묶여 있어, 프로젝트 데이터를 주고받기 전에 CLI가 바로 그 채널에서 연결 비밀 키를 가지고 있음을 증명해야 합니다. 모든 요청은 릴레이와 마찬가지로 암호학적으로 서명됩니다. [CLI 보안](./cli-config#security)을 참조하세요.
 
 ## <a name="daily-workflow"></a>일상적인 워크플로우
 
@@ -121,6 +156,7 @@ spck --setup
    spck
    ```
 4. 방화벽 설정 확인 — WebSocket 연결 (포트 443)이 허용되어 있는지 확인
+5. Fast Lane을 사용할 수 없어 릴레이를 사용 중이라는 알림이 표시되어도 연결은 릴레이를 통해 계속 작동합니다. 원인과 해결 방법은 [Fast Lane](#fast-lane)의 "자동 폴백"을 참조하세요
 
 ### QR 코드 스캔 불가
 
@@ -183,11 +219,11 @@ Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트�
 
 동시 CLI 연결의 최대 수와 일일 사용 제한은 계정 유형에 따라 다릅니다:
 
-| 플랜 | CLI 연결 수 | 일일 제한 |
-| --------- | --------------- | ----------- |
-| 무료 | 1 | 30분 |
-| 지원자 | 2 | 무제한 |
-| 골드 | 5 | 무제한 |
+| 플랜 | CLI 연결 수 | 일일 제한 | Fast Lane |
+| --------- | --------------- | ----------- | --------- |
+| 무료 | 1 | 30분 | —         |
+| 지원자 | 2 | 무제한 | ✓         |
+| 골드 | 5 | 무제한 | ✓         |
 
 무료 티어 사용량은 매일 UTC 오전 12:00에 초기화됩니다.
 

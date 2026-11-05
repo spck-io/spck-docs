@@ -40,6 +40,9 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   - **Rétrocompatible** : les configurations créées avant l’ajout de cette option sont chargées avec `acp: { enabled: true }` rempli automatiquement et réenregistrées
 
 > 💡 **Voir aussi** : [Agents IA de code sur mobile (ACP)](./cli-acp) pour le guide complet des agents pris en charge (Claude Code, Codex, Gemini CLI), de l’authentification et de la **facturation** — y compris le bucket de limite de débit distinct qu’Anthropic applique à Claude Code lorsqu’il est piloté par un outil tiers tel que Spck Editor.
+
+### <a name="fast-lane-settings"></a>Paramètres de Fast Lane
+
+- **`fastLane.enabled`** (boolean) : Autoriser les éditeurs à se connecter directement à cette CLI via WebRTC ([Fast Lane](./cli#fast-lane), comptes Supporter et Gold)
+  - Par défaut : `true` (les configurations sans entrée `fastLane` sont considérées comme activées)
+  - Mettre à `false` sur les réseaux où le trafic pair-à-pair n’est pas autorisé ; les éditeurs se connecteront alors via le relay
+  - Peut aussi être basculé depuis le tableau de bord de la CLI avec la touche **`f`**
+  - Nécessite un redémarrage de la CLI pour prendre effet
 
 ### Paramètres du Terminal
 
@@ -101,6 +112,10 @@ Toute communication utilise :
 
 - **WSS (WebSocket Secure)** : Chiffrement TLS/SSL
 - **HTTPS** : Handshake initial chiffré
+
+### Chiffrement de Fast Lane
+
+Lorsque [Fast Lane](./cli#fast-lane) est actif, les données transitent par une connexion WebRTC directe chiffrée avec DTLS. La preuve d’authentification de la CLI est liée à cette session DTLS, ce qui empêche qu’une connexion soit détournée ou rejouée sur un autre canal.
 
 ### Signature des Requêtes
 

@@ -8,6 +8,7 @@
 - **浏览器代理**：在 Spck Editor 内以全屏浏览器视图预览本地服务器
 - **快速搜索**：自动检测 ripgrep 的优化文件搜索（安装后速度提升 100 倍）
 - **本地 AI 编程助手 (ACP)**：通过 [Agent Client Protocol](https://agentclientprotocol.com/)，从 Spck Editor 的 AI 聊天中驱动 Claude Code、Codex 或 Gemini CLI。智能体在您的本地机器上使用您自己的订阅运行。请参阅 [移动端 AI 编程助手 (ACP)](./cli-acp)。
+- **Fast Lane**（Supporter 和 Gold）：Spck Editor 与 CLI 之间的 WebRTC 点对点直连，平均速度是中继的 2 倍。参见 [Fast Lane](#fast-lane)。
 - **安全可靠**：加密签名请求，支持可选的 Firebase 身份验证
 
 ## <a name="relay-server"></a>中继服务器
@@ -45,6 +46,40 @@ spck
 ### 在 Spck Editor 中选择中继服务器
 
 通过移动应用的 **Link Remote Server** 功能连接时，请在 **Relay Server** 下拉菜单中选择与 CLI 相同的中继服务器。CLI 连接后，输出中会显示中继服务器名称。
+
+## <a name="fast-lane"></a>Fast Lane
+
+Fast Lane 是面向 **Supporter** 和 **Gold** 订阅用户的高级功能。Spck Editor 不再让每条消息都经过中继服务器，而是使用 WebRTC（点对点）**直接连接到您的 CLI**。由于省去了中继这一跳并减少了往返次数，Fast Lane **平均速度是中继的 2 倍**，文件操作、搜索、Git 和终端输入的响应都会明显更流畅。
+
+中继服务器仍然是必需的：您的 CLI 在其上注册，并由它协调编辑器与 CLI 之间的初始握手。直连通道建立后，项目数据会通过该通道传输，而不再经过中继。
+
+### 要求
+
+- CLI 所登录账户拥有有效的 **Supporter** 或 **Gold** 订阅
+- Spck CLI **0.7.0 或更高版本**（`npm i -g spck`）
+- 运行 Spck Editor 的设备和运行 CLI 的机器都支持 WebRTC
+
+### 开启或关闭 Fast Lane
+
+**在 Spck Editor 中：** 打开 **Link Remote Server**（或从菜单编辑已有连接），使用 **⚡ Fast Lane** 开关。对于 Supporter 和 Gold 账户，新建连接默认开启。
+
+**在 CLI 中：** Fast Lane 默认启用。在 CLI 仪表盘中按 **`f`** 可为当前项目切换开关，也可以在[项目配置](./cli-config#fast-lane-settings)中设置 `fastLane.enabled`。更改在重启 CLI 后生效。在屏蔽点对点流量的网络中请将其关闭。
+
+CLI 仪表盘会显示当前的 Fast Lane 状态（已启用、可用、已关闭或此平台不可用），Spck Editor 的文件面板则会显示当前使用的传输方式及延迟，例如 `Fast Lane · 24 ms` 或 `Relay · 80 ms`。
+
+### 自动回退
+
+如果无法建立直连，Spck Editor 会自动回退到中继，让您可以继续工作，并显示说明原因的提示。常见原因：
+
+- CLI 版本过旧 — 请使用 `npm i -g spck` 更新
+- CLI 项目配置中已关闭 Fast Lane
+- 运行 CLI 的机器或您的设备不支持 WebRTC
+- 中继服务器尚不支持 Fast Lane
+- 网络阻止了点对点直连路径（例如严格的企业防火墙或 NAT）
+
+### 安全
+
+Fast Lane 流量由 WebRTC（DTLS）进行端到端加密。此外，CLI 的身份验证握手与具体的 DTLS 会话绑定，因此在交换任何项目数据之前，CLI 必须在该通道上证明自己持有您的连接密钥。所有请求仍与中继一样经过加密签名。参见 [CLI 安全](./cli-config#security)。
 
 ## <a name="daily-workflow"></a>日常工作流程
 
@@ -121,6 +156,7 @@ spck --setup
    spck
    ```
 4. 检查防火墙设置 — 确保允许 WebSocket 连接（端口 443）
+5. 如果看到提示称 Fast Lane 不可用并改用中继，连接仍可通过中继正常工作。原因和解决方法请参见 [Fast Lane](#fast-lane) 中的“自动回退”
 
 ### 二维码无法扫描
 
@@ -183,11 +219,11 @@ Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。�
 
 同时 CLI 连接数上限及每日使用限制取决于您的账号类型：
 
-| 套餐      | CLI 连接数 | 每日限制 |
-| --------- | --------------- | ----------- |
-| 免费版      | 1               | 30 分钟  |
-| 支持者 | 2               | 无限制   |
-| 黄金版      | 5               | 无限制   |
+| 套餐      | CLI 连接数 | 每日限制 | Fast Lane |
+| --------- | --------------- | ----------- | --------- |
+| 免费版      | 1               | 30 分钟  | —         |
+| 支持者 | 2               | 无限制   | ✓         |
+| 黄金版      | 5               | 无限制   | ✓         |
 
 免费套餐用量每天在 UTC 时间 12:00 AM 重置。
 

@@ -40,6 +40,9 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   - **Abwärtskompatibel**: Konfigurationen, die vor dieser Option erstellt wurden, werden mit automatisch ergänztem `acp: { enabled: true }` geladen und neu gespeichert
 
 > 💡 **Siehe auch**: [KI-Coding-Agenten auf dem Handy (ACP)](./cli-acp) für die vollständige Anleitung zu unterstützten Agenten (Claude Code, Codex, Gemini CLI), Authentifizierung und **Abrechnung** — einschließlich des separaten Rate-Limit-Buckets, den Anthropic auf Claude Code anwendet, wenn es von einem Drittanbieter-Tool wie Spck Editor gesteuert wird.
+
+### <a name="fast-lane-settings"></a>Fast-Lane-Einstellungen
+
+- **`fastLane.enabled`** (boolean): Editoren erlauben, sich per WebRTC direkt mit dieser CLI zu verbinden ([Fast Lane](./cli#fast-lane), Supporter- und Gold-Konten)
+  - Standard: `true` (Konfigurationen ohne `fastLane`-Eintrag gelten als aktiviert)
+  - In Netzwerken, in denen Peer-to-Peer-Verkehr nicht erlaubt ist, auf `false` setzen; Editoren verbinden sich dann stattdessen über den Relay-Server
+  - Kann auch im CLI-Dashboard mit der Taste **`f`** umgeschaltet werden
+  - Erfordert einen Neustart der CLI, um wirksam zu werden
 
 ### Terminal-Einstellungen
 
@@ -101,6 +112,10 @@ Alle Kommunikation verwendet:
 
 - **WSS (WebSocket Secure)**: TLS/SSL-Verschlüsselung
 - **HTTPS**: Verschlüsselter initialer Handshake
+
+### Fast-Lane-Verschlüsselung
+
+Wenn [Fast Lane](./cli#fast-lane) aktiv ist, werden die Daten über eine direkte, mit DTLS verschlüsselte WebRTC-Verbindung übertragen. Der Authentifizierungsnachweis der CLI ist an diese DTLS-Sitzung gebunden, sodass eine Verbindung nicht gekapert oder auf einem anderen Kanal wiederholt werden kann.
 
 ### Anfragensignierung
 

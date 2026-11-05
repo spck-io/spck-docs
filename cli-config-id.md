@@ -40,6 +40,9 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   - **Kompatibel ke belakang**: konfigurasi yang dibuat sebelum opsi ini ditambahkan dimuat dengan `acp: { enabled: true }` yang diisi otomatis dan disimpan ulang
 
 > 💡 **Lihat Juga**: [Agen AI Coding di Mobile (ACP)](./cli-acp) untuk panduan lengkap tentang agen yang didukung (Claude Code, Codex, Gemini CLI), autentikasi, dan **penagihan** — termasuk bucket rate-limit terpisah yang diterapkan Anthropic pada Claude Code ketika dijalankan oleh alat pihak ketiga seperti Spck Editor.
+
+### <a name="fast-lane-settings"></a>Pengaturan Fast Lane
+
+- **`fastLane.enabled`** (boolean): Izinkan editor terhubung langsung ke CLI ini melalui WebRTC ([Fast Lane](./cli#fast-lane), akun Supporter dan Gold)
+  - Default: `true` (konfigurasi tanpa entri `fastLane` dianggap aktif)
+  - Setel ke `false` di jaringan yang tidak mengizinkan lalu lintas peer-to-peer; editor akan terhubung melalui relay
+  - Dapat juga diaktifkan atau dinonaktifkan dari dasbor CLI dengan tombol **`f`**
+  - Memerlukan restart CLI agar berlaku
 
 ### Pengaturan Terminal
 
@@ -101,6 +112,10 @@ Semua komunikasi menggunakan:
 
 - **WSS (WebSocket Secure)**: Enkripsi TLS/SSL
 - **HTTPS**: Handshake awal yang terenkripsi
+
+### Enkripsi Fast Lane
+
+Saat [Fast Lane](./cli#fast-lane) aktif, data dikirim melalui koneksi WebRTC langsung yang dienkripsi dengan DTLS. Bukti autentikasi CLI terikat pada sesi DTLS tersebut, sehingga koneksi tidak dapat dibajak atau diputar ulang di kanal yang berbeda.
 
 ### Penandatanganan Permintaan
 

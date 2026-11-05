@@ -8,6 +8,7 @@
 - **Proxy de Navegador**: Visualize seu servidor local em uma janela de navegador em tela cheia dentro do Spck Editor
 - **Busca Rápida**: Busca de arquivos otimizada com detecção automática do ripgrep (100x mais rápido quando instalado)
 - **Agentes de IA Locais (ACP)**: Controle Claude Code, Codex ou Gemini CLI a partir do Chat de IA do Spck Editor via [Agent Client Protocol](https://agentclientprotocol.com/). O agente é executado em sua máquina com sua própria assinatura. Veja [Agentes de IA no Mobile (ACP)](./cli-acp).
+- **Fast Lane** (Supporter e Gold): Conexão WebRTC direta (peer-to-peer) entre o Spck Editor e o CLI, em média 2x mais rápida que o relay. Veja [Fast Lane](#fast-lane).
 - **Seguro**: Requisições assinadas criptograficamente com autenticação Firebase opcional
 
 ## <a name="relay-server"></a>Servidor Relay
@@ -45,6 +46,40 @@ spck
 ### Escolhendo um Servidor Relay no Spck Editor
 
 Ao conectar pelo aplicativo móvel via **Link Remote Server**, selecione o mesmo servidor relay no menu suspenso **Relay Server** que o CLI está usando. O nome do servidor relay é exibido na saída do CLI após a conexão.
+
+## <a name="fast-lane"></a>Fast Lane
+
+O Fast Lane é um recurso premium para assinantes **Supporter** e **Gold**. Em vez de encaminhar cada mensagem pelo servidor relay, o Spck Editor se conecta **diretamente ao seu CLI** usando WebRTC (peer-to-peer). Ao eliminar a passagem pelo relay e reduzir as idas e vindas, o Fast Lane é **em média 2x mais rápido que o relay**, e as operações com arquivos, a busca, o Git e a digitação no terminal ficam visivelmente mais responsivos.
+
+O servidor relay continua sendo necessário: é nele que seu CLI é registrado, e ele intermedeia o handshake inicial entre o editor e o CLI. Depois que o caminho direto é estabelecido, os dados do seu projeto passam por ele em vez de passar pelo relay.
+
+### Requisitos
+
+- Uma assinatura **Supporter** ou **Gold** ativa na conta com a qual o CLI está conectado
+- Spck CLI **0.7.0 ou posterior** (`npm i -g spck`)
+- Suporte a WebRTC tanto no dispositivo que executa o Spck Editor quanto na máquina que executa o CLI
+
+### Ativando ou Desativando o Fast Lane
+
+**No Spck Editor:** Abra **Link Remote Server** (ou edite uma conexão existente pelo menu) e use a chave **⚡ Fast Lane**. Ela vem ativada por padrão para novas conexões em contas Supporter e Gold.
+
+**No CLI:** O Fast Lane vem ativado por padrão. Pressione **`f`** no painel do CLI para ativá-lo ou desativá-lo no projeto atual, ou defina `fastLane.enabled` na [configuração do projeto](./cli-config#fast-lane-settings). As alterações entram em vigor após reiniciar o CLI. Desative-o em redes que bloqueiam tráfego peer-to-peer.
+
+O painel do CLI mostra o status atual do Fast Lane (ativo, disponível, desativado ou indisponível nesta plataforma), e o painel de Arquivos do Spck Editor mostra qual transporte está em uso, junto com o ping atual, por exemplo `Fast Lane · 24 ms` ou `Relay · 80 ms`.
+
+### Fallback Automático
+
+Se não for possível estabelecer uma conexão direta, o Spck Editor recorre automaticamente ao relay para que você possa continuar trabalhando, e exibe um aviso explicando o motivo. Motivos comuns:
+
+- O CLI está desatualizado — atualize com `npm i -g spck`
+- O Fast Lane está desativado na configuração do projeto do CLI
+- O WebRTC não está disponível na máquina que executa o CLI ou no seu dispositivo
+- O servidor relay ainda não oferece suporte ao Fast Lane
+- A rede bloqueia o caminho peer-to-peer direto (por exemplo, um firewall corporativo rígido ou NAT)
+
+### Segurança
+
+O tráfego do Fast Lane é criptografado de ponta a ponta pelo WebRTC (DTLS). Além disso, o handshake de autenticação do CLI é vinculado à sessão DTLS específica: o CLI precisa provar que possui o segredo da sua conexão naquele canal exato antes que qualquer dado do projeto seja trocado. Todas as requisições continuam sendo assinadas criptograficamente, como no relay. Veja [Segurança do CLI](./cli-config#security).
 
 ## <a name="daily-workflow"></a>Fluxo de Trabalho Diário
 
@@ -121,6 +156,7 @@ spck --setup
    spck
    ```
 4. Verifique as configurações de firewall — certifique-se de que conexões WebSocket (porta 443) são permitidas
+5. Se aparecer um aviso de que o Fast Lane está indisponível e o relay está sendo usado, a conexão continua funcionando pelo relay. Veja "Fallback Automático" em [Fast Lane](#fast-lane) para os motivos e as soluções
 
 ### QR Code Não Está Sendo Lido
 
@@ -183,11 +219,11 @@ O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck
 
 O número máximo de conexões simultâneas do CLI e os limites de uso diário dependem do tipo de conta:
 
-| Plano     | Conexões CLI | Limite Diário |
-| --------- | ------------ | ------------- |
-| Gratuito  | 1            | 30 minutos    |
-| Apoiador  | 2            | Ilimitado     |
-| Gold      | 5            | Ilimitado     |
+| Plano     | Conexões CLI | Limite Diário | Fast Lane |
+| --------- | ------------ | ------------- | --------- |
+| Gratuito  | 1            | 30 minutos    | —         |
+| Apoiador  | 2            | Ilimitado     | ✓         |
+| Gold      | 5            | Ilimitado     | ✓         |
 
 O uso do plano gratuito é redefinido diariamente à meia-noite UTC.
 

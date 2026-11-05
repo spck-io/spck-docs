@@ -8,6 +8,7 @@
 - **Browser Proxy**: Pratinjau server lokal Anda dalam tampilan browser layar penuh di dalam Spck Editor
 - **Pencarian Cepat**: Pencarian file yang dioptimalkan dengan deteksi ripgrep otomatis (100x lebih cepat saat terinstal)
 - **Agen AI Coding Lokal (ACP)**: Jalankan Claude Code, Codex, atau Gemini CLI dari AI Chat Spck Editor melalui [Agent Client Protocol](https://agentclientprotocol.com/). Agen berjalan di mesin Anda dengan langganan Anda sendiri. Lihat [Agen AI Coding di Mobile (ACP)](./cli-acp).
+- **Fast Lane** (Supporter & Gold): Koneksi WebRTC peer-to-peer langsung antara Spck Editor dan CLI, rata-rata 2x lebih cepat daripada relay. Lihat [Fast Lane](#fast-lane).
 - **Aman**: Permintaan yang ditandatangani secara kriptografis dengan autentikasi Firebase opsional
 
 ## <a name="relay-server"></a>Server Relay
@@ -45,6 +46,40 @@ spck
 ### Memilih Server Relay di Spck Editor
 
 Saat menghubungkan dari aplikasi mobile melalui **Link Remote Server**, pilih server relay yang sama dari dropdown **Relay Server** yang digunakan oleh CLI. Nama server relay ditampilkan di output CLI setelah terhubung.
+
+## <a name="fast-lane"></a>Fast Lane
+
+Fast Lane adalah fitur premium untuk pelanggan **Supporter** dan **Gold**. Alih-alih mengirim setiap pesan melalui server relay, Spck Editor terhubung **langsung ke CLI Anda** menggunakan WebRTC (peer-to-peer). Dengan menghilangkan perantara relay dan mengurangi bolak-balik data, Fast Lane **rata-rata 2x lebih cepat daripada relay**, sehingga operasi file, pencarian, Git, dan input terminal terasa jauh lebih responsif.
+
+Server relay tetap diperlukan: di sanalah CLI Anda terdaftar, dan relay menengahi handshake awal antara editor dan CLI. Setelah jalur langsung terbentuk, data proyek Anda mengalir melaluinya, bukan melalui relay.
+
+### Persyaratan
+
+- Langganan **Supporter** atau **Gold** yang aktif pada akun yang digunakan untuk masuk di CLI
+- Spck CLI **0.7.0 atau lebih baru** (`npm i -g spck`)
+- Dukungan WebRTC, baik di perangkat yang menjalankan Spck Editor maupun di mesin yang menjalankan CLI
+
+### Mengaktifkan atau Menonaktifkan Fast Lane
+
+**Di Spck Editor:** Buka **Link Remote Server** (atau edit koneksi yang sudah ada dari menu) lalu gunakan sakelar **⚡ Fast Lane**. Sakelar ini aktif secara default untuk koneksi baru pada akun Supporter dan Gold.
+
+**Di CLI:** Fast Lane aktif secara default. Tekan **`f`** di dasbor CLI untuk mengaktifkan atau menonaktifkannya pada proyek saat ini, atau atur `fastLane.enabled` di [konfigurasi proyek](./cli-config#fast-lane-settings). Perubahan berlaku setelah CLI dimulai ulang. Nonaktifkan di jaringan yang memblokir lalu lintas peer-to-peer.
+
+Dasbor CLI menampilkan status Fast Lane saat ini (aktif, tersedia, dinonaktifkan, atau tidak tersedia di platform ini), dan panel File di Spck Editor menampilkan transport yang sedang digunakan beserta ping saat ini, misalnya `Fast Lane · 24 ms` atau `Relay · 80 ms`.
+
+### Fallback Otomatis
+
+Jika koneksi langsung tidak dapat dibuat, Spck Editor otomatis beralih ke relay agar Anda tetap bisa bekerja, dan menampilkan pemberitahuan yang menjelaskan alasannya. Alasan umum:
+
+- CLI sudah usang — perbarui dengan `npm i -g spck`
+- Fast Lane dinonaktifkan di konfigurasi proyek CLI
+- WebRTC tidak tersedia di mesin yang menjalankan CLI, atau di perangkat Anda
+- Server relay belum mendukung Fast Lane
+- Jaringan memblokir jalur peer-to-peer langsung (misalnya firewall perusahaan yang ketat atau NAT)
+
+### Keamanan
+
+Lalu lintas Fast Lane dienkripsi end-to-end oleh WebRTC (DTLS). Selain itu, handshake autentikasi CLI terikat pada sesi DTLS tertentu, sehingga CLI harus membuktikan bahwa ia memegang rahasia koneksi Anda pada kanal yang sama persis sebelum data proyek apa pun dipertukarkan. Semua permintaan tetap ditandatangani secara kriptografis, sama seperti pada relay. Lihat [Keamanan CLI](./cli-config#security).
 
 ## <a name="daily-workflow"></a>Alur Kerja Harian
 
@@ -121,6 +156,7 @@ spck --setup
    spck
    ```
 4. Periksa pengaturan firewall — pastikan koneksi WebSocket (port 443) diizinkan
+5. Jika muncul pemberitahuan bahwa Fast Lane tidak tersedia dan relay digunakan, koneksi tetap berfungsi melalui relay. Lihat bagian "Fallback Otomatis" di [Fast Lane](#fast-lane) untuk alasan dan solusinya
 
 ### Kode QR Tidak Dapat Dipindai
 
@@ -183,11 +219,11 @@ Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck
 
 Jumlah maksimum koneksi CLI simultan dan batas penggunaan harian bergantung pada jenis akun Anda:
 
-| Paket     | Koneksi CLI | Batas Harian |
-| --------- | ----------- | ------------ |
-| Gratis    | 1           | 30 menit     |
-| Supporter | 2           | Tidak terbatas |
-| Gold      | 5           | Tidak terbatas |
+| Paket     | Koneksi CLI | Batas Harian | Fast Lane |
+| --------- | ----------- | ------------ | --------- |
+| Gratis    | 1           | 30 menit     | —         |
+| Supporter | 2           | Tidak terbatas | ✓         |
+| Gold      | 5           | Tidak terbatas | ✓         |
 
 Penggunaan tingkat gratis direset setiap hari pada pukul 12:00 AM UTC.
 

@@ -8,6 +8,7 @@
 - **瀏覽器代理**：在 Spck Editor 內以全螢幕瀏覽器視圖預覽本機伺服器
 - **快速搜尋**：具自動偵測 ripgrep 功能的最佳化檔案搜尋（安裝後速度快 100 倍）
 - **本機 AI 程式設計助手 (ACP)**：透過 [Agent Client Protocol](https://agentclientprotocol.com/)，從 Spck Editor 的 AI 聊天中驅動 Claude Code、Codex 或 Gemini CLI。代理程式在您本機機器上以您自己的訂閱執行。參閱 [行動裝置上的 AI 程式設計助手 (ACP)](./cli-acp)。
+- **Fast Lane**（Supporter 與 Gold）：Spck Editor 與 CLI 之間的 WebRTC 點對點直連，平均速度是中繼的 2 倍。請參閱 [Fast Lane](#fast-lane)。
 - **安全性**：採用密碼學簽章請求，並支援可選的 Firebase 身分驗證
 
 ## <a name="relay-server"></a>中繼伺服器
@@ -45,6 +46,40 @@ spck
 ### 在 Spck Editor 中選擇中繼伺服器
 
 透過行動應用程式的 **Link Remote Server** 連線時，請從 **Relay Server** 下拉選單中選擇與 CLI 相同的中繼伺服器。中繼伺服器名稱會在連線後顯示於 CLI 輸出中。
+
+## <a name="fast-lane"></a>Fast Lane
+
+Fast Lane 是提供給 **Supporter** 與 **Gold** 訂閱者的進階功能。Spck Editor 不再讓每則訊息都經過中繼伺服器，而是使用 WebRTC（點對點）**直接連線到您的 CLI**。由於省去了中繼這一跳並減少了往返次數，Fast Lane **平均速度是中繼的 2 倍**，檔案操作、搜尋、Git 與終端機輸入的回應都會明顯更順暢。
+
+中繼伺服器仍然是必要的：您的 CLI 會在其上註冊，並由它協調編輯器與 CLI 之間的初始交握。直連通道建立後，專案資料會透過該通道傳輸，而不再經過中繼。
+
+### 需求
+
+- CLI 所登入的帳號擁有有效的 **Supporter** 或 **Gold** 訂閱
+- Spck CLI **0.7.0 或更新版本**（`npm i -g spck`）
+- 執行 Spck Editor 的裝置與執行 CLI 的機器都支援 WebRTC
+
+### 開啟或關閉 Fast Lane
+
+**在 Spck Editor 中：** 開啟 **Link Remote Server**（或從選單編輯既有連線），並使用 **⚡ Fast Lane** 開關。對於 Supporter 與 Gold 帳號，新建立的連線預設為開啟。
+
+**在 CLI 中：** Fast Lane 預設為啟用。在 CLI 儀表板中按 **`f`** 即可為目前專案切換開關，也可以在[專案設定](./cli-config#fast-lane-settings)中設定 `fastLane.enabled`。變更會在重新啟動 CLI 後生效。在封鎖點對點流量的網路中請將其關閉。
+
+CLI 儀表板會顯示目前的 Fast Lane 狀態（已啟用、可用、已關閉或此平台無法使用），Spck Editor 的檔案面板則會顯示目前使用的傳輸方式及延遲，例如 `Fast Lane · 24 ms` 或 `Relay · 80 ms`。
+
+### 自動回退
+
+若無法建立直連，Spck Editor 會自動回退到中繼，讓您可以繼續工作，並顯示說明原因的通知。常見原因：
+
+- CLI 版本過舊 — 請使用 `npm i -g spck` 更新
+- CLI 專案設定中已關閉 Fast Lane
+- 執行 CLI 的機器或您的裝置不支援 WebRTC
+- 中繼伺服器尚未支援 Fast Lane
+- 網路封鎖了點對點直連路徑（例如嚴格的企業防火牆或 NAT）
+
+### 安全性
+
+Fast Lane 流量由 WebRTC（DTLS）進行端對端加密。此外，CLI 的身分驗證交握與特定的 DTLS 工作階段綁定，因此在交換任何專案資料之前，CLI 必須在該通道上證明自己持有您的連線密鑰。所有請求仍與中繼一樣經過加密簽署。請參閱 [CLI 安全性](./cli-config#security)。
 
 ## <a name="daily-workflow"></a>日常工作流程
 
@@ -121,6 +156,7 @@ spck --setup
    spck
    ```
 4. 檢查防火牆設定——確保允許 WebSocket 連線（連接埠 443）
+5. 如果看到通知指出 Fast Lane 無法使用並改用中繼，連線仍可透過中繼正常運作。原因與解決方法請參閱 [Fast Lane](#fast-lane) 中的「自動回退」
 
 ### QR 碼無法掃描
 
@@ -183,11 +219,11 @@ Lite 支援透過 Spck CLI 編輯桌上型電腦或公用虛擬機上的專案�
 
 最大同時 CLI 連線數和每日使用量限制取決於您的帳號類型：
 
-| 方案      | CLI 連線數 | 每日限制   |
-| --------- | ---------- | ---------- |
-| 免費版    | 1          | 30 分鐘    |
-| 支持者    | 2          | 無限制     |
-| 黃金方案  | 5          | 無限制     |
+| 方案      | CLI 連線數 | 每日限制   | Fast Lane |
+| --------- | ---------- | ---------- | --------- |
+| 免費版    | 1          | 30 分鐘    | —         |
+| 支持者    | 2          | 無限制     | ✓         |
+| 黃金方案  | 5          | 無限制     | ✓         |
 
 免費版每日使用量於 UTC 時間凌晨 12:00 重置。
 

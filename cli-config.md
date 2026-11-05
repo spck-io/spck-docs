@@ -40,6 +40,9 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - **Backward-compatible**: configs created before this option was added are loaded with `acp: { enabled: true }` populated automatically and re-saved
 
 > 💡 **See also**: [AI Coding Agents on Mobile (ACP)](./cli-acp) for the full walkthrough of supported agents (Claude Code, Codex, Gemini CLI), authentication, and **billing** — including the separate rate-limit bucket Anthropic applies to Claude Code when it's driven by a third-party tool like Spck Editor.
+
+### <a name="fast-lane-settings"></a>Fast Lane Settings
+
+- **`fastLane.enabled`** (boolean): Allow editors to connect directly to this CLI over WebRTC ([Fast Lane](./cli#fast-lane), Supporter and Gold accounts)
+  - Default: `true` (configs without a `fastLane` entry are treated as enabled)
+  - Set to `false` on networks where peer-to-peer traffic is not allowed; editors will connect through the relay instead
+  - Can also be toggled from the CLI dashboard with the **`f`** key
+  - Requires a CLI restart to take effect
 
 ### Terminal Settings
 
@@ -101,6 +112,10 @@ All communication uses:
 
 - **WSS (WebSocket Secure)**: TLS/SSL encryption
 - **HTTPS**: Encrypted initial handshake
+
+### Fast Lane Encryption
+
+When [Fast Lane](./cli#fast-lane) is active, data travels over a direct WebRTC connection encrypted with DTLS. The CLI's authentication proof is bound to that DTLS session, so a connection cannot be hijacked or replayed on a different channel.
 
 ### Request Signing
 

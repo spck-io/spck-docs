@@ -40,6 +40,9 @@
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@
   - **下位互換性**: このオプションが追加される前に作成された設定は、`acp: { enabled: true }` が自動的に埋め込まれた状態で読み込まれ、再保存されます
 
 > 💡 **関連項目**: サポートされているエージェント（Claude Code、Codex、Gemini CLI）、認証、**課金**の完全なガイドについては [モバイルでの AI コーディングエージェント (ACP)](./cli-acp) を参照してください — Spck Editor のようなサードパーティツールから Claude Code を駆動した場合に Anthropic が適用する個別のレート制限バケットを含みます。
+
+### <a name="fast-lane-settings"></a>Fast Lane 設定
+
+- **`fastLane.enabled`** (boolean): エディタが WebRTC 経由でこの CLI に直接接続することを許可（[Fast Lane](./cli#fast-lane)、Supporter および Gold アカウント）
+  - デフォルト: `true`（`fastLane` エントリのない設定は有効として扱われます）
+  - ピアツーピア通信が許可されていないネットワークでは `false` に設定すると、エディタはリレー経由で接続します
+  - CLI ダッシュボードの **`f`** キーでも切り替え可能
+  - 反映には CLI の再起動が必要
 
 ### ターミナル設定
 
@@ -101,6 +112,10 @@
 
 - **WSS (WebSocket Secure)**: TLS/SSL 暗号化
 - **HTTPS**: 暗号化された初期ハンドシェイク
+
+### Fast Lane の暗号化
+
+[Fast Lane](./cli#fast-lane) が有効な場合、データは DTLS で暗号化された WebRTC の直接接続を流れます。CLI の認証証明はこの DTLS セッションに紐づけられているため、接続が乗っ取られたり、別のチャネルで再利用されたりすることはありません。
 
 ### リクエスト署名
 

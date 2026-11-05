@@ -40,6 +40,9 @@
   },
   "acp": {
     "enabled": true
+  },
+  "fastLane": {
+    "enabled": true
   }
 }
 ```
@@ -60,6 +63,14 @@
   - **하위 호환성**: 이 옵션이 추가되기 전에 만들어진 구성은 `acp: { enabled: true }`가 자동으로 채워진 채로 로드되고 다시 저장됩니다.
 
 > 💡 **참고**: 지원되는 에이전트(Claude Code, Codex, Gemini CLI), 인증, **결제**에 대한 전체 가이드는 [모바일에서 AI 코딩 에이전트 (ACP)](./cli-acp)를 참조하세요 — Spck Editor와 같은 타사 도구가 Claude Code를 구동할 때 Anthropic이 적용하는 별도의 속도 제한 버킷도 포함됩니다.
+
+### <a name="fast-lane-settings"></a>Fast Lane 설정
+
+- **`fastLane.enabled`** (boolean): 에디터가 WebRTC를 통해 이 CLI에 직접 연결하도록 허용 ([Fast Lane](./cli#fast-lane), Supporter 및 Gold 계정)
+  - 기본값: `true` (`fastLane` 항목이 없는 구성은 활성화된 것으로 처리됩니다)
+  - P2P 트래픽이 허용되지 않는 네트워크에서는 `false`로 설정하세요. 에디터는 대신 릴레이를 통해 연결합니다.
+  - CLI 대시보드에서 **`f`** 키로도 전환할 수 있습니다.
+  - 적용하려면 CLI를 다시 시작해야 합니다.
 
 ### 터미널 설정
 
@@ -101,6 +112,10 @@
 
 - **WSS (WebSocket Secure)**: TLS/SSL 암호화
 - **HTTPS**: 암호화된 초기 핸드셰이크
+
+### Fast Lane 암호화
+
+[Fast Lane](./cli#fast-lane)이 활성화되면 데이터는 DTLS로 암호화된 직접 WebRTC 연결을 통해 전송됩니다. CLI의 인증 증명은 해당 DTLS 세션에 묶여 있으므로 연결이 탈취되거나 다른 채널에서 재전송될 수 없습니다.
 
 ### 요청 서명
 
