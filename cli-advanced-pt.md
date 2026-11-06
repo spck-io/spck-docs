@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Substituir servidor de relay (ex.: usar uma região específica)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Exibir logs simples em vez do painel
-spck --no-dashboard
 ```
 
 ### Painel

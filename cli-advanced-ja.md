@@ -38,9 +38,6 @@ spck -r /path/to/project
 # リレーサーバーを上書きする（例: 特定のリージョンを使用する）
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# ダッシュボードの代わりにプレーンなログを出力する
-spck --no-dashboard
 ```
 
 ### ダッシュボード

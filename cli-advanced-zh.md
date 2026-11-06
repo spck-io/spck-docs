@@ -38,9 +38,6 @@ spck -r /path/to/project
 # 覆盖中继服务器（例如使用特定区域）
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# 输出纯日志而不显示仪表板
-spck --no-dashboard
 ```
 
 ### 仪表板

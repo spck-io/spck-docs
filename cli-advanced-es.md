@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Sobreescribir el servidor de retransmisión (p. ej., usar una región específica)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Mostrar registros sin formato en lugar del panel
-spck --no-dashboard
 ```
 
 ### Panel

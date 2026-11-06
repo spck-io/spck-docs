@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Relay-Server überschreiben (z. B. eine bestimmte Region verwenden)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Einfache Log-Ausgabe statt des Dashboards anzeigen
-spck --no-dashboard
 ```
 
 ### Dashboard

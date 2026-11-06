@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Ganti server relay (mis., gunakan region tertentu)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Tampilkan log biasa, bukan dasbor
-spck --no-dashboard
 ```
 
 ### Dasbor

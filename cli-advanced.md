@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Override relay server (e.g., use a specific region)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Print plain logs instead of showing the dashboard
-spck --no-dashboard
 ```
 
 ### Dashboard

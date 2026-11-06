@@ -38,9 +38,6 @@ spck -r /path/to/project
 # 覆蓋中繼伺服器（例如使用特定區域）
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# 輸出純文字日誌而不顯示儀表板
-spck --no-dashboard
 ```
 
 ### 儀表板

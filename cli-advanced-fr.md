@@ -38,9 +38,6 @@ spck -r /path/to/project
 # Remplacer le serveur de relais (par ex., utiliser une région spécifique)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# Afficher des journaux bruts au lieu du tableau de bord
-spck --no-dashboard
 ```
 
 ### Tableau de bord

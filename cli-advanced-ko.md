@@ -38,9 +38,6 @@ spck -r /path/to/project
 # 릴레이 서버 재정의 (예: 특정 리전 사용)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
-
-# 대시보드 대신 일반 로그 출력
-spck --no-dashboard
 ```
 
 ### 대시보드
