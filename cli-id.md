@@ -160,9 +160,9 @@ spck --setup
 
 ### Kode QR Tidak Dapat Dipindai
 
-- Verifikasi aplikasi Spck Editor sudah terinstal sebelum memindai
-- Gunakan entri manual: Projects → New Project → Link Remote Server
-- Gunakan aplikasi Kamera native, bukan pemindai pihak ketiga
+- Pindai dari Spck Editor: Proyek → Proyek Baru → Tautkan Server Jarak Jauh, lalu ketuk ikon kode QR
+- Jika terminal terlalu kecil untuk menampilkan kode, CLI menampilkan ukuran yang diperlukan. Perbesar jendela, atau masukkan detailnya secara manual di dialog yang sama
+- Hindari pemindai pihak ketiga, yang dapat mengekspos kunci rahasia Anda
 
 ### Operasi Git Tidak Berfungsi
 

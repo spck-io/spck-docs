@@ -38,7 +38,24 @@ spck -r /path/to/project
 # Sobreescribir el servidor de retransmisión (p. ej., usar una región específica)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
+
+# Mostrar registros sin formato en lugar del panel
+spck --no-dashboard
 ```
+
+### Panel
+
+En un terminal interactivo, la CLI muestra un panel a pantalla completa una vez conectada. Si su salida se redirige o se ejecuta como servicio, muestra registros sin formato.
+
+| Vista | Teclas |
+|------|------|
+| Principal | `l` registros, `c` código QR de conexión, `m` gestionar terminales, `q` `q` salir |
+| Ajustes (vista principal) | `t` terminal, `b` proxy del navegador, `a` agentes de IA, `s` servidor de lenguaje, `u` verificación de usuario, `f` Fast Lane, `w` mantener el equipo activo |
+| Registros | `↑` `↓` / `j` `k` desplazarse, `PgUp` `PgDn` por páginas, `←` `→` mover líneas largas, `g` `G` primera / última línea, `Esc` volver |
+| Terminales | `↑` `↓` / `j` `k` seleccionar, `x` `x` finalizar (o quitar un terminal finalizado), `Esc` volver |
+| Código QR | `c` / `Esc` volver |
+
+`Ctrl+L` vuelve a dibujar la pantalla y `Ctrl+C` sale desde cualquier vista. Si pulsas `Ctrl+C` de nuevo mientras la CLI se desconecta, sale de inmediato.
 
 ## <a name="ai-coding-agents"></a>Agentes de codificación con IA (ACP)
 

@@ -10,7 +10,7 @@ Lite 支援透過 Spck CLI 編輯桌上型電腦或公用虛擬機上的專案�
 
 ### 必要
 
-- **Node.js**：18.0.0 或更高版本
+- **Node.js**：22.22.2 或更高版本，或 24.15+
 - **Spck Editor 帳號**：免費帳號（30 分鐘/天）或 Premium 訂閱（無限制）
 - **Spck Editor 行動應用程式**：[Android](https://play.google.com/store/apps/details?id=io.spck) 或 [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ CLI 執行後會顯示 QR 碼和連線詳情。
 
 ### 方法 1：QR 碼（建議）
 
-**重要**：掃描 QR 碼**之前**請先安裝 Spck Editor 應用程式。
+1. 開啟 Spck Editor → **專案** → **新增專案** → **連結遠端伺服器**
+2. 點選 QR 碼圖示
+3. 掃描終端機中顯示的 QR 碼。應用程式會自動連線。
 
-**在 Android 上：**
-
-1. 使用相機應用程式或快速設定中的 QR 掃描器
-2. 偵測到後，點選通知開啟 Spck Editor
-3. 應用程式自動連線
-
-> 💡 **注意**：部分 QR 碼掃描器無法處理直接開啟 Spck Editor 的自訂通訊協定。請複製 URL 並貼到 Chrome 中，Chrome 會透過該 URL 啟動 Spck Editor。
-
-**在 iOS 上：**
-
-1. 使用相機應用程式或控制中心中的 QR 掃描器
-2. 偵測到後，點選通知開啟 Spck Editor
-3. 應用程式自動連線
-
-> 💡 **注意**：Spck Editor **沒有**內建 QR 掃描器。請使用裝置的原生 QR 功能。
+> 💡 **注意**：您也可以用裝置的相機應用程式掃描 QR 碼；如果已安裝應用程式，連結會在 Spck Editor 中開啟。
 
 ### 方法 2：手動輸入
 
-如果 QR 碼無法使用：
+如果無法掃描 QR 碼：
 
 1. 開啟 Spck Editor → **專案** → **新增專案** → **連結遠端伺服器**
 2. 輸入終端機中顯示的**用戶端 ID** 和**密鑰**
-3. 點選**連線**
+3. 選擇終端機中顯示的中繼伺服器
+4. 點選**連線**
 
 ## <a name="next-steps"></a>後續步驟
 

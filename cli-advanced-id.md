@@ -38,7 +38,24 @@ spck -r /path/to/project
 # Ganti server relay (mis., gunakan region tertentu)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
+
+# Tampilkan log biasa, bukan dasbor
+spck --no-dashboard
 ```
+
+### Dasbor
+
+Di terminal interaktif, CLI menampilkan dasbor layar penuh setelah terhubung. Jika outputnya dialihkan atau dijalankan sebagai layanan, CLI menampilkan log biasa.
+
+| Tampilan | Tombol |
+|------|------|
+| Utama | `l` log, `c` kode QR koneksi, `m` kelola terminal, `q` `q` keluar |
+| Pengaturan (tampilan utama) | `t` terminal, `b` proxy browser, `a` agen AI, `s` server bahasa, `u` verifikasi pengguna, `f` Fast Lane, `w` jaga komputer tetap aktif |
+| Log | `↑` `↓` / `j` `k` gulir, `PgUp` `PgDn` per halaman, `←` `→` geser baris panjang, `g` `G` baris pertama / terakhir, `Esc` kembali |
+| Terminal | `↑` `↓` / `j` `k` pilih, `x` `x` hentikan (atau hapus terminal yang sudah berhenti), `Esc` kembali |
+| Kode QR | `c` / `Esc` kembali |
+
+`Ctrl+L` menggambar ulang layar dan `Ctrl+C` keluar dari tampilan mana pun. Menekan `Ctrl+C` lagi saat CLI sedang memutuskan koneksi akan langsung keluar.
 
 ## <a name="ai-coding-agents"></a>Agen Coding AI (ACP)
 

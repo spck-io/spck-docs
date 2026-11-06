@@ -160,9 +160,9 @@ spck --setup
 
 ### QR Code Not Scanning
 
-- Verify Spck Editor app is installed before scanning
-- Use manual entry: Projects → New Project → Link Remote Server
-- Use native Camera app, not third-party scanners
+- Scan from Spck Editor: Projects → New Project → Link Remote Server, then tap the QR code icon
+- If the terminal is too small to show the code, the CLI shows the size it needs. Enlarge the window, or enter the details by hand in the same dialog
+- Avoid third-party scanners, which may expose your secret key
 
 ### Git Operations Not Working
 

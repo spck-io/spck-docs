@@ -10,7 +10,7 @@ Lite unterstützt Remote-Projekte auf Ihrem Desktop oder einer öffentlichen VM 
 
 ### Erforderlich
 
-- **Node.js**: 18.0.0 oder höher
+- **Node.js**: 22.22.2 oder höher, oder 24.15+
 - **Spck Editor-Konto**: Kostenloses Konto (30 Min./Tag) oder Premium-Abonnement (unbegrenzt)
 - **Spck Editor Mobile App**: [Android](https://play.google.com/store/apps/details?id=io.spck) oder [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ Sobald das CLI läuft, zeigt es einen QR-Code und Verbindungsdetails an.
 
 ### Methode 1: QR-Code (Empfohlen)
 
-**WICHTIG**: Installiere die Spck Editor-App, BEVOR du den QR-Code scannst.
+1. Spck Editor öffnen → **Projekte** → **Neues Projekt** → **Remote-Server verknüpfen**
+2. Tippen Sie auf das QR-Code-Symbol
+3. Scannen Sie den im Terminal angezeigten QR-Code. Die App verbindet sich automatisch.
 
-**Auf Android:**
-
-1. Kamera-App oder QR-Scanner in den Schnelleinstellungen verwenden
-2. Nach Erkennung die Benachrichtigung antippen, um Spck Editor zu öffnen
-3. App verbindet sich automatisch
-
-> 💡 **Hinweis**: Einige QR-Code-Scanner können das benutzerdefinierte Schema zum direkten Öffnen von Spck Editor nicht verarbeiten. URL kopieren und in Chrome einfügen, das Spck Editor über die URL startet.
-
-**Auf iOS:**
-
-1. Kamera-App oder QR-Scanner im Kontrollzentrum verwenden
-2. Nach Erkennung die Benachrichtigung antippen, um Spck Editor zu öffnen
-3. App verbindet sich automatisch
-
-> 💡 **Hinweis**: Spck Editor verfügt über KEINEN integrierten QR-Scanner. Verwende die native QR-Funktion deines Geräts.
+> 💡 **Hinweis**: Sie können den Code auch mit der Kamera-App Ihres Geräts scannen. Dadurch wird der Link in Spck Editor geöffnet, sofern die App installiert ist.
 
 ### Methode 2: Manuelle Eingabe
 
-Falls der QR-Code nicht funktioniert:
+Falls Sie den QR-Code nicht scannen können:
 
 1. Spck Editor öffnen → **Projekte** → **Neues Projekt** → **Remote-Server verknüpfen**
 2. Die im Terminal angezeigte **Client-ID** und das **Secret** eingeben
-3. **Verbinden** antippen
+3. Wählen Sie den im Terminal angezeigten Relay-Server aus
+4. **Verbinden** antippen
 
 ## <a name="next-steps"></a>Nächste Schritte
 

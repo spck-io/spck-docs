@@ -10,7 +10,7 @@ Lite permet de modifier des projets sur votre ordinateur ou une VM publique via 
 
 ### Obligatoires
 
-- **Node.js** : 18.0.0 ou supérieur
+- **Node.js** : 22.22.2 ou supérieur, ou 24.15+
 - **Compte Spck Editor** : Compte gratuit (30 min/jour) ou abonnement Premium (illimité)
 - **Application mobile Spck Editor** : [Android](https://play.google.com/store/apps/details?id=io.spck) ou [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ Une fois le CLI lancé, il affiche un QR code et les détails de connexion.
 
 ### Méthode 1 : QR code (Recommandé)
 
-**IMPORTANT** : Installez l'application Spck Editor AVANT de scanner le QR code.
+1. Ouvrez Spck Editor → **Projets** → **Nouveau projet** → **Lier un serveur distant**
+2. Appuyez sur l’icône de QR code
+3. Scannez le QR code affiché dans le terminal. L’application se connecte automatiquement.
 
-**Sur Android :**
-
-1. Utilisez l'application Appareil photo ou le scanner QR des réglages rapides
-2. Une fois détecté, appuyez sur la notification pour ouvrir Spck Editor
-3. L'application se connecte automatiquement
-
-> 💡 **Remarque** : Certains lecteurs de QR code ne peuvent pas gérer le schéma personnalisé pour ouvrir Spck Editor directement. Copiez l'URL et collez-la dans Chrome, qui lancera Spck Editor depuis l'URL.
-
-**Sur iOS :**
-
-1. Utilisez l'application Appareil photo ou le scanner QR du Centre de contrôle
-2. Une fois détecté, appuyez sur la notification pour ouvrir Spck Editor
-3. L'application se connecte automatiquement
-
-> 💡 **Remarque** : Spck Editor ne dispose PAS d'un scanner QR intégré. Utilisez la fonction QR native de votre appareil.
+> 💡 **Remarque** : vous pouvez aussi scanner le code avec l’application Appareil photo de votre appareil, qui ouvre le lien dans Spck Editor si l’application est installée.
 
 ### Méthode 2 : Saisie manuelle
 
-Si le QR code ne fonctionne pas :
+Si vous ne pouvez pas scanner le QR code :
 
 1. Ouvrez Spck Editor → **Projets** → **Nouveau projet** → **Lier un serveur distant**
 2. Saisissez l'**ID client** et le **Secret** affichés dans le terminal
-3. Appuyez sur **Connecter**
+3. Sélectionnez le serveur relais affiché dans le terminal
+4. Appuyez sur **Connecter**
 
 ## <a name="next-steps"></a>Prochaines étapes
 

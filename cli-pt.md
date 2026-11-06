@@ -160,9 +160,9 @@ spck --setup
 
 ### QR Code Não Está Sendo Lido
 
-- Verifique se o aplicativo Spck Editor está instalado antes de escanear
-- Use a entrada manual: Projects → New Project → Link Remote Server
-- Use o aplicativo de câmera nativo, não leitores de terceiros
+- Escaneie pelo Spck Editor: Projetos → Novo Projeto → Vincular Servidor Remoto e toque no ícone de código QR
+- Se o terminal for pequeno demais para mostrar o código, a CLI informa o tamanho necessário. Aumente a janela ou insira os dados manualmente na mesma caixa de diálogo
+- Evite leitores de terceiros, que podem expor sua chave secreta
 
 ### Operações Git Não Estão Funcionando
 

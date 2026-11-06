@@ -38,7 +38,24 @@ spck -r /path/to/project
 # Relay-Server überschreiben (z. B. eine bestimmte Region verwenden)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
+
+# Einfache Log-Ausgabe statt des Dashboards anzeigen
+spck --no-dashboard
 ```
+
+### Dashboard
+
+In einem interaktiven Terminal zeigt die CLI nach dem Verbinden ein Vollbild-Dashboard an. Wird die Ausgabe umgeleitet oder läuft die CLI als Dienst, gibt sie stattdessen einfache Logs aus.
+
+| Ansicht | Tasten |
+|------|------|
+| Hauptansicht | `l` Logs, `c` Verbindungs-QR-Code, `m` Terminals verwalten, `q` `q` Beenden |
+| Einstellungen (Hauptansicht) | `t` Terminal, `b` Browser-Proxy, `a` KI-Agenten, `s` Sprachserver, `u` Benutzerüberprüfung, `f` Fast Lane, `w` Computer wach halten |
+| Logs | `↑` `↓` / `j` `k` scrollen, `PgUp` `PgDn` seitenweise, `←` `→` lange Zeilen verschieben, `g` `G` erste / letzte Zeile, `Esc` zurück |
+| Terminals | `↑` `↓` / `j` `k` auswählen, `x` `x` beenden (oder ein beendetes Terminal entfernen), `Esc` zurück |
+| QR-Code | `c` / `Esc` zurück |
+
+`Ctrl+L` zeichnet den Bildschirm neu und `Ctrl+C` beendet die CLI aus jeder Ansicht. Ein erneutes `Ctrl+C`, während die CLI die Verbindung trennt, beendet sie sofort.
 
 ## <a name="ai-coding-agents"></a>KI-Coding-Agenten (ACP)
 

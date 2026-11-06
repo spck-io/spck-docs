@@ -38,7 +38,24 @@ spck -r /path/to/project
 # Substituir servidor de relay (ex.: usar uma região específica)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
+
+# Exibir logs simples em vez do painel
+spck --no-dashboard
 ```
+
+### Painel
+
+Em um terminal interativo, a CLI mostra um painel em tela cheia depois de conectar. Quando a saída é redirecionada ou a CLI roda como serviço, ela exibe logs simples.
+
+| Visualização | Teclas |
+|------|------|
+| Principal | `l` logs, `c` código QR de conexão, `m` gerenciar terminais, `q` `q` sair |
+| Configurações (visualização principal) | `t` terminal, `b` proxy do navegador, `a` agentes de IA, `s` servidor de linguagem, `u` verificação de usuário, `f` Fast Lane, `w` manter o computador ativo |
+| Logs | `↑` `↓` / `j` `k` rolar, `PgUp` `PgDn` por página, `←` `→` mover linhas longas, `g` `G` primeira / última linha, `Esc` voltar |
+| Terminais | `↑` `↓` / `j` `k` selecionar, `x` `x` encerrar (ou remover um terminal encerrado), `Esc` voltar |
+| Código QR | `c` / `Esc` voltar |
+
+`Ctrl+L` redesenha a tela e `Ctrl+C` sai de qualquer visualização. Pressionar `Ctrl+C` novamente enquanto a CLI se desconecta faz com que ela saia imediatamente.
 
 ## <a name="ai-coding-agents"></a>Agentes de codificação com IA (ACP)
 

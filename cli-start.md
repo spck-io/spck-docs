@@ -8,7 +8,7 @@ Spck CLI is a command-line tool that connects your local development environment
 
 ### Required
 
-- **Node.js**: 18.0.0 or higher
+- **Node.js**: 22.22.2 or higher, or 24.15+
 - **Spck Editor Account**: In the full app, a free account (30 min/day) or Premium subscription (unlimited). **Spck Editor Lite requires a Spck account and an active Spck subscription for Remote Projects.**
 - **Spck Editor Mobile App**: [Android](https://play.google.com/store/apps/details?id=io.spck) or [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ Once the CLI is running, it displays a QR code and connection details.
 
 ### Method 1: QR Code (Recommended)
 
-**IMPORTANT**: Install Spck Editor app BEFORE scanning the QR code.
+1. Open Spck Editor → **Projects** → **New Project** → **Link Remote Server**
+2. Tap the QR code icon
+3. Scan the QR code shown in the terminal. The app connects automatically.
 
-**On Android:**
-
-1. Use Camera app or Quick Settings QR scanner
-2. When detected, tap the notification to open Spck Editor
-3. App automatically connects
-
-> 💡 **Note**: Some QR code scanners cannot handle the custom scheme to open Spck Editor directly. Copy the URL and paste it in Chrome, which will launch Spck Editor from the URL.
-
-**On iOS:**
-
-1. Use Camera app or Control Center QR scanner
-2. When detected, tap the notification to open Spck Editor
-3. App automatically connects
-
-> 💡 **Note**: Spck Editor does NOT have a built-in QR scanner. Use your device's native QR capability.
+> 💡 **Note**: You can also scan the code with your device's Camera app, which opens the link in Spck Editor if the app is installed.
 
 ### Method 2: Manual Entry
 
-If the QR code doesn't work:
+If you can't scan the QR code:
 
 1. Open Spck Editor → **Projects** → **New Project** → **Link Remote Server**
 2. Enter the **Client ID** and **Secret** shown in the terminal
-3. Tap **Connect**
+3. Select the relay server shown in the terminal
+4. Tap **Connect**
 
 ## <a name="next-steps"></a>Next Steps
 

@@ -160,9 +160,9 @@ spck --setup
 
 ### QR-Code lässt sich nicht scannen
 
-- Überprüfen Sie, ob die Spck Editor-App vor dem Scannen installiert ist
-- Manuelle Eingabe verwenden: Projects → New Project → Link Remote Server
-- Native Kamera-App verwenden, keine Drittanbieter-Scanner
+- In Spck Editor scannen: Projekte → Neues Projekt → Remote-Server verknüpfen, dann auf das QR-Code-Symbol tippen
+- Ist das Terminal zu klein für den Code, zeigt die CLI die benötigte Größe an. Vergrößern Sie das Fenster oder geben Sie die Daten im selben Dialog von Hand ein
+- Vermeiden Sie QR-Scanner von Drittanbietern, da diese Ihren geheimen Schlüssel preisgeben könnten
 
 ### Git-Operationen funktionieren nicht
 

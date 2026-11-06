@@ -38,7 +38,24 @@ spck -r /path/to/project
 # Remplacer le serveur de relais (par ex., utiliser une région spécifique)
 spck --server cli-eu-1.spck.io
 spck -s cli-na-1.spck.io
+
+# Afficher des journaux bruts au lieu du tableau de bord
+spck --no-dashboard
 ```
+
+### Tableau de bord
+
+Dans un terminal interactif, la CLI affiche un tableau de bord plein écran une fois connectée. Lorsque sa sortie est redirigée ou qu’elle s’exécute en tant que service, elle affiche des journaux bruts.
+
+| Vue | Touches |
+|------|------|
+| Principale | `l` journaux, `c` QR code de connexion, `m` gérer les terminaux, `q` `q` quitter |
+| Paramètres (vue principale) | `t` terminal, `b` proxy navigateur, `a` agents IA, `s` serveur de langage, `u` vérification de l’utilisateur, `f` Fast Lane, `w` garder l’ordinateur éveillé |
+| Journaux | `↑` `↓` / `j` `k` défiler, `PgUp` `PgDn` par page, `←` `→` déplacer les longues lignes, `g` `G` première / dernière ligne, `Esc` retour |
+| Terminaux | `↑` `↓` / `j` `k` sélectionner, `x` `x` arrêter (ou retirer un terminal terminé), `Esc` retour |
+| QR code | `c` / `Esc` retour |
+
+`Ctrl+L` redessine l’écran et `Ctrl+C` quitte depuis n’importe quelle vue. Un nouveau `Ctrl+C` pendant la déconnexion de la CLI la ferme immédiatement.
 
 ## <a name="ai-coding-agents"></a>Agents de codage IA (ACP)
 

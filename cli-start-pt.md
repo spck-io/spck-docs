@@ -10,7 +10,7 @@ O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck
 
 ### Obrigatórios
 
-- **Node.js**: 18.0.0 ou superior
+- **Node.js**: 22.22.2 ou superior, ou 24.15+
 - **Conta do Spck Editor**: Conta gratuita (30 min/dia) ou assinatura Premium (ilimitada)
 - **Aplicativo móvel Spck Editor**: [Android](https://play.google.com/store/apps/details?id=io.spck) ou [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ Assim que o CLI estiver em execução, ele exibirá um código QR e os detalhes 
 
 ### Método 1: Código QR (Recomendado)
 
-**IMPORTANTE**: Instale o aplicativo Spck Editor ANTES de escanear o código QR.
+1. Abra o Spck Editor → **Projetos** → **Novo Projeto** → **Vincular Servidor Remoto**
+2. Toque no ícone de código QR
+3. Escaneie o código QR exibido no terminal. O aplicativo se conecta automaticamente.
 
-**No Android:**
-
-1. Use o aplicativo de câmera ou o scanner QR nas configurações rápidas
-2. Quando detectado, toque na notificação para abrir o Spck Editor
-3. O aplicativo se conecta automaticamente
-
-> 💡 **Nota**: Alguns leitores de código QR não conseguem lidar com o esquema personalizado para abrir o Spck Editor diretamente. Copie a URL e cole-a no Chrome, que iniciará o Spck Editor pela URL.
-
-**No iOS:**
-
-1. Use o aplicativo de câmera ou o scanner QR na Central de Controle
-2. Quando detectado, toque na notificação para abrir o Spck Editor
-3. O aplicativo se conecta automaticamente
-
-> 💡 **Nota**: O Spck Editor NÃO possui um scanner QR integrado. Use a função QR nativa do seu dispositivo.
+> 💡 **Nota**: Você também pode escanear o código com o app Câmera do dispositivo, que abre o link no Spck Editor se o aplicativo estiver instalado.
 
 ### Método 2: Entrada manual
 
-Se o código QR não funcionar:
+Se você não conseguir escanear o código QR:
 
 1. Abra o Spck Editor → **Projetos** → **Novo Projeto** → **Vincular Servidor Remoto**
 2. Insira o **ID do Cliente** e o **Segredo** exibidos no terminal
-3. Toque em **Conectar**
+3. Selecione o servidor de retransmissão exibido no terminal
+4. Toque em **Conectar**
 
 ## <a name="next-steps"></a>Próximos passos
 

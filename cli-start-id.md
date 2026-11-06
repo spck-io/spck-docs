@@ -10,7 +10,7 @@ Lite mendukung pengeditan proyek di komputer desktop atau VM publik melalui Spck
 
 ### Wajib
 
-- **Node.js**: 18.0.0 atau lebih tinggi
+- **Node.js**: 22.22.2 atau lebih tinggi, atau 24.15+
 - **Akun Spck Editor**: Akun gratis (30 menit/hari) atau langganan Premium (tanpa batas)
 - **Aplikasi Mobile Spck Editor**: [Android](https://play.google.com/store/apps/details?id=io.spck) atau [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -91,31 +91,20 @@ Setelah CLI berjalan, ia menampilkan kode QR dan detail koneksi.
 
 ### Metode 1: Kode QR (Direkomendasikan)
 
-**PENTING**: Instal aplikasi Spck Editor SEBELUM memindai kode QR.
+1. Buka Spck Editor → **Proyek** → **Proyek Baru** → **Tautkan Server Jarak Jauh**
+2. Ketuk ikon kode QR
+3. Pindai kode QR yang ditampilkan di terminal. Aplikasi terhubung secara otomatis.
 
-**Di Android:**
-
-1. Gunakan aplikasi Kamera atau pemindai QR di Pengaturan Cepat
-2. Saat terdeteksi, ketuk notifikasi untuk membuka Spck Editor
-3. Aplikasi terhubung secara otomatis
-
-> 💡 **Catatan**: Beberapa pemindai kode QR tidak dapat menangani skema khusus untuk membuka Spck Editor secara langsung. Salin URL dan tempelkan di Chrome, yang akan meluncurkan Spck Editor dari URL tersebut.
-
-**Di iOS:**
-
-1. Gunakan aplikasi Kamera atau pemindai QR di Pusat Kontrol
-2. Saat terdeteksi, ketuk notifikasi untuk membuka Spck Editor
-3. Aplikasi terhubung secara otomatis
-
-> 💡 **Catatan**: Spck Editor TIDAK memiliki pemindai QR bawaan. Gunakan kemampuan QR bawaan perangkat Anda.
+> 💡 **Catatan**: Anda juga dapat memindai kode dengan aplikasi Kamera perangkat Anda, yang membuka tautan di Spck Editor jika aplikasi sudah terpasang.
 
 ### Metode 2: Entri Manual
 
-Jika kode QR tidak berfungsi:
+Jika Anda tidak dapat memindai kode QR:
 
 1. Buka Spck Editor → **Proyek** → **Proyek Baru** → **Tautkan Server Jarak Jauh**
 2. Masukkan **ID Klien** dan **Rahasia** yang ditampilkan di terminal
-3. Ketuk **Hubungkan**
+3. Pilih server relay yang ditampilkan di terminal
+4. Ketuk **Hubungkan**
 
 ## <a name="next-steps"></a>Langkah Selanjutnya
 
