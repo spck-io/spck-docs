@@ -17,11 +17,13 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,14 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - Default: `true`
   - Set to `false` to reduce risk of unauthorized access to your terminal
 
+- **`terminal.compactPrompt`** (boolean): Show a shorter shell prompt without the computer name
+  - Default: `true`, including when omitted in older project configs
+  - Bash, Zsh and Fish show the current folder followed by `$`, or `#` when running as root; home is shown as `~`
+  - Shell startup files, aliases, environment setup, prompt hooks and continuation prompts still load normally; user configuration files are never modified
+  - Other shells keep their normal prompt
+  - Toggle **Compact shell prompt** with **`p`** in the dashboard; changes are saved to this project's config and apply to new terminal sessions
+  - Set to `false` to use your usual shell prompt
+
 - **`terminal.maxBufferedLines`** (number): Maximum scrollback buffer
   - Default: `10000`
   - Affects memory usage (~1MB per 10k lines)
@@ -97,6 +107,15 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - Improves performance by avoiding thousands of generated files
 
 ### Security Settings
+
+- **`security.requirePin`** (boolean): Require a 4–6 digit PIN when an editor connects
+  - Default: `false`
+  - Press **`i` — Require PIN to connect** in the CLI dashboard. Choose a PIN and confirm it locally before the setting turns on
+  - The editor shows a masked numeric keypad before gaining access to files, Git, terminals, browser preview, or AI agents
+  - The PIN is never saved on the phone or included in the connection QR code. The project config stores a salted verifier in `security.pin`, not the PIN itself
+  - Five incorrect attempts trigger a 60-second cooldown shared across devices and reconnects
+  - Applies to new connections, including reconnections. Existing connected editors stay connected until they reconnect
+  - Toggle the dashboard option off to disable protection. Enabling it again lets you choose a new PIN
 
 - **`security.userAuthenticationEnabled`** (boolean): Enable Firebase user authentication
   - Default: `false`
