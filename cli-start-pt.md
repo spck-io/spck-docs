@@ -2,7 +2,7 @@
 
 ## <a name="overview"></a>Visão geral
 
-O Spck CLI é uma ferramenta de linha de comando que conecta seu ambiente de desenvolvimento local ao aplicativo móvel Spck Editor por meio de uma conexão WebSocket segura. Uma vez em execução, você pode navegar e editar arquivos locais, executar comandos no terminal e visualizar servidores locais — tudo a partir do seu celular ou tablet.
+Spck CLI saiu da versão beta. Conecte seu computador ao Spck Editor no celular ou tablet para editar arquivos, usar Git e terminais e visualizar servidores locais. As conexões usam um relay criptografado ou uma conexão direta [Fast Lane](./cli#fast-lane) (Supporter e Gold).
 
 ## <a name="requirements"></a>Requisitos
 
@@ -10,7 +10,7 @@ O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck
 
 ### Obrigatórios
 
-- **Node.js**: 22.22.2 ou superior, ou 24.15+
+- **Node.js**: **22.22.2+ (22.x), 24.15.0+ (24.x), ou 26.0.0+** (`^22.22.2 || ^24.15.0 || >=26.0.0`).
 - **Conta do Spck Editor**: Conta gratuita (30 min/dia) ou assinatura Premium (ilimitada)
 - **Aplicativo móvel Spck Editor**: [Android](https://play.google.com/store/apps/details?id=io.spck) ou [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -24,10 +24,10 @@ O Lite permite editar projetos no seu computador ou em uma VM pública pelo Spck
 ### Opção 1: Executar com npx (Sem instalação)
 
 ```bash
-npx spck
+npx spck@latest
 ```
 
-Sempre usa a versão mais recente — perfeito para configuração inicial ou uso ocasional.
+Solicita a versão mais recente da CLI, ideal para a configuração inicial ou uso ocasional. `npx spck` pode reutilizar uma versão instalada.
 
 ### Opção 2: Instalação global
 
@@ -36,9 +36,11 @@ npm install -g spck
 spck
 ```
 
-Inicialização mais rápida, funciona offline e conveniente para uso diário.
+Instale uma vez e execute `spck` no dia a dia. Atualize com `npm install -g spck@latest`. Conexões remotas continuam exigindo internet.
 
 ## <a name="demo"></a>Demonstração
+
+[Assista ao vídeo do Spck CLI](https://youtu.be/EtfEhd5EmKM), incluindo o novo recurso Fast Lane.
 
 Uma breve demonstração conectando o Spck CLI ao app móvel e editando arquivos locais remotamente:
 
@@ -59,6 +61,8 @@ spck
 ```
 
 As credenciais são armazenadas em `~/.spck-editor/.credentials.json` e persistem entre sessões.
+
+Se o navegador não alcançar localhost, o login usa o relay. Use o QR de login ou o link exibido pela CLI para entrar por outro dispositivo. Esse código é diferente do QR de conexão ao projeto.
 
 ### 2. Configuração do projeto
 
@@ -87,7 +91,7 @@ spck --setup
 
 ## <a name="connecting"></a>Conectando ao Spck Editor
 
-Assim que o CLI estiver em execução, ele exibirá um código QR e os detalhes de conexão.
+Em projetos novos, a CLI exibe o QR de conexão até o primeiro editor se conectar com sucesso. As próximas execuções abrem o painel diretamente; pressione **`c`** para mostrar o QR e os dados novamente, ou **`l`** para os logs. Aumente o terminal se o QR não couber.
 
 ### Método 1: Código QR (Recomendado)
 
@@ -105,6 +109,8 @@ Se você não conseguir escanear o código QR:
 2. Insira o **ID do Cliente** e o **Segredo** exibidos no terminal
 3. Selecione o servidor de retransmissão exibido no terminal
 4. Toque em **Conectar**
+
+Se **Require PIN to connect** estiver ativo, digite o PIN escolhido no painel da CLI. O app não salva esse PIN. Veja [PIN de conexão](./cli-config#connection-pin).
 
 ## <a name="next-steps"></a>Próximos passos
 

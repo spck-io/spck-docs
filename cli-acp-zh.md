@@ -17,12 +17,12 @@ Agent Client Protocol (ACP) 是 Zed Industries 推出的、用于编辑器 ↔ A
 
 ## <a name="acp-supported-agents"></a>支持的 AI 代理
 
-安装您希望可用的任何代理。Spck CLI 在启动时自动检测它们。
+Spck CLI 0.8.0+ 已内置 Claude Code 和 Codex ACP 适配器，无需全局安装适配器。请在 CLI 主机上通过代理自己的登录流程认证。Gemini CLI 需单独安装，并通过 `PATH` 检测。
 
 | 代理              | 安装                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | Spck CLI 已内置 ACP 适配器；请在 CLI 主机登录 |
+| **OpenAI Codex** | Spck CLI 已内置 ACP 适配器；请在 CLI 主机登录 |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>安装与设置
@@ -34,14 +34,14 @@ Agent Client Protocol (ACP) 是 Zed Industries 推出的、用于编辑器 ↔ A
 ```bash
 npm install -g spck
 # 或不安装而直接运行
-npx spck
+npx spck@latest
 ```
 
 完整的首次运行向导见[开始使用 Spck CLI](./cli-start)。
 
-### 2. 安装一个或多个代理 CLI
+### 2. 准备要使用的代理
 
-选择您希望可用的任何代理。可以安装多个 —— AI Chat 会让您按会话在它们之间选择。安装命令参见上面的[支持的 AI 代理](#acp-supported-agents)表。
+使用内置的 Claude Code 或 Codex 适配器，或单独安装 Gemini CLI。可为每个聊天会话选择代理。请在运行 Spck CLI 的同一台电脑、同一用户账户下登录。
 
 ### 3. 对每个代理进行一次身份验证
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-启动时,CLI 会按代理打印一份检测报告,列出哪些代理可用,随后在主要功能块中显示一行摘要,例如 `✅ ACP agents: Claude Code, Gemini CLI`。如果没有任何可用的,它将回退到经服务器路由的 AI Chat。
+仪表盘的功能区域会列出可用代理。按 **`l`** 查看启动时的检测日志。如果没有可用的本地代理，请使用云端 AI 聊天选项。
 
 ### 5. 连接 Spck Editor
 

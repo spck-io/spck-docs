@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Dashboard
 
-In einem interaktiven Terminal zeigt die CLI nach dem Verbinden ein Vollbild-Dashboard an. Wird die Ausgabe umgeleitet oder läuft die CLI als Dienst, gibt sie stattdessen einfache Logs aus.
+In einem interaktiven Terminal öffnet die CLI ein Vollbild-Dashboard. Neue Projekte zeigen bis zur ersten erfolgreichen Editor-Verbindung den QR-Code, spätere Starts die Hauptansicht. Sie zeigt verbundene Editoren, Ping, Relay-/Fast-Lane-Status und verfügbare Werkzeuge. Bei umgeleiteter Ausgabe oder als Dienst erscheinen einfache Logs.
 
 | Ansicht | Tasten |
 |------|------|
 | Hauptansicht | `l` Logs, `c` Verbindungs-QR-Code, `m` Terminals verwalten, `q` `q` Beenden |
-| Einstellungen (Hauptansicht) | `t` Terminal, `b` Browser-Proxy, `a` KI-Agenten, `s` Sprachserver, `u` Benutzerüberprüfung, `f` Fast Lane, `w` Computer wach halten |
+| Einstellungen (Hauptansicht) | `t` Terminal, `b` Browser-Proxy, `a` KI-Agenten, `s` Sprachserver, `u` Benutzerüberprüfung, `f` Fast Lane, `w` Computer wach halten, `p` kompakter Shell-Prompt, `i` Verbindungs-PIN verlangen |
 | Logs | `↑` `↓` / `j` `k` scrollen, `PgUp` `PgDn` seitenweise, `←` `→` lange Zeilen verschieben, `g` `G` erste / letzte Zeile, `Esc` zurück |
 | Terminals | `↑` `↓` / `j` `k` auswählen, `x` `x` beenden (oder ein beendetes Terminal entfernen), `Esc` zurück |
 | QR-Code | `c` / `Esc` zurück |
@@ -157,9 +157,9 @@ Anzahl gleichzeitiger Terminals begrenzen:
 
 ## <a name="mobile-prompt"></a>Shell-Prompt für Mobilgeräte verkleinern
 
-Auf Mobilgeräten ist der horizontale Bildschirmplatz begrenzt. Der Standard-Shell-Prompt – der in der Regel den aktuellen Verzeichnispfad, Benutzernamen und Hostnamen enthält – kann das Terminal überfüllen und die Ausgabe schwerer lesbar machen.
+Spck CLI aktiviert für Bash, Zsh und Fish standardmäßig einen kompakten Prompt: `folder $`, als root `folder #`, mit `~` für das Home-Verzeichnis. Mit **`p`** im Dashboard oder **`terminal.compactPrompt`** schalten Sie ihn für neue Terminals um. Ihre Shell-Konfigurationsdateien bleiben unverändert. Siehe [Kompakter Prompt](./cli-config#compact-prompt).
 
-Den Prompt auf `$ ` zu reduzieren sorgt für ein deutlich übersichtlicheres Terminal-Erlebnis auf kleinen Bildschirmen.
+Für andere Shells oder ein eigenes Format bei deaktiviertem kompaktem Prompt können Sie die folgenden manuellen Beispiele verwenden.
 
 ### Bash
 

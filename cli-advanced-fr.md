@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Tableau de bord
 
-Dans un terminal interactif, la CLI affiche un tableau de bord plein écran une fois connectée. Lorsque sa sortie est redirigée ou qu’elle s’exécute en tant que service, elle affiche des journaux bruts.
+Dans un terminal interactif, la CLI ouvre un tableau de bord plein écran. Les nouveaux projets affichent le QR code jusqu’à la première connexion réussie ; les lancements suivants ouvrent la vue principale. Elle affiche les éditeurs connectés, le ping, l’état Relay/Fast Lane et les outils disponibles. Avec une sortie redirigée ou en service, la CLI imprime des journaux simples.
 
 | Vue | Touches |
 |------|------|
 | Principale | `l` journaux, `c` QR code de connexion, `m` gérer les terminaux, `q` `q` quitter |
-| Paramètres (vue principale) | `t` terminal, `b` proxy navigateur, `a` agents IA, `s` serveur de langage, `u` vérification de l’utilisateur, `f` Fast Lane, `w` garder l’ordinateur éveillé |
+| Paramètres (vue principale) | `t` terminal, `b` proxy navigateur, `a` agents IA, `s` serveur de langage, `u` vérification de l’utilisateur, `f` Fast Lane, `w` garder l’ordinateur éveillé, `p` invite compacte, `i` exiger un PIN de connexion |
 | Journaux | `↑` `↓` / `j` `k` défiler, `PgUp` `PgDn` par page, `←` `→` déplacer les longues lignes, `g` `G` première / dernière ligne, `Esc` retour |
 | Terminaux | `↑` `↓` / `j` `k` sélectionner, `x` `x` arrêter (ou retirer un terminal terminé), `Esc` retour |
 | QR code | `c` / `Esc` retour |
@@ -157,9 +157,9 @@ Limitez le nombre de terminaux simultanés :
 
 ## <a name="mobile-prompt"></a>Réduire le prompt du shell pour mobile
 
-Sur les appareils mobiles, l'espace horizontal à l'écran est limité. Le prompt par défaut du shell — qui inclut généralement le chemin du répertoire courant, le nom d'utilisateur et le nom d'hôte — peut encombrer le terminal et rendre la lecture de la sortie des commandes plus difficile.
+Spck CLI active par défaut une invite compacte pour Bash, Zsh et Fish : `folder $`, ou `folder #` pour root, avec `~` pour le dossier personnel. Appuyez sur **`p`** dans le tableau de bord ou réglez **`terminal.compactPrompt`** pour les nouveaux terminaux. Vos fichiers de configuration shell ne sont pas modifiés. Voir [Invite compacte](./cli-config#compact-prompt).
 
-Remplacer votre prompt par simplement `$ ` offre une expérience de terminal bien plus épurée sur les petits écrans.
+Pour les autres shells, ou pour un format personnalisé après désactivation de l’invite intégrée, utilisez les exemples manuels ci-dessous.
 
 ### Bash
 

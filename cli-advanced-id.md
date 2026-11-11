@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Dasbor
 
-Di terminal interaktif, CLI menampilkan dasbor layar penuh setelah terhubung. Jika outputnya dialihkan atau dijalankan sebagai layanan, CLI menampilkan log biasa.
+Di terminal interaktif, CLI membuka dasbor layar penuh. Proyek baru menampilkan QR hingga editor pertama berhasil terhubung; peluncuran berikutnya membuka tampilan utama. Dasbor menampilkan editor terhubung, ping, status Relay/Fast Lane, dan alat tersedia. Output yang dialihkan atau dijalankan sebagai layanan berupa log teks biasa.
 
 | Tampilan | Tombol |
 |------|------|
 | Utama | `l` log, `c` kode QR koneksi, `m` kelola terminal, `q` `q` keluar |
-| Pengaturan (tampilan utama) | `t` terminal, `b` proxy browser, `a` agen AI, `s` server bahasa, `u` verifikasi pengguna, `f` Fast Lane, `w` jaga komputer tetap aktif |
+| Pengaturan (tampilan utama) | `t` terminal, `b` proxy browser, `a` agen AI, `s` server bahasa, `u` verifikasi pengguna, `f` Fast Lane, `w` jaga komputer tetap aktif, `p` prompt shell ringkas, `i` wajibkan PIN koneksi |
 | Log | `↑` `↓` / `j` `k` gulir, `PgUp` `PgDn` per halaman, `←` `→` geser baris panjang, `g` `G` baris pertama / terakhir, `Esc` kembali |
 | Terminal | `↑` `↓` / `j` `k` pilih, `x` `x` hentikan (atau hapus terminal yang sudah berhenti), `Esc` kembali |
 | Kode QR | `c` / `Esc` kembali |
@@ -157,9 +157,9 @@ Batasi terminal yang berjalan bersamaan:
 
 ## <a name="mobile-prompt"></a>Memperkecil Prompt Shell untuk Mobile
 
-Di perangkat mobile, ruang layar horizontal terbatas. Prompt shell default — yang biasanya mencakup jalur direktori saat ini, nama pengguna, dan nama host — dapat memenuhi terminal dan membuat output perintah lebih sulit dibaca.
+Spck CLI mengaktifkan prompt ringkas secara default untuk Bash, Zsh, dan Fish: `folder $`, atau `folder #` untuk root, dengan `~` untuk direktori home. Tekan **`p`** di dasbor atau atur **`terminal.compactPrompt`** untuk terminal baru. File konfigurasi shell tidak diubah. Lihat [Prompt ringkas](./cli-config#compact-prompt).
 
-Mengubah prompt Anda menjadi hanya `$ ` memberikan pengalaman terminal yang jauh lebih bersih di layar kecil.
+Untuk shell lain, atau jika prompt bawaan dimatikan dan Anda ingin format sendiri, gunakan contoh manual berikut.
 
 ### Bash
 

@@ -17,12 +17,12 @@ Comparado ao AI Chat roteado pelo servidor dentro do app, o caminho ACP local lh
 
 ## <a name="acp-supported-agents"></a>Agentes de IA Suportados
 
-Instale os agentes que você quiser ter disponíveis. O Spck CLI os detecta automaticamente na inicialização.
+Spck CLI 0.8.0+ inclui os adaptadores ACP do Claude Code e Codex; não é preciso instalá-los globalmente. Entre com o login do agente na máquina da CLI. Gemini CLI é instalado separadamente e detectado no `PATH`.
 
 | Agente            | Instalação                                                                           |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | Adaptador ACP incluído com Spck CLI; entre na máquina da CLI |
+| **OpenAI Codex** | Adaptador ACP incluído com Spck CLI; entre na máquina da CLI |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>Instalação e Configuração
@@ -34,14 +34,14 @@ Se você ainda não o tem:
 ```bash
 npm install -g spck
 # ou execute sem instalar
-npx spck
+npx spck@latest
 ```
 
 Veja [Primeiros passos com Spck CLI](./cli-start) para o assistente completo de primeira execução.
 
-### 2. Instale uma ou mais CLIs de agente
+### 2. Prepare os agentes que deseja usar
 
-Escolha quais agentes quer ter disponíveis. Você pode instalar vários — o AI Chat permitirá escolher entre eles a cada sessão. Veja a tabela [Agentes de IA Suportados](#acp-supported-agents) acima para os comandos de instalação.
+Use os adaptadores incluídos do Claude Code ou Codex, ou instale Gemini CLI separadamente. É possível escolher o agente por sessão de chat. Faça login na mesma máquina e com o mesmo usuário que executa Spck CLI.
 
 ### 3. Autentique cada agente uma vez
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-Na inicialização, o CLI imprime um relatório de detecção por agente listando quais agentes estão disponíveis, seguido por um resumo de uma linha como `✅ ACP agents: Claude Code, Gemini CLI` no bloco principal de funcionalidades. Se nada estiver disponível, recai para o AI Chat roteado pelo servidor.
+O painel lista os agentes disponíveis na seção de capacidades. Pressione **`l`** para consultar os logs de detecção da inicialização. Se nenhum agente local estiver disponível, use a opção de Chat IA na nuvem.
 
 ### 5. Conecte o Spck Editor
 

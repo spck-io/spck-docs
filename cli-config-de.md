@@ -17,11 +17,13 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   - Standard: `true`
   - Auf `false` setzen, um das Risiko unbefugten Zugriffs auf Ihr Terminal zu reduzieren
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Kompakter Prompt für Bash, Zsh und Fish (`folder $`, als root `folder #`; `~` für Home). Standard: `true`, auch bei älteren Konfigurationen ohne diesen Eintrag. Mit **`p`** im Dashboard umschalten; gilt für neue Terminals. Mit `false` bleibt Ihr gewohnter Prompt erhalten. Shell-Konfigurationsdateien werden nicht geändert.
+
 - **`terminal.maxBufferedLines`** (number): Maximaler Scrollback-Puffer
   - Standard: `10000`
   - Beeinflusst den Speicherverbrauch (~1MB pro 10.000 Zeilen)
@@ -97,6 +103,10 @@ Die Konfiguration wird in `.spck-editor/config/spck-cli.config.json` in Ihrem Pr
   - Verbessert die Leistung durch Vermeidung von Tausenden generierter Dateien
 
 ### Sicherheitseinstellungen
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): 4–6-stellige Verbindungs-PIN verlangen. Standard: `false`. Drücken Sie **`i`** im Dashboard, wählen und bestätigen Sie eine PIN. Die App verlangt sie vor dem Zugriff und speichert sie nicht. Der QR-Code enthält keine PIN; `security.pin` speichert einen gesalzenen Prüfwert. Nach fünf falschen Versuchen gilt geräte- und verbindungsübergreifend eine Sperre von 60 Sekunden. Gilt für neue und erneute Verbindungen; bestehende bleiben offen. Zum Deaktivieren ausschalten; beim erneuten Aktivieren eine neue PIN wählen.
 
 - **`security.userAuthenticationEnabled`** (boolean): Firebase-Benutzerauthentifizierung aktivieren
   - Standard: `false`

@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Painel
 
-Em um terminal interativo, a CLI mostra um painel em tela cheia depois de conectar. Quando a saída é redirecionada ou a CLI roda como serviço, ela exibe logs simples.
+Em um terminal interativo, a CLI abre um painel em tela cheia. Projetos novos exibem o QR até a primeira conexão bem-sucedida; as próximas execuções abrem a visão principal. O painel mostra editores conectados, ping, estado Relay/Fast Lane e ferramentas disponíveis. Com saída redirecionada ou como serviço, imprime logs simples.
 
 | Visualização | Teclas |
 |------|------|
 | Principal | `l` logs, `c` código QR de conexão, `m` gerenciar terminais, `q` `q` sair |
-| Configurações (visualização principal) | `t` terminal, `b` proxy do navegador, `a` agentes de IA, `s` servidor de linguagem, `u` verificação de usuário, `f` Fast Lane, `w` manter o computador ativo |
+| Configurações (visualização principal) | `t` terminal, `b` proxy do navegador, `a` agentes de IA, `s` servidor de linguagem, `u` verificação de usuário, `f` Fast Lane, `w` manter o computador ativo, `p` prompt compacto, `i` exigir PIN de conexão |
 | Logs | `↑` `↓` / `j` `k` rolar, `PgUp` `PgDn` por página, `←` `→` mover linhas longas, `g` `G` primeira / última linha, `Esc` voltar |
 | Terminais | `↑` `↓` / `j` `k` selecionar, `x` `x` encerrar (ou remover um terminal encerrado), `Esc` voltar |
 | Código QR | `c` / `Esc` voltar |
@@ -157,9 +157,9 @@ Limite terminais simultâneos:
 
 ## <a name="mobile-prompt"></a>Reduzindo o prompt do shell para mobile
 
-Em dispositivos móveis, o espaço horizontal na tela é limitado. O prompt padrão do shell — que normalmente inclui o caminho do diretório atual, nome de usuário e nome do host — pode sobrecarregar o terminal e dificultar a leitura da saída dos comandos.
+Spck CLI ativa por padrão um prompt compacto para Bash, Zsh e Fish: `folder $`, ou `folder #` para root, com `~` para a pasta pessoal. Pressione **`p`** no painel ou ajuste **`terminal.compactPrompt`** para novos terminais. Os arquivos de configuração do shell não são alterados. Veja [Prompt compacto](./cli-config#compact-prompt).
 
-Mudar seu prompt para apenas `$ ` proporciona uma experiência de terminal muito mais limpa em telas pequenas.
+Para outros shells, ou se desativar o prompt integrado e quiser um formato próprio, use os exemplos manuais abaixo.
 
 ### Bash
 

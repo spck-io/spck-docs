@@ -17,11 +17,13 @@
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@
   - 기본값: `true`
   - 터미널에 대한 무단 접근 위험을 줄이려면 `false`로 설정하세요.
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Bash, Zsh, Fish의 간결한 프롬프트(`folder $`, root는 `folder #`, 홈은 `~`). 기본값은 `true`이며 이 키가 없는 이전 설정에도 적용됩니다. 대시보드의 **`p`**로 전환하며 새 터미널부터 적용됩니다. `false`로 설정하면 원래 프롬프트를 사용합니다. 셸 설정 파일은 변경하지 않습니다.
+
 - **`terminal.maxBufferedLines`** (number): 최대 스크롤백 버퍼
   - 기본값: `10000`
   - 메모리 사용량에 영향을 줍니다 (10,000줄당 약 1MB)
@@ -97,6 +103,10 @@
   - 수천 개의 생성된 파일을 피해 성능을 향상시킵니다.
 
 ### 보안 설정
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): 연결 시 4~6자리 PIN을 요구합니다. 기본값은 `false`입니다. 대시보드에서 **`i`**를 누르고 PIN을 설정한 뒤 확인하세요. 앱은 접근 전에 PIN을 요청하며 저장하지 않습니다. QR 코드에 PIN을 넣지 않으며 `security.pin`에는 솔트를 적용한 검증 값을 저장합니다. 5번 실패하면 기기 및 재연결 전체에 걸쳐 60초 대기합니다. 새 연결과 재연결에 적용되며 기존 연결은 유지됩니다. 끄면 해제되며 다시 켜면 새 PIN을 선택합니다.
 
 - **`security.userAuthenticationEnabled`** (boolean): Firebase 사용자 인증 활성화
   - 기본값: `false`

@@ -17,12 +17,12 @@ Dibandingkan dengan AI Chat yang dialihkan melalui server di dalam aplikasi, jal
 
 ## <a name="acp-supported-agents"></a>Agen AI yang Didukung
 
-Instal agen mana pun yang Anda ingin tersedia. Spck CLI mendeteksinya secara otomatis saat startup.
+Spck CLI 0.8.0+ menyertakan adaptor ACP Claude Code dan Codex; adaptor tidak perlu diinstal secara global. Login dengan akun agen di komputer CLI. Gemini CLI diinstal terpisah dan dideteksi pada `PATH`.
 
 | Agen              | Instalasi                                                                            |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | Adaptor ACP disertakan dengan Spck CLI; login di komputer CLI |
+| **OpenAI Codex** | Adaptor ACP disertakan dengan Spck CLI; login di komputer CLI |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>Instalasi dan Pengaturan
@@ -34,14 +34,14 @@ Jika Anda belum memilikinya:
 ```bash
 npm install -g spck
 # atau jalankan tanpa menginstal
-npx spck
+npx spck@latest
 ```
 
 Lihat [Memulai dengan Spck CLI](./cli-start) untuk wizard first-run lengkap.
 
-### 2. Instal satu atau lebih CLI agen
+### 2. Siapkan agen yang ingin digunakan
 
-Pilih agen mana pun yang Anda ingin tersedia. Anda dapat menginstal beberapa — AI Chat akan membiarkan Anda memilih di antaranya per sesi. Lihat tabel [Agen AI yang Didukung](#acp-supported-agents) di atas untuk perintah instalasi.
+Gunakan adaptor Claude Code atau Codex bawaan, atau instal Gemini CLI secara terpisah. Agen dapat dipilih per sesi chat. Login di komputer dan akun pengguna yang sama dengan Spck CLI.
 
 ### 3. Otentikasi setiap agen sekali
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-Saat startup, CLI mencetak laporan deteksi per-agen yang mencantumkan agen mana yang tersedia, diikuti dengan ringkasan satu baris seperti `✅ ACP agents: Claude Code, Gemini CLI` di blok fitur utama. Jika tidak ada yang tersedia, sistem akan beralih kembali ke AI Chat yang dialihkan melalui server.
+Dasbor menampilkan agen tersedia di bagian kemampuan. Tekan **`l`** untuk melihat log deteksi saat startup. Jika tidak ada agen lokal, gunakan opsi AI Chat cloud.
 
 ### 5. Hubungkan Spck Editor
 

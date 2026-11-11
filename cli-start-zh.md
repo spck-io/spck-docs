@@ -2,7 +2,7 @@
 
 ## <a name="overview"></a>概述
 
-Spck CLI 是一个命令行工具，通过安全的 WebSocket 连接将本地开发环境连接到 Spck Editor 移动应用。启动后，您可以在手机或平板电脑上浏览和编辑本地文件、运行终端命令以及预览本地服务器。
+Spck CLI 已正式发布。将电脑连接到手机或平板上的 Spck Editor，即可编辑文件、使用 Git 和终端，以及预览本地服务器。连接使用加密中继，或 [Fast Lane](./cli#fast-lane) 点对点直连（Supporter 和 Gold）。
 
 ## <a name="requirements"></a>要求
 
@@ -10,7 +10,7 @@ Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。�
 
 ### 必需
 
-- **Node.js**：22.22.2 或更高版本，或 24.15+
+- **Node.js**：**22.22.2+ (22.x), 24.15.0+ (24.x), 或 26.0.0+** (`^22.22.2 || ^24.15.0 || >=26.0.0`).
 - **Spck Editor 账户**：免费账户（30 分钟/天）或 Premium 订阅（无限制）
 - **Spck Editor 移动应用**：[Android](https://play.google.com/store/apps/details?id=io.spck) 或 [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -24,10 +24,10 @@ Lite 支持通过 Spck CLI 编辑桌面电脑或公共虚拟机上的项目。�
 ### 选项 1：使用 npx 运行（无需安装）
 
 ```bash
-npx spck
+npx spck@latest
 ```
 
-始终使用最新版本，非常适合首次设置或偶尔使用。
+请求最新的 CLI 版本，适合首次设置或偶尔使用。`npx spck` 可能复用已安装的版本。
 
 ### 选项 2：全局安装
 
@@ -36,9 +36,11 @@ npm install -g spck
 spck
 ```
 
-启动更快，支持离线使用，便于日常使用。
+安装一次后，日常直接运行 `spck`。使用 `npm install -g spck@latest` 更新。远程连接仍需要互联网。
 
 ## <a name="demo"></a>演示
+
+[观看 Spck CLI 宣传视频](https://youtu.be/EtfEhd5EmKM)，了解新的 Fast Lane 功能。
 
 以下是一段简短的演示，展示如何将 Spck CLI 连接到移动应用并远程编辑本地文件：
 
@@ -59,6 +61,8 @@ spck
 ```
 
 凭据存储在 `~/.spck-editor/.credentials.json` 中，会在会话间持久保存。
+
+如果浏览器无法访问 localhost，将通过中继完成登录。可使用 CLI 显示的登录二维码或链接在其他设备上登录。登录二维码与项目连接二维码不同。
 
 ### 2. 项目配置
 
@@ -87,7 +91,7 @@ spck --setup
 
 ## <a name="connecting"></a>连接到 Spck Editor
 
-CLI 运行后会显示二维码和连接详情。
+新项目会显示连接二维码，直到编辑器首次成功连接。之后启动时直接打开仪表盘；按 **`c`** 再次显示二维码和连接信息，按 **`l`** 查看日志。如果二维码放不下，请扩大终端窗口。
 
 ### 方法 1：二维码（推荐）
 
@@ -105,6 +109,8 @@ CLI 运行后会显示二维码和连接详情。
 2. 输入终端中显示的**客户端 ID** 和**密钥**
 3. 选择终端中显示的中继服务器
 4. 点击**连接**
+
+如果启用了 **Require PIN to connect**，请输入在 CLI 仪表盘设置的 PIN。应用不会保存 PIN。参见[连接 PIN](./cli-config#connection-pin)。
 
 ## <a name="next-steps"></a>后续步骤
 

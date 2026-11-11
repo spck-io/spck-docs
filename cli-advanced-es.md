@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Panel
 
-En un terminal interactivo, la CLI muestra un panel a pantalla completa una vez conectada. Si su salida se redirige o se ejecuta como servicio, muestra registros sin formato.
+En un terminal interactivo, la CLI abre un panel a pantalla completa. Los proyectos nuevos muestran el QR hasta la primera conexión correcta del editor; los siguientes inicios abren la vista principal. Muestra editores conectados, ping, estado Relay/Fast Lane y herramientas disponibles. Con salida redirigida o como servicio, imprime registros de texto.
 
 | Vista | Teclas |
 |------|------|
 | Principal | `l` registros, `c` código QR de conexión, `m` gestionar terminales, `q` `q` salir |
-| Ajustes (vista principal) | `t` terminal, `b` proxy del navegador, `a` agentes de IA, `s` servidor de lenguaje, `u` verificación de usuario, `f` Fast Lane, `w` mantener el equipo activo |
+| Ajustes (vista principal) | `t` terminal, `b` proxy del navegador, `a` agentes de IA, `s` servidor de lenguaje, `u` verificación de usuario, `f` Fast Lane, `w` mantener el equipo activo, `p` prompt compacto, `i` exigir PIN de conexión |
 | Registros | `↑` `↓` / `j` `k` desplazarse, `PgUp` `PgDn` por páginas, `←` `→` mover líneas largas, `g` `G` primera / última línea, `Esc` volver |
 | Terminales | `↑` `↓` / `j` `k` seleccionar, `x` `x` finalizar (o quitar un terminal finalizado), `Esc` volver |
 | Código QR | `c` / `Esc` volver |
@@ -157,9 +157,9 @@ Limita los terminales simultáneos:
 
 ## <a name="mobile-prompt"></a>Reducir el prompt del shell para móvil
 
-En dispositivos móviles, el espacio horizontal en pantalla es limitado. El prompt predeterminado del shell —que normalmente incluye la ruta del directorio actual, el nombre de usuario y el nombre del host— puede saturar el terminal y dificultar la lectura de la salida de los comandos.
+Spck CLI activa por defecto un prompt compacto en Bash, Zsh y Fish: `folder $`, o `folder #` para root, con `~` para el directorio personal. Pulsa **`p`** en el panel o ajusta **`terminal.compactPrompt`** para los terminales nuevos. No se modifican tus archivos de configuración del shell. Consulta [Prompt compacto](./cli-config#compact-prompt).
 
-Cambiar el prompt a simplemente `$ ` ofrece una experiencia de terminal mucho más limpia en pantallas pequeñas.
+Para otros shells, o si desactivas el prompt compacto y quieres un formato propio, usa los ejemplos manuales siguientes.
 
 ### Bash
 

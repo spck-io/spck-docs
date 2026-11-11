@@ -17,11 +17,13 @@
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@
   - 默认值：`true`
   - 设为 `false` 可降低终端被未授权访问的风险
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`**（boolean）：Bash、Zsh 和 Fish 的精简提示符（`folder $`，root 为 `folder #`，主目录为 `~`）。默认值为 `true`，旧配置缺少此项时也默认启用。在仪表盘按 **`p`** 切换，对新终端生效。设为 `false` 可使用原来的提示符。不会修改 Shell 配置文件。
+
 - **`terminal.maxBufferedLines`**（数字）：最大滚动缓冲行数
   - 默认值：`10000`
   - 影响内存使用（约每 1 万行占用 1MB）
@@ -97,6 +103,10 @@
   - 通过避免监视大量生成文件来提升性能
 
 ### 安全设置
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`**（boolean）：连接时要求 4–6 位数字 PIN，默认 `false`。在仪表盘按 **`i`**，选择并确认 PIN。应用在授权访问前要求输入，且不会保存。二维码不包含 PIN；`security.pin` 保存加盐验证值。五次错误会触发跨设备和重连共享的 60 秒冷却期。对新连接和重连生效，现有连接保持打开。关闭即可停用；重新启用时可选择新 PIN。
 
 - **`security.userAuthenticationEnabled`**（布尔值）：启用 Firebase 用户身份验证
   - 默认值：`false`

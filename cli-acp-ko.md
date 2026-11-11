@@ -17,12 +17,12 @@ Agent Client Protocol (ACP)은 Language Server Protocol (LSP)과 같은 정신�
 
 ## <a name="acp-supported-agents"></a>지원되는 AI 에이전트
 
-원하는 에이전트를 설치하세요. Spck CLI가 시작 시 자동으로 감지합니다.
+Spck CLI 0.8.0+에는 Claude Code 및 Codex ACP 어댑터가 포함되어 전역 설치가 필요하지 않습니다. CLI 호스트에서 에이전트의 자체 로그인으로 인증하세요. Gemini CLI는 별도로 설치하며 `PATH`에서 감지됩니다.
 
 | 에이전트          | 설치                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | Spck CLI에 ACP 어댑터 포함; CLI 호스트에서 로그인 |
+| **OpenAI Codex** | Spck CLI에 ACP 어댑터 포함; CLI 호스트에서 로그인 |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>설치 및 설정
@@ -34,14 +34,14 @@ Agent Client Protocol (ACP)은 Language Server Protocol (LSP)과 같은 정신�
 ```bash
 npm install -g spck
 # 또는 설치 없이 실행
-npx spck
+npx spck@latest
 ```
 
 전체 첫 실행 마법사는 [Spck CLI 시작하기](./cli-start)를 참조하세요.
 
-### 2. 하나 이상의 에이전트 CLI 설치
+### 2. 사용할 에이전트 준비
 
-사용 가능하게 하고 싶은 에이전트를 선택하세요. 여러 개를 설치할 수 있으며 — AI Chat은 세션별로 그 중에서 선택할 수 있게 합니다. 설치 명령은 위의 [지원되는 AI 에이전트](#acp-supported-agents) 표를 참조하세요.
+포함된 Claude Code 또는 Codex 어댑터를 사용하거나 Gemini CLI를 별도로 설치하세요. 채팅 세션마다 에이전트를 선택할 수 있습니다. Spck CLI와 같은 컴퓨터 및 사용자 계정으로 로그인하세요.
 
 ### 3. 각 에이전트를 한 번 인증
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-시작 시 CLI는 어떤 에이전트가 사용 가능한지 나열하는 에이전트별 감지 보고서를 출력하며, 이어서 주 기능 블록에 `✅ ACP agents: Claude Code, Gemini CLI`와 같은 한 줄 요약이 표시됩니다. 아무것도 사용할 수 없으면 대신 서버 라우팅 AI Chat으로 대체됩니다.
+대시보드의 기능 영역에 사용 가능한 에이전트가 표시됩니다. **`l`**로 시작 시 감지 로그를 확인하세요. 로컬 에이전트가 없으면 클라우드 AI 채팅 옵션을 사용하세요.
 
 ### 5. Spck Editor 연결
 

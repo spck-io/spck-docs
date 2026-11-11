@@ -17,11 +17,13 @@
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@
   - デフォルト: `true`
   - `false` に設定すると、ターミナルへの不正アクセスのリスクを軽減
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Bash、Zsh、Fish 用の短いプロンプト（`folder $`、root は `folder #`、ホームは `~`）。既定値は `true` で、項目のない古い設定にも適用されます。ダッシュボードの **`p`** で切り替えでき、新しいターミナルに反映されます。`false` で通常のプロンプトに戻せます。シェルの設定ファイルは変更しません。
+
 - **`terminal.maxBufferedLines`** (number): 最大スクロールバックバッファ
   - デフォルト: `10000`
   - メモリ使用量に影響（10,000行あたり約 1MB）
@@ -97,6 +103,10 @@
   - 大量の生成ファイルを避けることでパフォーマンスを向上
 
 ### セキュリティ設定
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): 接続時に4～6桁の PIN を要求します。既定値は `false`。ダッシュボードで **`i`** を押し、PIN を選んで確認します。アプリはアクセス前に PIN を要求し、保存しません。QR コードにも含まれず、`security.pin` にはソルト付き検証値を保存します。5回失敗すると、端末や再接続をまたいで60秒間待機します。新規接続と再接続に適用され、既存の接続は維持されます。オフで解除し、再度オンにすると新しい PIN を選べます。
 
 - **`security.userAuthenticationEnabled`** (boolean): Firebase ユーザー認証の有効化
   - デフォルト: `false`

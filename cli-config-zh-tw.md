@@ -17,11 +17,13 @@
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@
   - 預設值：`true`
   - 設為 `false` 可降低終端機遭未授權存取的風險
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`**（boolean）：Bash、Zsh 和 Fish 的精簡提示字元（`folder $`，root 為 `folder #`，家目錄為 `~`）。預設值為 `true`，舊設定缺少此項時也預設啟用。在儀表板按 **`p`** 切換，對新終端機生效。設為 `false` 可使用原來的提示字元。不會修改 Shell 設定檔。
+
 - **`terminal.maxBufferedLines`**（數字）：最大捲動回溯緩衝區
   - 預設值：`10000`
   - 影響記憶體使用量（每 10,000 行約 1MB）
@@ -97,6 +103,10 @@
   - 透過避免監看大量自動產生的檔案來提升效能
 
 ### 安全性設定
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`**（boolean）：連線時要求 4–6 位數 PIN，預設為 `false`。在儀表板按 **`i`**，選擇並確認 PIN。應用程式在授權存取前要求輸入，且不會儲存。QR 碼不包含 PIN；`security.pin` 儲存加鹽驗證值。五次錯誤會觸發跨裝置和重新連線共用的 60 秒冷卻期。對新連線和重新連線生效，現有連線保持開啟。關閉即可停用；重新啟用時可選擇新 PIN。
 
 - **`security.userAuthenticationEnabled`**（布林值）：啟用 Firebase 使用者身分驗證
   - 預設值：`false`

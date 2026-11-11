@@ -17,11 +17,13 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   - Par défaut : `true`
   - Mettre à `false` pour réduire le risque d’accès non autorisé à votre terminal
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean) : Invite compacte pour Bash, Zsh et Fish (`folder $`, ou `folder #` pour root ; `~` pour le dossier personnel). Par défaut : `true`, y compris dans les anciennes configurations sans cette clé. Basculez avec **`p`** ; le changement concerne les nouveaux terminaux. Réglez sur `false` pour retrouver votre invite habituelle. Les fichiers de configuration shell ne sont pas modifiés.
+
 - **`terminal.maxBufferedLines`** (number) : Tampon de défilement maximum
   - Par défaut : `10000`
   - Affecte l’utilisation mémoire (~1 Mo pour 10 000 lignes)
@@ -97,6 +103,10 @@ La configuration est stockée dans `.spck-editor/config/spck-cli.config.json` da
   - Améliore les performances en évitant des milliers de fichiers générés
 
 ### Paramètres de Sécurité
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean) : Exiger un PIN de connexion de 4–6 chiffres. Par défaut : `false`. Appuyez sur **`i`**, choisissez et confirmez un PIN. L’app le demande avant tout accès et ne l’enregistre jamais. Le QR code ne contient pas le PIN ; `security.pin` conserve un vérificateur salé. Cinq erreurs déclenchent un délai de 60 secondes partagé entre appareils et reconnexions. S’applique aux nouvelles connexions et reconnexions ; les connexions existantes restent ouvertes. Désactivez pour retirer la protection ; réactivez pour choisir un nouveau PIN.
 
 - **`security.userAuthenticationEnabled`** (boolean) : Activer l’authentification utilisateur Firebase
   - Par défaut : `false`

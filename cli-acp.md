@@ -17,12 +17,12 @@ Compared to the in-app server-routed AI Chat, the local-ACP path gives you:
 
 ## <a name="acp-supported-agents"></a>Supported AI Agents
 
-Install whichever agents you want available. Spck CLI auto-detects them on startup.
+Spck CLI 0.8.0+ bundles the Claude Code and Codex ACP adapters; no global ACP adapter installation is needed. Authenticate with the agent’s own login on the CLI host. Gemini CLI is installed separately and detected on `PATH`.
 
 | Agent             | Install                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | ACP adapter bundled with Spck CLI; sign in on the CLI host |
+| **OpenAI Codex** | ACP adapter bundled with Spck CLI; sign in on the CLI host |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>Installation and Setup
@@ -34,14 +34,14 @@ If you don't already have it:
 ```bash
 npm install -g spck
 # or run without installing
-npx spck
+npx spck@latest
 ```
 
 See [Getting Started with Spck CLI](./cli-start) for the full first-run wizard.
 
-### 2. Install one or more agent CLIs
+### 2. Prepare the agents you want to use
 
-Pick whichever agents you want available. You can install multiple — the AI Chat will let you pick between them on a per-session basis. See the [Supported AI Agents](#acp-supported-agents) table above for install commands.
+Use the bundled Claude Code or Codex adapter, or install Gemini CLI separately. You can choose the agent per chat session. Complete the agent login on the same machine and user account that runs Spck CLI.
 
 ### 3. Authenticate each agent once
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-On startup, the CLI prints a per-agent detection report listing which agents are available, followed by a one-line summary like `✅ ACP agents: Claude Code, Gemini CLI` in the main feature block. If nothing is available, it falls back to the server-routed AI Chat instead.
+The dashboard lists available agents in its capabilities section. Press **`l`** to inspect startup detection logs. If no local agent is available, use the cloud AI Chat option instead.
 
 ### 5. Connect Spck Editor
 

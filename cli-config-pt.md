@@ -17,11 +17,13 @@ A configuração é armazenada em `.spck-editor/config/spck-cli.config.json` no 
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@ A configuração é armazenada em `.spck-editor/config/spck-cli.config.json` no 
   - Padrão: `true`
   - Defina como `false` para reduzir o risco de acesso não autorizado ao terminal
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Prompt compacto para Bash, Zsh e Fish (`folder $`, ou `folder #` para root; `~` para a pasta pessoal). Padrão: `true`, inclusive em configurações antigas sem esta chave. Alterne com **`p`** no painel; vale para novos terminais. Use `false` para manter o prompt habitual. Os arquivos de configuração do shell não são alterados.
+
 - **`terminal.maxBufferedLines`** (number): Buffer máximo de rolagem
   - Padrão: `10000`
   - Afeta o uso de memória (~1MB por 10 mil linhas)
@@ -97,6 +103,10 @@ A configuração é armazenada em `.spck-editor/config/spck-cli.config.json` no 
   - Melhora o desempenho ao evitar milhares de arquivos gerados
 
 ### Configurações de Segurança
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): Exigir PIN de conexão de 4–6 dígitos. Padrão: `false`. Pressione **`i`** no painel, escolha e confirme um PIN. O app o pede antes de conceder acesso e nunca o salva. O QR não contém o PIN; `security.pin` guarda um verificador com salt. Cinco erros causam espera de 60 segundos compartilhada entre dispositivos e reconexões. Aplica-se a novas conexões e reconexões; as existentes continuam abertas. Desative para remover a proteção; ative novamente para escolher outro PIN.
 
 - **`security.userAuthenticationEnabled`** (boolean): Ativa a autenticação de usuário via Firebase
   - Padrão: `false`

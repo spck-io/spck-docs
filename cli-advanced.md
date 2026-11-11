@@ -42,12 +42,12 @@ spck -s cli-na-1.spck.io
 
 ### Dashboard
 
-In an interactive terminal, the CLI shows a full-screen dashboard once it connects. When its output is piped or run as a service, it prints plain logs instead.
+In an interactive terminal, the CLI opens a full-screen dashboard. New projects show the QR code until the first successful editor connection; later launches open the main view. It shows connected editors, ping, Relay/Fast Lane status, and available tools. Piped and service runs print plain logs instead.
 
 | View | Keys |
 |------|------|
 | Main | `l` logs, `c` connection QR code, `m` manage terminals, `q` `q` quit |
-| Settings (main view) | `t` terminal, `b` browser proxy, `a` AI agents, `s` language server, `u` user verification, `f` Fast Lane, `w` keep computer awake |
+| Settings (main view) | `t` terminal, `b` browser proxy, `a` AI agents, `s` language server, `u` user verification, `f` Fast Lane, `w` keep computer awake, `p` compact shell prompt, `i` require PIN to connect |
 | Logs | `↑` `↓` / `j` `k` scroll, `PgUp` `PgDn` page, `←` `→` pan long lines, `g` `G` first / last line, `Esc` back |
 | Terminals | `↑` `↓` / `j` `k` select, `x` `x` kill (or remove an exited terminal), `Esc` back |
 | QR code | `c` / `Esc` back |
@@ -157,9 +157,9 @@ Limit concurrent terminals:
 
 ## <a name="mobile-prompt"></a>Reducing the Shell Prompt for Mobile
 
-On mobile devices, horizontal screen space is limited. The default shell prompt — which typically includes the current directory path, username, and hostname — can crowd the terminal and make it harder to read command output.
+Spck CLI now enables a compact prompt by default for Bash, Zsh and Fish: `folder $`, or `folder #` for root, with `~` for home. Press **`p`** in the dashboard or set **`terminal.compactPrompt`** to toggle it for new terminals. Your shell configuration files are not changed. See [Compact prompt](./cli-config#compact-prompt).
 
-Changing your prompt to just `$ ` gives a much cleaner terminal experience on small screens.
+For other shells, or if you disable the built-in compact prompt and want your own format, use the manual examples below.
 
 ### Bash
 

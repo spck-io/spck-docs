@@ -80,6 +80,8 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - Default: `true`
   - Set to `false` to reduce risk of unauthorized access to your terminal
 
+<a name="compact-prompt"></a>
+
 - **`terminal.compactPrompt`** (boolean): Show a shorter shell prompt without the computer name
   - Default: `true`, including when omitted in older project configs
   - Bash, Zsh and Fish show the current folder followed by `$`, or `#` when running as root; home is shown as `~`
@@ -107,6 +109,8 @@ Configuration is stored in `.spck-editor/config/spck-cli.config.json` in your pr
   - Improves performance by avoiding thousands of generated files
 
 ### Security Settings
+
+<a name="connection-pin"></a>
 
 - **`security.requirePin`** (boolean): Require a 4–6 digit PIN when an editor connects
   - Default: `false`

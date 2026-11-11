@@ -17,11 +17,13 @@ La configuración se almacena en `.spck-editor/config/spck-cli.config.json` en e
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@ La configuración se almacena en `.spck-editor/config/spck-cli.config.json` en e
   - Predeterminado: `true`
   - Establecer en `false` para reducir el riesgo de acceso no autorizado a tu terminal
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Prompt compacto para Bash, Zsh y Fish (`folder $`, o `folder #` para root; `~` para el directorio personal). Predeterminado: `true`, también en configuraciones antiguas sin esta clave. Pulsa **`p`** en el panel; se aplica a terminales nuevos. Usa `false` para conservar tu prompt habitual. No modifica archivos de configuración del shell.
+
 - **`terminal.maxBufferedLines`** (number): Búfer de desplazamiento máximo
   - Predeterminado: `10000`
   - Afecta el uso de memoria (~1MB por cada 10.000 líneas)
@@ -97,6 +103,10 @@ La configuración se almacena en `.spck-editor/config/spck-cli.config.json` en e
   - Mejora el rendimiento al evitar miles de archivos generados
 
 ### Configuración de Seguridad
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): Exigir un PIN de conexión de 4–6 dígitos. Predeterminado: `false`. Pulsa **`i`** en el panel, elige y confirma un PIN. La app lo pide antes de conceder acceso y nunca lo guarda. El QR no contiene el PIN; `security.pin` guarda un verificador con sal. Cinco intentos incorrectos provocan un bloqueo de 60 segundos compartido entre dispositivos y reconexiones. Se aplica a conexiones nuevas y reconexiones; las existentes siguen abiertas. Desactívalo para quitar la protección; al activarlo de nuevo puedes elegir otro PIN.
 
 - **`security.userAuthenticationEnabled`** (boolean): Habilitar autenticación de usuario Firebase
   - Predeterminado: `false`

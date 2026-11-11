@@ -17,11 +17,13 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   "name": "My Project",
   "terminal": {
     "enabled": true,
+    "compactPrompt": true,
     "maxBufferedLines": 10000,
     "maxTerminals": 10
   },
   "security": {
-    "userAuthenticationEnabled": false
+    "userAuthenticationEnabled": false,
+    "requirePin": false
   },
   "filesystem": {
     "maxFileSize": "10MB",
@@ -78,6 +80,10 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   - Default: `true`
   - Setel ke `false` untuk mengurangi risiko akses tidak sah ke terminal Anda
 
+<a name="compact-prompt"></a>
+
+- **`terminal.compactPrompt`** (boolean): Prompt ringkas Bash, Zsh, dan Fish (`folder $`, atau `folder #` untuk root; `~` untuk home). Default: `true`, termasuk konfigurasi lama tanpa kunci ini. Tekan **`p`** di dasbor; perubahan berlaku untuk terminal baru. Atur `false` untuk prompt biasa. File konfigurasi shell tidak diubah.
+
 - **`terminal.maxBufferedLines`** (number): Buffer scrollback maksimum
   - Default: `10000`
   - Memengaruhi penggunaan memori (~1MB per 10k baris)
@@ -97,6 +103,10 @@ Konfigurasi disimpan di `.spck-editor/config/spck-cli.config.json` di direktori 
   - Meningkatkan performa dengan menghindari ribuan file yang dihasilkan
 
 ### Pengaturan Keamanan
+
+<a name="connection-pin"></a>
+
+- **`security.requirePin`** (boolean): Wajibkan PIN koneksi 4–6 digit. Default: `false`. Tekan **`i`** di dasbor, pilih dan konfirmasi PIN. Aplikasi memintanya sebelum akses diberikan dan tidak pernah menyimpannya. QR tidak berisi PIN; `security.pin` menyimpan verifikator dengan salt. Lima kesalahan memicu jeda 60 detik yang dibagi lintas perangkat dan koneksi ulang. Berlaku untuk koneksi baru dan koneksi ulang; koneksi aktif tetap terbuka. Matikan untuk menonaktifkan; aktifkan lagi untuk memilih PIN baru.
 
 - **`security.userAuthenticationEnabled`** (boolean): Aktifkan autentikasi pengguna Firebase
   - Default: `false`

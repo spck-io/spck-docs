@@ -2,7 +2,7 @@
 
 ## <a name="overview"></a>개요
 
-Spck CLI는 안전한 WebSocket 연결을 통해 로컬 개발 환경을 Spck Editor 모바일 앱에 연결하는 커맨드라인 도구입니다. 실행한 후에는 스마트폰이나 태블릿에서 로컬 파일을 탐색하고 편집하거나, 터미널 명령을 실행하거나, 로컬 서버를 미리볼 수 있습니다.
+Spck CLI가 정식 출시되었습니다. 휴대폰이나 태블릿의 Spck Editor를 컴퓨터에 연결하여 파일 편집, Git, 터미널, 로컬 서버 미리보기를 이용하세요. 암호화된 릴레이 또는 직접 [Fast Lane](./cli#fast-lane) 연결(Supporter 및 Gold)을 사용합니다.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -10,7 +10,7 @@ Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트�
 
 ### 필수
 
-- **Node.js**: 22.22.2 이상 또는 24.15 이상
+- **Node.js**: **22.22.2+ (22.x), 24.15.0+ (24.x), 또는 26.0.0+** (`^22.22.2 || ^24.15.0 || >=26.0.0`).
 - **Spck Editor 계정**: 무료 계정(30분/일) 또는 프리미엄 구독(무제한)
 - **Spck Editor 모바일 앱**: [Android](https://play.google.com/store/apps/details?id=io.spck) 또는 [iOS](https://apps.apple.com/us/app/spck-editor/id1507309511)
 
@@ -24,10 +24,10 @@ Lite는 Spck CLI를 통해 데스크톱이나 공개 VM에 있는 프로젝트�
 ### 옵션 1: npx로 실행 (설치 불필요)
 
 ```bash
-npx spck
+npx spck@latest
 ```
 
-항상 최신 버전을 사용합니다. 처음 설정하거나 가끔 사용할 때 적합합니다.
+최신 CLI 버전을 요청하므로 처음 설정하거나 가끔 사용할 때 좋습니다. `npx spck`는 설치된 버전을 재사용할 수 있습니다.
 
 ### 옵션 2: 전역 설치
 
@@ -36,9 +36,11 @@ npm install -g spck
 spck
 ```
 
-시작 속도가 빠르고, 오프라인에서도 동작하며, 매일 사용하기에 편리합니다.
+한 번 설치한 뒤 매일 `spck`로 실행하세요. 업데이트는 `npm install -g spck@latest`를 사용합니다. 원격 연결에는 계속 인터넷이 필요합니다.
 
 ## <a name="demo"></a>데모
+
+새로운 Fast Lane 기능이 포함된 [Spck CLI 동영상 보기](https://youtu.be/EtfEhd5EmKM).
 
 Spck CLI를 모바일 앱에 연결하고 로컬 파일을 원격으로 편집하는 짧은 데모입니다:
 
@@ -59,6 +61,8 @@ spck
 ```
 
 자격 증명은 `~/.spck-editor/.credentials.json`에 저장되며 세션 간에 유지됩니다.
+
+브라우저가 localhost에 접근하지 못하면 릴레이를 통해 로그인합니다. CLI의 로그인 QR 코드나 링크를 사용하면 다른 기기에서도 로그인할 수 있습니다. 이 코드는 프로젝트 연결 QR 코드와 다릅니다.
 
 ### 2. 프로젝트 구성
 
@@ -87,7 +91,7 @@ spck --setup
 
 ## <a name="connecting"></a>Spck Editor 연결
 
-CLI가 실행되면 QR 코드와 연결 정보가 표시됩니다.
+새 프로젝트는 첫 에디터 연결이 성공할 때까지 연결 QR 코드를 표시합니다. 이후 실행에서는 대시보드가 바로 열립니다. **`c`**로 QR 코드와 연결 정보를 다시 표시하고, **`l`**로 로그를 확인하세요. QR 코드가 맞지 않으면 터미널을 크게 하세요.
 
 ### 방법 1: QR 코드 (권장)
 
@@ -105,6 +109,8 @@ QR 코드를 스캔할 수 없는 경우:
 2. 터미널에 표시된 **클라이언트 ID**와 **시크릿** 입력
 3. 터미널에 표시된 릴레이 서버 선택
 4. **연결** 탭
+
+**Require PIN to connect**가 켜져 있으면 CLI 대시보드에서 설정한 PIN을 입력하세요. 앱은 PIN을 저장하지 않습니다. [연결 PIN](./cli-config#connection-pin)을 참고하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

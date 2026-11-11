@@ -17,12 +17,12 @@ Agent Client Protocol (ACP) は Zed Industries による、エディタと AI �
 
 ## <a name="acp-supported-agents"></a>サポートされる AI エージェント
 
-利用したいエージェントをインストールしてください。Spck CLI が起動時に自動検出します。
+Spck CLI 0.8.0+ には Claude Code と Codex の ACP アダプターが同梱されており、グローバルインストールは不要です。CLI ホストで各エージェントのログインを行ってください。Gemini CLI は別途インストールし、`PATH` から検出します。
 
 | エージェント       | インストール                                                                         |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| **Claude Code**   | [`claude`](https://docs.claude.com/en/docs/claude-code/setup)                        |
-| **OpenAI Codex**  | `npm install -g @agentclientprotocol/codex-acp`                                      |
+| **Claude Code** | ACP アダプターは Spck CLI に同梱。CLI ホストでログイン |
+| **OpenAI Codex** | ACP アダプターは Spck CLI に同梱。CLI ホストでログイン |
 | **Gemini CLI**    | [`gemini`](https://github.com/google-gemini/gemini-cli)                              |
 
 ## <a name="acp-installation"></a>インストールとセットアップ
@@ -34,14 +34,14 @@ Agent Client Protocol (ACP) は Zed Industries による、エディタと AI �
 ```bash
 npm install -g spck
 # またはインストールせずに実行
-npx spck
+npx spck@latest
 ```
 
 完全な初回セットアップウィザードについては [Spck CLI を始める](./cli-start) を参照してください。
 
-### 2. 1つ以上のエージェント CLI をインストール
+### 2. 利用するエージェントを準備する
 
-使いたいエージェントを選びます。複数インストールしてもよく — AI Chat はセッションごとに切り替えさせてくれます。インストールコマンドは上の [サポートされる AI エージェント](#acp-supported-agents) の表を参照してください。
+同梱の Claude Code または Codex アダプターを使うか、Gemini CLI を別途インストールします。チャットごとにエージェントを選択できます。Spck CLI と同じマシン、同じユーザーアカウントでログインしてください。
 
 ### 3. 各エージェントを一度認証する
 
@@ -62,7 +62,7 @@ cd /path/to/your/project
 spck
 ```
 
-起動時、CLI は利用可能なエージェントを列挙したエージェントごとの検出レポートを出力し、続いてメインの機能ブロックに `✅ ACP agents: Claude Code, Gemini CLI` のような 1 行のサマリーを表示します。何も利用できない場合は、代わりにサーバー経由の AI Chat にフォールバックします。
+ダッシュボードの機能欄で利用可能なエージェントを確認できます。**`l`** で起動時の検出ログを表示します。ローカルエージェントが利用できない場合は、クラウド AI チャットを選択してください。
 
 ### 5. Spck Editor を接続
 
